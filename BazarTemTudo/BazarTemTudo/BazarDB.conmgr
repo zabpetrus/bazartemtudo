@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-NSQ6C33_ATLAS.BazarDB"
+  DTS:DTSID="{D19B2DE5-255C-40C7-A58E-294C4FBC716D}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-NSQ6C33\ATLAS;User ID=;Initial Catalog=BazarDB;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-BazarTemTudo-{D19B2DE5-255C-40C7-A58E-294C4FBC716D}DESKTOP-NSQ6C33\ATLAS.BazarDB;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

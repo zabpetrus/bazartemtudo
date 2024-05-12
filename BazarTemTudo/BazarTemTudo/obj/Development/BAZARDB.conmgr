@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="BAZARDB"
   DTS:DTSID="{EC22FFFA-F9CA-4B86-A174-32EF6F612EB6}"

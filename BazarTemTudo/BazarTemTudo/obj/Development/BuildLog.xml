@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>BazarTemTudo</Name>
-    <LastWriteTime>2024-05-09T20:33:33.2110993Z</LastWriteTime>
+    <LastWriteTime>2024-05-13T21:51:52.5014654Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>ETL.dtsx</Name>
-      <LastWriteTime>2024-05-09T20:26:36.96679Z</LastWriteTime>
+      <LastWriteTime>2024-05-13T21:51:52.459414Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

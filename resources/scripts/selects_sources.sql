@@ -13,6 +13,10 @@ SELECT * FROM Products;
 
 SELECT * FROM Internal_Storage;
 
+SELECT * FROM Suppliers;
+
+SELECT * FROM Purchase_Requests;
+
 GO
 
 

@@ -50,7 +50,6 @@ END
 
 DROP TABLE IF EXISTS [Clients];
 
-
 CREATE TABLE [dbo].[Clients](
 	[client_id] [INT] PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[client_name] [varchar](80) NOT NULL,
@@ -74,9 +73,9 @@ CREATE TABLE [dbo].[Products](
 DROP TABLE IF EXISTS [Orders];
 
 CREATE TABLE [dbo].[Orders](
-	[internal_order_ID] INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	[order_ID] INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[client_id] INT NOT NULL,
-	[order_id] INT NOT NULL,    
+	[order_def_id] INT NOT NULL,    -- vem da loja
     [order_purchase_date] DATETIME2 NOT NULL,
     [order_payments_date] DATETIME2 NOT NULL,
 	[order_ship_city] VARCHAR(50) NOT NULL,
@@ -92,7 +91,7 @@ CREATE TABLE [dbo].[Orders](
 DROP TABLE IF EXISTS [OrderItems];
 
 CREATE TABLE [dbo].[OrderItems] (
-	[oi_internal_order_ID] INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	[oi_order_ID] INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[order_id] INT NOT NULL, -- OrderID vindo de Pedidos
 	[product_id] INT NOT NULL, -- ProductID vindo de Produtos
 	[oi_order_item_id] INT NOT NULL, -- Ordem ID da Fonte
@@ -101,21 +100,51 @@ CREATE TABLE [dbo].[OrderItems] (
 	[oi_item_status] INT DEFAULT 0 NOT NULL -- Se está disponivel
 );
 
+DROP TABLE IF EXISTS [Purchase_Requests];
+
+CREATE TABLE [dbo].[Purchase_Requests](
+	[pr_id] INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	[product_id] INT NOT NULL,
+	[pr_supply] INT NOT NULL,
+	[pr_quantity] INT NOT NULL,
+	[pr_unit_price] DECIMAL(18,2) NOT NULL,
+	[pr_total_price] DECIMAL (18,2) NOT NULL,
+	[pr_purchase] DATETIME2 NOT NULL	
+);
+
+
 DROP TABLE IF EXISTS [Internal_Storage];
 
 CREATE TABLE [dbo].[Internal_Storage] (
 	[is_id] INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	[product_id] INT NOT NULL,
-	[is_qte] INT DEFAULT 0 NOT NULL,
+	[is_actual_qte] INT DEFAULT 0 NOT NULL,
 	[is_minimal_qte] INT DEFAULT 0 NOT NULL,
 );
+
+DROP TABLE IF EXISTS [Suppliers];
+
+CREATE TABLE [dbo].[Suppliers] (
+	[s_id] INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	[s_name] VARCHAR(50) NOT NULL,
+	[s_cnpj] VARCHAR(30) NOT NULL UNIQUE,
+	[s_email] VARCHAR(50) NOT NULL,
+	[s_city] VARCHAR(50) NOT NULL,
+	[s_country] VARCHAR(30) NOT NULL
+);
+
+
+
+
+
+
 
 
 ALTER TABLE Orders ADD CONSTRAINT FK_OR_CLI FOREIGN KEY (client_id) REFERENCES Clients ( client_id ) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE Internal_Storage ADD CONSTRAINT FK_IS_PROD FOREIGN KEY (product_id) REFERENCES Products (product_id) ON DELETE CASCADE ON UPDATE CASCADE;
 
-ALTER TABLE OrderItems ADD CONSTRAINT FK_OI_ORD FOREIGN KEY (order_ID) REFERENCES Orders (internal_order_ID) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE OrderItems ADD CONSTRAINT FK_OI_ORD FOREIGN KEY (order_id) REFERENCES Orders (order_ID) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE OrderItems ADD CONSTRAINT FK_OI_PROD FOREIGN KEY (product_id) REFERENCES Products (product_id) ON DELETE CASCADE ON UPDATE CASCADE;
 

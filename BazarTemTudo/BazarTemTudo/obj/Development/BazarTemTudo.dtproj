@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-NSQ6C33</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhwxHyTa1ukOwa2Ekrss8SgAAAAACAAAAAAAQZgAAAAEAACAAAAAOzA5CD2tdhxC3HIGuPe9li/7oggihkUpkEoYCMyhWgQAAAAAOgAAAAAIAACAAAAAIe6U+Tt/DCAsvoubnrxSRA7/2Z59K2J0SXNtVz9fBd5AAAAB2CztFwpdGbDYuTiSPXNyfmWUYkuXsdGaFOmHwZxuh3I8XhkEZxUB7dqdEcdq6D4QKeV9dlXp7smY/xkf5k90GfeLvThvUJCjI4s6MuKX9yxE0uh6iw/0OPUmhPP96+JJygk6BYht8k4R6VwUT4sgEPV35yFfimQc4cjSmSXhQNz6ZLjLAgOBt8mmkyhCMrPdAAAAAVEP+VPohMB/Q/OQPWe44PK7UiA9tb9NgOh4+5/DzD6VCNaYUb0uMWQZmMSdxsYi833nPZg7t8MoMTvd1cAek/w==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhwxHyTa1ukOwa2Ekrss8SgAAAAACAAAAAAAQZgAAAAEAACAAAAAp3kVG+KLztC45jmdKihYGWYiTmVPbfWZPMH2U4hWNKQAAAAAOgAAAAAIAACAAAAD+oV9VAx8fcfAJP5tw+wWOOdqagSvbwiiC++GjzIOhcpAAAAB/URU06gq3Ve943zuvThQgfrhF0QJd+OE72DmjdcfC54GwujhE95RyTR1ZCS+5eoQY0qvPA3WlxZ60r1qz5OEJiry1nRUaGC8HDCHA4IqpYvw6MhrRN0/j9mXwEjMXoptDcuheBfFnqqLpi5T4ShAGzHXA5G0E+opbYDjLRu1hcFQfCbnKbt2zRC6enfOeUQ1AAAAA3ETirDmse4dFaxUEIMSPJFqx/ES3AF0PyXZTttEfdSXvxgOrx0egO9IMcacNvHbYl+4iqyb4WWTRkz8U/zuJYQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -63,7 +63,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=DESKTOP-NSQ6C33\ATLAS;User ID=;Initial Catalog=BazarDB;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-BazarTemTudo-{EC22FFFA-F9CA-4B86-A174-32EF6F612EB6}DESKTOP-NSQ6C33\ATLAS.BazarDB;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=DESKTOP-NSQ6C33\ATLAS;Initial Catalog=BazarDB;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-BazarTemTudo-{EC22FFFA-F9CA-4B86-A174-32EF6F612EB6}DESKTOP-NSQ6C33\ATLAS.BazarDB;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -182,8 +182,6 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">
-                </SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -195,10 +193,10 @@
                 <SSIS:Property SSIS:Name="Name">ETL</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">11</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">21</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B35791D7-1575-47A9-A522-E8E4FCC9123A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5F6659C3-68FB-49B5-8BBE-A458EC9F57C4}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -306,7 +304,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">J:\bazar\resources\sourcedata\origem.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">J:\bazar\resources\sourcedata\origem2.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -397,6 +395,8 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">
+                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>

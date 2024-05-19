@@ -47,7 +47,7 @@ INSERT INTO [dbo].[Products]
 			LEFT JOIN Products ON Products.product_upc = Ca.upc WHERE NOT EXISTS 
 			(SELECT 1 FROM Products WHERE Products.product_upc = Ca.upc );
 
-		PRINT 'Produtos populados';
+		PRINT 'Produtos populado';
 
 
 
@@ -59,6 +59,9 @@ INSERT INTO [dbo].[Orders]
 	,[order_ship_city]
 	,[order_ship_state]
 	,[order_ship_postal_code]
+	,[order_ship_address_1] 
+	,[order_ship_address_2]
+	,[order_ship_address_3]
 	,[order_ship_country]
 	,[order_currency]
 	,[order_ship_service_level])
@@ -71,6 +74,9 @@ INSERT INTO [dbo].[Orders]
 	carga.ship_city,
 	carga.ship_state,
 	carga.ship_postal_code,
+	order_ship_address_1,
+	order_ship_address_2,
+	order_ship_address_3,
 	carga.ship_country,
 	carga.currency,
 	carga.ship_service_level
@@ -79,7 +85,7 @@ INSERT INTO [dbo].[Orders]
 	LEFT JOIN Orders ON Orders.order_id = Carga.order_id
 	WHERE NOT EXISTS (SELECT 1 FROM Orders WHERE Orders.order_def_id = Carga.order_id );
 
-	PRINT 'Orders populados';
+	PRINT 'Orders populado (Pedidos)';
 
 
 	INSERT INTO [dbo].[OrderItems]
@@ -107,8 +113,57 @@ INSERT INTO [dbo].[Orders]
     AND oi.product_id = pr.product_id
 	);
 
-	PRINT 'OrdersItens populados';
+	PRINT 'OrdersItens populados (Itens dos pedidos)';
+
+
+INSERT INTO [dbo].[Internal_Storage]
+           ([product_id]
+           ,[is_actual_qte]
+           ,[is_minimal_qte])
+			SELECT DISTINCT 
+			oi.product_id, 
+			0 AS qte,
+			SUM( oi.oi_quantity_purchased ) AS minimal_qte
+			FROM orderitems oi 
+			LEFT JOIN
+			Internal_Storage it ON it.product_id = oi.product_id
+				WHERE NOT EXISTS (
+				SELECT 1 FROM internal_storage WHERE internal_storage.product_id = oi.product_id )
+				GROUP BY oi.product_id;
+
+	PRINT 'Internal Storage populado (Estoque)';
 
 
 
 
+INSERT INTO [dbo].[Purchase_Requests]
+    (
+	[product_id], 
+	[pr_supply],
+	[pr_quantity],
+	[pr_unit_price],
+	[pr_total_price],
+	[pr_purchase],
+	[pr_backorder])
+
+SELECT 
+    pr.product_id,
+	SUM(10 * oi.oi_quantity_purchased) AS oiqte,
+	oi.oi_product_price,
+	SUM(oi.oi_product_price * oi.oi_quantity_purchased * 10) AS Total,
+	(SELECT TOP(1) su.s_id FROM Suppliers su INNER JOIN Orders oi ON oi.order_ship_state = su.s_city OR oi.order_ship_country = su.s_country) AS MinSupplierID,
+	GETDATE() AS CurrentTime,
+	0
+	FROM products pr
+	LEFT JOIN OrderItems oi ON oi.product_id = pr.product_id
+    INNER JOIN orders od ON od.order_ID = oi.order_id
+	LEFT JOIN purchase_requests prx ON prx.product_id = oi.product_id
+	WHERE NOT EXISTS (
+    SELECT 1 FROM purchase_requests WHERE purchase_requests.product_id = oi.product_id
+)
+GROUP BY pr.product_id,oi_product_price
+ORDER BY Total DESC;
+	
+
+
+PRINT 'Purchase_Requests Populado (Requisicao de compra)';

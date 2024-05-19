@@ -9,18 +9,19 @@
 */
 
 SELECT 
-    oi.product_id,
-    SUM(oi.oi_quantity_purchased * oi.oi_product_price) AS KAS
-
-FROM 
-    OrderItems oi
-INNER JOIN 
-    Products pr ON oi.product_id = pr.product_id  
-INNER JOIN
-	Orders od ON od.order_ID = oi.oi_order_ID
-INNER JOIN
-	Suppliers su ON su.s_country = od.order_ship_country
-GROUP BY 
-    oi.product_id
-ORDER BY 
-    oi.product_id;
+    pr.product_id,
+	SUM(10 * oi.oi_quantity_purchased) AS oiqte,
+	oi.oi_product_price,
+	SUM(oi.oi_product_price * oi.oi_quantity_purchased * 10) AS Total,
+	(SELECT TOP(1) su.s_id FROM Suppliers su INNER JOIN Orders oi ON oi.order_ship_state = su.s_city OR oi.order_ship_country = su.s_country) AS MinSupplierID,
+	GETDATE() AS CurrentTime
+	FROM products pr
+	LEFT JOIN OrderItems oi ON oi.product_id = pr.product_id
+    INNER JOIN orders od ON od.order_ID = oi.order_id
+	LEFT JOIN purchase_requests prx ON prx.product_id = oi.product_id
+	WHERE NOT EXISTS (
+    SELECT 1 FROM purchase_requests WHERE purchase_requests.product_id = oi.product_id
+)
+GROUP BY pr.product_id,oi_product_price
+ORDER BY Total DESC;
+	

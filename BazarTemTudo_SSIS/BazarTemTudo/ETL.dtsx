@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-NSQ6C33\zsant"
   DTS:DTSID="{3D2AE899-1E1C-42CD-8F63-6BB782A1DF96}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
   DTS:LocaleID="1046"
   DTS:ObjectName="ETL"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{5F6659C3-68FB-49B5-8BBE-A458EC9F57C4}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{3D966636-B132-4024-9CEA-D1B4171B5CD9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -49,7 +49,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="order-id"
-              DTS:DTSID="{D95F4A80-8CD2-4586-B42C-616742D0319B}"
+              DTS:DTSID="{A0475A4C-F8AF-4B3E-AAFC-B670FA984174}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="order-item-id"
-              DTS:DTSID="{4B5D8024-5F66-47D9-8BF2-C867F589E3D1}"
+              DTS:DTSID="{B7EC8B9A-23D2-42C5-9463-CFBC27FF7054}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
               DTS:DataType="304"
               DTS:TextQualified="True"
               DTS:ObjectName="purchase-date"
-              DTS:DTSID="{308CE46F-1239-47CF-B680-3AEC3E3A71E8}"
+              DTS:DTSID="{23327FC2-56B8-417D-B2F0-A9F3234374B2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -73,7 +73,7 @@
               DTS:DataType="304"
               DTS:TextQualified="True"
               DTS:ObjectName="payments-date"
-              DTS:DTSID="{5E0B02CC-3EA1-42DB-9722-76D9733C4925}"
+              DTS:DTSID="{9E8EE435-4A55-4C37-9243-E769671B313E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -82,7 +82,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="buyer-email"
-              DTS:DTSID="{FEA6A25B-FB8D-440F-A66C-91A1D8C674AE}"
+              DTS:DTSID="{E9EAD261-CAC8-496D-8E42-ED0AEB14A9F5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -91,7 +91,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="buyer-name"
-              DTS:DTSID="{36FD4EAE-1E14-4BBB-920A-0B6CFAB7E086}"
+              DTS:DTSID="{4551A227-1A36-44DE-8B83-508E362589AC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -100,7 +100,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="cpf"
-              DTS:DTSID="{6E9C04C9-0CDA-41DD-B29A-7BCC51740EDC}"
+              DTS:DTSID="{97B67DF1-841E-4AFC-9000-F41709C9D027}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -109,7 +109,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="buyer-phone-number"
-              DTS:DTSID="{41B4F5CC-191E-415F-8242-75B7E59881A1}"
+              DTS:DTSID="{3E6D2926-D386-42AF-AB66-55972E7BABD1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -118,7 +118,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="sku"
-              DTS:DTSID="{385E9EE8-58D5-4DEE-84D9-1F318127FDAB}"
+              DTS:DTSID="{755F2E30-414A-459F-8B7C-53414C890962}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -127,7 +127,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="upc"
-              DTS:DTSID="{FAFF483C-0CD4-49B6-A538-696A3DA4CFD9}"
+              DTS:DTSID="{28672357-B063-4770-8882-B21B92026839}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -136,7 +136,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="product-name"
-              DTS:DTSID="{FCF09C97-6C23-41AC-B864-7CC9DD03134D}"
+              DTS:DTSID="{F7C46415-F8E8-419A-90DE-F909970B0C6A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -144,7 +144,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="quantity-purchased"
-              DTS:DTSID="{1AAE5A84-AD67-4E73-98DF-C2AFB97F99D5}"
+              DTS:DTSID="{F47F1760-B007-4B8D-8412-064AB12BAE7C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -153,7 +153,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="currency"
-              DTS:DTSID="{80143C04-ACCE-4172-9C69-F15D9A85EEBE}"
+              DTS:DTSID="{E49900F3-7860-4404-A918-0725C5934A75}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -162,7 +162,7 @@
               DTS:DataScale="2"
               DTS:TextQualified="True"
               DTS:ObjectName="item-price"
-              DTS:DTSID="{CD7E7E3B-6AD4-48C7-A6F1-EFF81475523C}"
+              DTS:DTSID="{9D42370D-1279-47ED-8C42-0FF4CD101633}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -171,7 +171,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ship-service-level"
-              DTS:DTSID="{D2BB1B41-5525-466D-A5EF-D422FE8C1141}"
+              DTS:DTSID="{C19C4BAA-5BC5-49D8-8E85-DB6A75459236}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -180,7 +180,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ship-address-1"
-              DTS:DTSID="{1C2283CA-3A2B-4CDF-A5E9-C982EFDC72A9}"
+              DTS:DTSID="{E4F3C473-25EC-4EA0-AF6C-7FA6D368B344}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -189,7 +189,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ship-address-2"
-              DTS:DTSID="{ADBFDB38-5D42-4610-A121-F42EDFD42255}"
+              DTS:DTSID="{7A892F22-4BA9-43E3-8F52-84E6F2BFE23A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -198,7 +198,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ship-address-3"
-              DTS:DTSID="{6CADCE04-112D-4D82-A3A7-751838A606B5}"
+              DTS:DTSID="{62D71EDE-FEB6-4E2D-BDFD-F200FD38FC0D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -207,7 +207,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ship-city"
-              DTS:DTSID="{62426E3E-1806-44F4-8833-6D031B264EF5}"
+              DTS:DTSID="{5585840D-C011-4B14-A2BC-DD3C1129A0DD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -216,7 +216,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ship-state"
-              DTS:DTSID="{909717EB-95BC-4E94-AAD0-8609D071A99F}"
+              DTS:DTSID="{08EAEC64-F42D-4EA1-89DA-C26929F126F4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -225,7 +225,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ship-postal-code"
-              DTS:DTSID="{3D592961-DF47-48FA-9F75-0FD89B31BE7D}"
+              DTS:DTSID="{330CB5EE-5F0F-42E8-ACBE-66A2EEBA1A38}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -234,7 +234,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ship-country"
-              DTS:DTSID="{AE488539-5708-469E-8082-D297830136F8}"
+              DTS:DTSID="{C030910C-AB2B-4235-A278-A75D6ABE67AC}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -260,6 +260,23 @@
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStmtSourceType="FileConnection"
           SQLTask:SqlStatementSource="create_table_carga.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CRIAR TABELAS ATRAVÉS DE DROP TABLE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{81B8B636-D794-42C9-B9B1-2D28400012CB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CRIAR TABELAS ATRAVÉS DE DROP TABLE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{EC22FFFA-F9CA-4B86-A174-32EF6F612EB6}"
+          SQLTask:SqlStatementSource="USE [BazarDB];&#xA;GO&#xA;&#xA;IF EXISTS (&#xA;    SELECT 1&#xA;    FROM information_schema.table_constraints&#xA;    WHERE table_name = 'Orders' &#xA;    AND constraint_name = 'FK_OR_CLI'&#xA;)&#xA;BEGIN&#xA;    ALTER TABLE Orders&#xA;    DROP CONSTRAINT FK_OR_CLI;&#xA;END;&#xA;&#xA;&#xA;&#xA;IF EXISTS (&#xA;    SELECT 1&#xA;    FROM information_schema.table_constraints&#xA;    WHERE table_name = 'Internal_Storage' &#xA;    AND constraint_name = 'FK_IS_PROD'&#xA;)&#xA;BEGIN&#xA;    ALTER TABLE Internal_Storage&#xA;    DROP CONSTRAINT FK_IS_PROD;&#xA;END;&#xA;&#xA;&#xA;IF EXISTS (&#xA;&#x9;SELECT 1 FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS&#xA;&#x9;WHERE TABLE_NAME = 'OrderItems'&#xA;&#x9;AND CONSTRAINT_NAME = 'FK_OI_ORD'&#xA;)&#xA;BEGIN&#xA;&#x9;ALTER TABLE OrderItems DROP CONSTRAINT FK_OI_ORD;&#xA;END&#xA;&#xA;&#xA;&#xA;IF EXISTS (&#xA;&#x9;SELECT 1 FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS&#xA;&#x9;WHERE TABLE_NAME = 'OrderItems'&#xA;&#x9;AND CONSTRAINT_NAME = 'FK_OI_PROD'&#xA;)&#xA;BEGIN&#xA;&#x9;ALTER TABLE OrderItems DROP CONSTRAINT FK_OI_PROD;&#xA;END&#xA;&#xA;&#xA;&#xA;DROP TABLE IF EXISTS [Clients];&#xA;&#xA;CREATE TABLE [dbo].[Clients](&#xA;&#x9;[client_id] [INT] PRIMARY KEY IDENTITY(1,1) NOT NULL,&#xA;&#x9;[client_name] [varchar](80) NOT NULL,&#xA;&#x9;[client_email] [varchar](50) NOT NULL,&#xA;&#x9;[client_cpf] [varchar](30) NOT NULL,&#xA;&#x9;[client_phone_number] [varchar](30) NOT NULL&#x9;&#xA;);&#xA;&#xA;&#xA;DROP TABLE IF EXISTS [Products];&#xA;&#xA;CREATE TABLE [dbo].[Products](&#xA;&#x9;[product_id] INT PRIMARY KEY IDENTITY(1,1) NOT NULL,&#xA;&#x9;[product_name] VARCHAR(150) NOT NULL,&#xA;&#x9;[product_sku] VARCHAR(50) NOT NULL,&#xA;    [product_upc] VARCHAR(50) NOT NULL,&#xA;&#x9;[product_item_price] DECIMAL(18,2) NOT NULL,   &#xA;);&#xA;&#xA;&#xA;DROP TABLE IF EXISTS [Orders];&#xA;&#xA;CREATE TABLE [dbo].[Orders](&#xA;&#x9;[order_ID] INT PRIMARY KEY IDENTITY(1,1) NOT NULL, --id exclusivo (controle interno) do pedido&#xA;&#x9;[client_id] INT NOT NULL, -- id do cliente (controle interno)&#xA;&#x9;[order_def_id] INT NOT NULL, --id do cliente (vem do marketplace - controle externo)&#xA;    [order_purchase_date] DATETIME2 NOT NULL, -- data da compra&#xA;    [order_payments_date] DATETIME2 NOT NULL, -- data do pagamento&#xA;&#x9;[order_ship_city] VARCHAR(50) NOT NULL, -- cidade de despacho do pedido&#xA;    [order_ship_state] VARCHAR(50) NOT NULL,-- estado de despacho do pedido&#xA;    [order_ship_postal_code] VARCHAR(10) NOT NULL, -- codigo postal de despacho do pedido&#xA;&#x9;[order_ship_address_1] varchar(100) NULL,&#xA;&#x9;[order_ship_address_2] varchar(100) NULL,&#xA;&#x9;[order_ship_address_3] varchar(100) NULL,&#xA;    [order_ship_country] VARCHAR(30) NOT NULL,&#x9;-- pais de despacho do pedido&#xA;&#x9;[order_currency] VARCHAR(10) NOT NULL, -- moeda corrente do pedido&#xA;&#x9;[order_ship_service_level] VARCHAR(20) DEFAULT 'Standard Shipping' CHECK ([order_ship_service_level] IN ('Standard Shipping', 'Express Shipping', 'Priority Shipping')),&#xA;&#x9;[order_status_delivery] VARCHAR(20) NOT NULL DEFAULT 'Processing' CHECK ([order_status_delivery] IN ('Processing', 'Shipped', 'Delivered', 'In Transit', 'Returned'))&#xA;);&#xA;&#xA;&#xA;DROP TABLE IF EXISTS [OrderItems];&#xA;&#xA;CREATE TABLE [dbo].[OrderItems] (&#xA;&#x9;[oi_order_ID] INT PRIMARY KEY IDENTITY(1,1) NOT NULL,&#xA;&#x9;[order_id] INT NOT NULL, -- OrderID vindo de Pedidos&#xA;&#x9;[product_id] INT NOT NULL, -- ProductID vindo de Produtos&#xA;&#x9;[oi_order_item_id] INT NOT NULL, -- Ordem ID da Fonte&#xA;&#x9;[oi_product_price] DECIMAL(18,2) NOT NULL, -- preco&#xA;&#x9;[oi_quantity_purchased] INT NOT NULL, -- quantidade &#xA;&#x9;[oi_item_status] VARCHAR(20) NOT NULL DEFAULT 'Processing' CHECK ([oi_item_status] IN ('Processing', 'Shipped', 'Delivered', 'In Transit', 'Returned')) -- Se est� disponivel&#xA;);&#xA;&#xA;-- TABELA DE REQUISICAO DE COMPRA&#xA;&#xA;DROP TABLE IF EXISTS [Purchase_Requests];&#xA;&#xA;CREATE TABLE [dbo].[Purchase_Requests](&#xA;&#x9;[pr_id] INT PRIMARY KEY IDENTITY(1,1) NOT NULL,&#xA;&#x9;[product_id] INT NOT NULL,-- id do produto registrado&#xA;&#x9;[pr_supply] INT NOT NULL, -- id do fornecedor. Neste caso,ser� um forncedor generalista tipo atacad�o&#xA;&#x9;[pr_quantity] INT NOT NULL, -- quantidade do produto&#xA;&#x9;[pr_unit_price] DECIMAL(18,2) NOT NULL, -- preco individual do produto&#xA;&#x9;[pr_total_price] DECIMAL (18,2) NOT NULL, -- o custo total da compra&#xA;&#x9;[pr_purchase] DATETIME2 NOT NULL, -- data da requisicao&#xA;&#x9;[pr_backorder] BIT DEFAULT 0 --termo em ingles que indica que um produto est� &quot;aguardando chegada&quot; &#xA;);&#xA;&#xA;-- TABELA ESTOQUE&#xA;DROP TABLE IF EXISTS [Internal_Storage];&#xA;&#xA;CREATE TABLE [dbo].[Internal_Storage] (&#xA;&#x9;[is_id] INT PRIMARY KEY IDENTITY(1,1) NOT NULL, -- id de controle interno do estoque&#xA;&#x9;[product_id] INT NOT NULL, -- id do produto&#xA;&#x9;[is_actual_qte] INT DEFAULT 0 NOT NULL, -- o que � comprado&#xA;&#x9;[is_minimal_qte] INT DEFAULT 0 NOT NULL,--vem dos pedidos: rela��o � carga. � atualizado quando vem a carga&#xA;);&#xA;&#xA;-- TABELA FORNECEDORES&#xA;&#xA;DROP TABLE IF EXISTS [Suppliers];&#xA;&#xA;CREATE TABLE [dbo].[Suppliers] (&#xA;&#x9;[s_id] INT PRIMARY KEY IDENTITY(1,1) NOT NULL, -- id do fornecedor&#xA;&#x9;[s_name] VARCHAR(50) NOT NULL, -- Nome Fantasia do Fornecedor&#xA;&#x9;[s_cnpj] VARCHAR(30) NOT NULL UNIQUE, -- Cnpj do Fornecedor&#xA;&#x9;[s_email] VARCHAR(50) NOT NULL, -- Email de contato do Fornecedor. A ordem de servi�o ser� enviada para o email designado&#xA;&#x9;[s_city] VARCHAR(50) NOT NULL, -- Cidade do Fornecedor&#xA;&#x9;[s_country] VARCHAR(30) NOT NULL -- Pa�s do Fornecedor&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;ALTER TABLE Orders ADD CONSTRAINT FK_OR_CLI FOREIGN KEY (client_id) REFERENCES Clients ( client_id ) ON DELETE CASCADE ON UPDATE CASCADE;&#xA;&#xA;ALTER TABLE Internal_Storage ADD CONSTRAINT FK_IS_PROD FOREIGN KEY (product_id) REFERENCES Products (product_id) ON DELETE CASCADE ON UPDATE CASCADE;&#xA;&#xA;ALTER TABLE OrderItems ADD CONSTRAINT FK_OI_ORD FOREIGN KEY (order_id) REFERENCES Orders (order_ID) ON DELETE CASCADE ON UPDATE CASCADE;&#xA;&#xA;ALTER TABLE OrderItems ADD CONSTRAINT FK_OI_PROD FOREIGN KEY (product_id) REFERENCES Products (product_id) ON DELETE CASCADE ON UPDATE CASCADE;&#xA;&#xA;&#xA;GO&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1328,6 +1345,23 @@
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\POPULANDO AS TABELAS (INSERT POR CARGA)"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{6393590E-3B08-4DE3-B413-F6AFBFA01B7D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="POPULANDO AS TABELAS (INSERT POR CARGA)"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{EC22FFFA-F9CA-4B86-A174-32EF6F612EB6}"
+          SQLTask:SqlStatementSource="USE [BazarDB];&#xA;GO&#xA;&#xA;-- Inserindo Fornecedores&#xA;&#xA;INSERT INTO [dbo].[Suppliers] (&#xA;[s_name], [s_cnpj],&#x9;[s_email], &#x9;[s_city], [s_country]) &#xA;SELECT 'Atacadao Auto Market', '99.250.886/0001-99', 'atacadaoauto@comercial.com', 'Sao Paulo', 'BR'&#xA;WHERE NOT EXISTS (SELECT 1 FROM [dbo].[Suppliers] WHERE [s_cnpj] = '99.250.886/0001-99');&#xA;&#xA;INSERT INTO [dbo].[Suppliers] (&#xA;[s_name], [s_cnpj],&#x9;[s_email], &#x9;[s_city], [s_country]) &#xA;SELECT 'AlibabaDropship', '43.372.061/0001-92', 'alibabadrophopcommerce@marketrio.com', 'Rio de Janeiro','USA'&#xA;WHERE NOT EXISTS (SELECT 1 FROM [dbo].[Suppliers] WHERE [s_cnpj] = '43.372.061/0001-92');&#xA;&#xA;INSERT INTO [dbo].[Suppliers] (&#xA;[s_name], [s_cnpj],&#x9;[s_email], &#x9;[s_city], [s_country]) &#xA;SELECT 'Muambeiros Atacadao', '75.590.367/0001-01', 'commerce@muambeirosatacadao.com.br', 'Brasilia', 'BR'&#xA;WHERE NOT EXISTS (SELECT 1 FROM [dbo].[Suppliers] WHERE [s_cnpj] = '75.590.367/0001-01');&#xA;&#xA;INSERT INTO [dbo].[Suppliers] (&#xA;[s_name], [s_cnpj],&#x9;[s_email], &#x9;[s_city], [s_country]) &#xA;SELECT 'Emporio Tabajara', '57.457.143/0001-44', 'emporiotabajara@marketcommerce.com', 'Salvador', 'BR'&#xA;WHERE NOT EXISTS (SELECT 1 FROM [dbo].[Suppliers] WHERE [s_cnpj] = '57.457.143/0001-44');&#xA;&#xA;&#xA;&#xA;-- Inserindo atraves da carga&#xA;&#xA;INSERT INTO [dbo].[Clients]&#xA;           ([client_name] ,[client_email] ,[client_cpf],[client_phone_number])&#xA;&#xA;&#x9;SELECT DISTINCT &#xA;&#x9;Ca.buyer_name, Ca.buyer_email, &#x9;Ca.cpf, Ca.buyer_phone_number &#xA;&#x9;FROM Carga Ca  &#xA;&#x9;LEFT JOIN [Clients] ON Clients.client_cpf = Ca.cpf &#xA;&#x9;WHERE NOT EXISTS (  SELECT 1  FROM [Clients] Cl  WHERE Cl.client_cpf = Ca.cpf );&#xA;&#xA;&#x9;PRINT 'Clientes populados';&#xA;&#xA;&#xA;&#xA;INSERT INTO [dbo].[Products]&#xA;           ([product_name] ,[product_sku] ,[product_upc],[product_item_price])&#xA;&#xA;&#x9;&#x9;&#x9;SELECT DISTINCT Ca.product_name, ca.sku, ca.upc,ca.item_price FROM Carga Ca&#xA;&#x9;&#x9;&#x9;LEFT JOIN Products ON Products.product_upc = Ca.upc WHERE NOT EXISTS &#xA;&#x9;&#x9;&#x9;(SELECT 1 FROM Products WHERE Products.product_upc = Ca.upc );&#xA;&#xA;&#x9;&#x9;PRINT 'Produtos populado';&#xA;&#xA;&#xA;&#xA;INSERT INTO [dbo].[Orders]&#xA;&#x9;([client_id]&#xA;&#x9;,[order_def_id]&#xA;&#x9;,[order_purchase_date]&#xA;&#x9;,[order_payments_date]&#xA;&#x9;,[order_ship_city]&#xA;&#x9;,[order_ship_state]&#xA;&#x9;,[order_ship_postal_code]&#xA;&#x9;,[order_ship_address_1] &#xA;&#x9;,[order_ship_address_2]&#xA;&#x9;,[order_ship_address_3]&#xA;&#x9;,[order_ship_country]&#xA;&#x9;,[order_currency]&#xA;&#x9;,[order_ship_service_level])&#xA;&#xA;&#x9;SELECT DISTINCT&#xA;&#x9;Clients.client_id,&#xA;&#x9;carga.order_id AS order_def_id,&#xA;&#x9;carga.purchase_date,&#xA;&#x9;carga.payments_date,&#xA;&#x9;carga.ship_city,&#xA;&#x9;carga.ship_state,&#xA;&#x9;carga.ship_postal_code,&#xA;&#x9;order_ship_address_1,&#xA;&#x9;order_ship_address_2,&#xA;&#x9;order_ship_address_3,&#xA;&#x9;carga.ship_country,&#xA;&#x9;carga.currency,&#xA;&#x9;carga.ship_service_level&#xA;&#x9;FROM Carga &#xA;&#x9;LEFT JOIN Clients ON Clients.client_cpf = Carga.cpf&#xA;&#x9;LEFT JOIN Orders ON Orders.order_id = Carga.order_id&#xA;&#x9;WHERE NOT EXISTS (SELECT 1 FROM Orders WHERE Orders.order_def_id = Carga.order_id );&#xA;&#xA;&#x9;PRINT 'Orders populado (Pedidos)';&#xA;&#xA;&#xA;&#x9;INSERT INTO [dbo].[OrderItems]&#xA;    ([order_id]&#xA;    ,[product_id]&#xA;    ,[oi_order_item_id]&#xA;    ,[oi_product_price]&#xA;    ,[oi_quantity_purchased]&#xA;    )&#xA;&#xA;&#x9;SELECT &#xA;&#x9;od.order_ID,&#xA;&#x9;pr.product_id,&#xA;&#x9;ca.order_item_id,&#xA;&#x9;pr.product_item_price,&#xA;&#x9;ca.quantity_purchased&#xA;&#x9;FROM Carga ca &#xA;&#x9;LEFT JOIN  Orders od ON od.order_def_id = ca.order_id&#xA;&#x9;LEFT JOIN Products pr ON pr.product_upc  = ca.upc &#xA;&#x9;LEFT JOIN OrderItems oi ON oi.order_id = ca.order_item_id AND oi.product_id = pr.product_id&#xA;&#x9;WHERE NOT EXISTS (&#xA;    SELECT 1&#xA;    FROM OrderItems oi &#xA;    WHERE oi.order_id = od.order_ID &#xA;    AND oi.product_id = pr.product_id&#xA;&#x9;);&#xA;&#xA;&#x9;PRINT 'OrdersItens populados (Itens dos pedidos)';&#xA;&#xA;&#xA;INSERT INTO [dbo].[Internal_Storage]&#xA;           ([product_id]&#xA;           ,[is_actual_qte]&#xA;           ,[is_minimal_qte])&#xA;&#x9;&#x9;&#x9;SELECT DISTINCT &#xA;&#x9;&#x9;&#x9;oi.product_id, &#xA;&#x9;&#x9;&#x9;0 AS qte,&#xA;&#x9;&#x9;&#x9;SUM( oi.oi_quantity_purchased ) AS minimal_qte&#xA;&#x9;&#x9;&#x9;FROM orderitems oi &#xA;&#x9;&#x9;&#x9;LEFT JOIN&#xA;&#x9;&#x9;&#x9;Internal_Storage it ON it.product_id = oi.product_id&#xA;&#x9;&#x9;&#x9;&#x9;WHERE NOT EXISTS (&#xA;&#x9;&#x9;&#x9;&#x9;SELECT 1 FROM internal_storage WHERE internal_storage.product_id = oi.product_id )&#xA;&#x9;&#x9;&#x9;&#x9;GROUP BY oi.product_id;&#xA;&#xA;&#x9;PRINT 'Internal Storage populado (Estoque)';&#xA;&#xA;&#xA;&#xA;&#xA;INSERT INTO [dbo].[Purchase_Requests]&#xA;    (&#xA;&#x9;[product_id], &#xA;&#x9;[pr_supply],&#xA;&#x9;[pr_quantity],&#xA;&#x9;[pr_unit_price],&#xA;&#x9;[pr_total_price],&#xA;&#x9;[pr_purchase],&#xA;&#x9;[pr_backorder])&#xA;&#xA;SELECT &#xA;    pr.product_id,&#xA;&#x9;SUM(10 * oi.oi_quantity_purchased) AS oiqte,&#xA;&#x9;oi.oi_product_price,&#xA;&#x9;SUM(oi.oi_product_price * oi.oi_quantity_purchased * 10) AS Total,&#xA;&#x9;(SELECT TOP(1) su.s_id FROM Suppliers su INNER JOIN Orders oi ON oi.order_ship_state = su.s_city OR oi.order_ship_country = su.s_country) AS MinSupplierID,&#xA;&#x9;GETDATE() AS CurrentTime,&#xA;&#x9;0&#xA;&#x9;FROM products pr&#xA;&#x9;LEFT JOIN OrderItems oi ON oi.product_id = pr.product_id&#xA;    INNER JOIN orders od ON od.order_ID = oi.order_id&#xA;&#x9;LEFT JOIN purchase_requests prx ON prx.product_id = oi.product_id&#xA;&#x9;WHERE NOT EXISTS (&#xA;    SELECT 1 FROM purchase_requests WHERE purchase_requests.product_id = oi.product_id&#xA;)&#xA;GROUP BY pr.product_id,oi_product_price&#xA;ORDER BY Total DESC;&#xA;&#x9;&#xA;&#xA;&#xA;PRINT 'Purchase_Requests Populado (Requisicao de compra)';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -1338,6 +1372,22 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição"
       DTS:To="Package\JOGAR PARA CARGA" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{0937CCCF-84F9-4CC1-9CC2-490C9738A176}"
+      DTS:From="Package\JOGAR PARA CARGA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 1"
+      DTS:To="Package\CRIAR TABELAS ATRAVÉS DE DROP TABLE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{82DB5032-2868-4A3C-919A-C1044B18CE90}"
+      DTS:From="Package\CRIAR TABELAS ATRAVÉS DE DROP TABLE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 2"
+      DTS:To="Package\POPULANDO AS TABELAS (INSERT POR CARGA)" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
@@ -1350,7 +1400,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="155,42"
           Id="Package\CRIAR CARGA"
@@ -1358,21 +1408,73 @@
         <NodeLayout
           Size="192,42"
           Id="Package\JOGAR PARA CARGA"
-          TopLeft="178,140" />
+          TopLeft="178,135" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição]"
           TopLeft="271,99.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.5"
+              EndConnector="0,35.5"
               Start="0,0"
-              End="0,33">
+              End="0,28">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33" />
+                    End="0,28" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="311,42"
+          Id="Package\CRIAR TABELAS ATRAVÉS DE DROP TABLE"
+          TopLeft="120,219" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 1]"
+          TopLeft="274.75,177">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="337,42"
+          Id="Package\POPULANDO AS TABELAS (INSERT POR CARGA)"
+          TopLeft="111,319" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 2]"
+          TopLeft="277.5,261">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1388,7 +1490,7 @@
     design-time-name="Package\JOGAR PARA CARGA">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="192,42"
           Id="Package\JOGAR PARA CARGA\Destino do SQL Server"
@@ -1416,7 +1518,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "BazarTemTudo", "BazarTemTudo\BazarTemTudo.dtproj", "{9B13A745-0D35-4BF6-B408-EAB1928EB288}"
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "BazarTemTudo_ssis", "BazarTemTudo\BazarTemTudo_ssis.dtproj", "{9B13A745-0D35-4BF6-B408-EAB1928EB288}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

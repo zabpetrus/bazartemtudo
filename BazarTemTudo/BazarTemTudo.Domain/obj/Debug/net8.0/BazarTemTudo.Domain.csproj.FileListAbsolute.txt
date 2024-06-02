@@ -1,0 +1,15 @@
+J:\bazar\BazarTemTudo\BazarTemTudo.Domain\bin\Debug\net8.0\BazarTemTudo.Domain.deps.json
+J:\bazar\BazarTemTudo\BazarTemTudo.Domain\bin\Debug\net8.0\BazarTemTudo.Domain.runtimeconfig.json
+J:\bazar\BazarTemTudo\BazarTemTudo.Domain\bin\Debug\net8.0\BazarTemTudo.Domain.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Domain\bin\Debug\net8.0\BazarTemTudo.Domain.pdb
+J:\bazar\BazarTemTudo\BazarTemTudo.Domain\obj\Debug\net8.0\BazarTemTudo.Domain.csproj.AssemblyReference.cache
+J:\bazar\BazarTemTudo\BazarTemTudo.Domain\obj\Debug\net8.0\BazarTemTudo.Domain.GeneratedMSBuildEditorConfig.editorconfig
+J:\bazar\BazarTemTudo\BazarTemTudo.Domain\obj\Debug\net8.0\BazarTemTudo.Domain.AssemblyInfoInputs.cache
+J:\bazar\BazarTemTudo\BazarTemTudo.Domain\obj\Debug\net8.0\BazarTemTudo.Domain.AssemblyInfo.cs
+J:\bazar\BazarTemTudo\BazarTemTudo.Domain\obj\Debug\net8.0\BazarTemTudo.Domain.csproj.CoreCompileInputs.cache
+J:\bazar\BazarTemTudo\BazarTemTudo.Domain\obj\Debug\net8.0\BazarTemTudo.Domain.sourcelink.json
+J:\bazar\BazarTemTudo\BazarTemTudo.Domain\obj\Debug\net8.0\BazarTemTudo.Domain.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Domain\obj\Debug\net8.0\refint\BazarTemTudo.Domain.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Domain\obj\Debug\net8.0\BazarTemTudo.Domain.pdb
+J:\bazar\BazarTemTudo\BazarTemTudo.Domain\obj\Debug\net8.0\BazarTemTudo.Domain.genruntimeconfig.cache
+J:\bazar\BazarTemTudo\BazarTemTudo.Domain\obj\Debug\net8.0\ref\BazarTemTudo.Domain.dll

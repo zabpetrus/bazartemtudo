@@ -1,0 +1,15 @@
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\bin\Debug\net8.0\BazarTemTudo.CrossCutting.deps.json
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\bin\Debug\net8.0\BazarTemTudo.CrossCutting.runtimeconfig.json
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\bin\Debug\net8.0\BazarTemTudo.CrossCutting.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\bin\Debug\net8.0\BazarTemTudo.CrossCutting.pdb
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\obj\Debug\net8.0\BazarTemTudo.CrossCutting.csproj.AssemblyReference.cache
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\obj\Debug\net8.0\BazarTemTudo.CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\obj\Debug\net8.0\BazarTemTudo.CrossCutting.AssemblyInfoInputs.cache
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\obj\Debug\net8.0\BazarTemTudo.CrossCutting.AssemblyInfo.cs
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\obj\Debug\net8.0\BazarTemTudo.CrossCutting.csproj.CoreCompileInputs.cache
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\obj\Debug\net8.0\BazarTemTudo.CrossCutting.sourcelink.json
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\obj\Debug\net8.0\BazarTemTudo.CrossCutting.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\obj\Debug\net8.0\refint\BazarTemTudo.CrossCutting.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\obj\Debug\net8.0\BazarTemTudo.CrossCutting.pdb
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\obj\Debug\net8.0\BazarTemTudo.CrossCutting.genruntimeconfig.cache
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\obj\Debug\net8.0\ref\BazarTemTudo.CrossCutting.dll

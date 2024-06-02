@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BazarTemTudo", "BazarTemTudo\BazarTemTudo.csproj", "{71C7EB18-6BAA-496C-87C9-513630389897}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BazarTemTudo.Application", "BazarTemTudo.Application\BazarTemTudo.Application.csproj", "{D2C26657-B54D-4914-AAF5-C6F5410467BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BazarTemTudo.Application", "BazarTemTudo.Application\BazarTemTudo.Application.csproj", "{D2C26657-B54D-4914-AAF5-C6F5410467BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BazarTemTudo.Domain", "BazarTemTudo.Domain\BazarTemTudo.Domain.csproj", "{52D7C1EB-E373-4086-9D3E-C56E4C82060F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BazarTemTudo.Domain", "BazarTemTudo.Domain\BazarTemTudo.Domain.csproj", "{52D7C1EB-E373-4086-9D3E-C56E4C82060F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BazarTemTudo.InfraData", "BazarTemTudo.InfraData\BazarTemTudo.InfraData.csproj", "{F2379B61-1821-4048-92A3-309B8446FC08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BazarTemTudo.InfraData", "BazarTemTudo.InfraData\BazarTemTudo.InfraData.csproj", "{F2379B61-1821-4048-92A3-309B8446FC08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BazarTemTudo.CrossCutting", "BazarTemTudo.CrossCutting\BazarTemTudo.CrossCutting.csproj", "{84B4328F-E013-41CD-8986-A749C12320D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BazarTemTudo.CrossCutting", "BazarTemTudo.CrossCutting\BazarTemTudo.CrossCutting.csproj", "{84B4328F-E013-41CD-8986-A749C12320D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BazarTemTudo.Test", "BazarTemTudo.Test\BazarTemTudo.Test.csproj", "{4DB8C176-CE34-4CA2-966E-AA131C0ED392}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BazarTemTudo.Test", "BazarTemTudo.Test\BazarTemTudo.Test.csproj", "{4DB8C176-CE34-4CA2-966E-AA131C0ED392}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BazarTemTudo.API", "BazarTemTudo.API\BazarTemTudo.API.csproj", "{809A2C46-D1C5-498F-9561-1F0867AE25D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{71C7EB18-6BAA-496C-87C9-513630389897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{71C7EB18-6BAA-496C-87C9-513630389897}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{71C7EB18-6BAA-496C-87C9-513630389897}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{71C7EB18-6BAA-496C-87C9-513630389897}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D2C26657-B54D-4914-AAF5-C6F5410467BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D2C26657-B54D-4914-AAF5-C6F5410467BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2C26657-B54D-4914-AAF5-C6F5410467BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{4DB8C176-CE34-4CA2-966E-AA131C0ED392}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DB8C176-CE34-4CA2-966E-AA131C0ED392}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DB8C176-CE34-4CA2-966E-AA131C0ED392}.Release|Any CPU.Build.0 = Release|Any CPU
+		{809A2C46-D1C5-498F-9561-1F0867AE25D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{809A2C46-D1C5-498F-9561-1F0867AE25D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{809A2C46-D1C5-498F-9561-1F0867AE25D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{809A2C46-D1C5-498F-9561-1F0867AE25D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

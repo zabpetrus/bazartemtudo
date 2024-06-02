@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "vNmyZNCs1Mc=",
+  "dgSpecHash": "UrakPjQ/NwM=",
   "success": true,
   "projectFilePath": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\BazarTemTudo.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\zsant\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\zsant\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\zsant\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\zsant\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",

@@ -13,7 +13,7 @@ namespace BazarTemTudo.InfraData.Context
         public SQLServerContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<SQLServerContext>();
-            optionsBuilder.UseSqlServer("Host=localhost;Port=5432;Database=vel_db;Username=postgres;Password=823543");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-NSQ6C33\\ATLAS;Initial Catalog=bazartemtudodb;Integrated Security=True;Pooling=False;Encrypt=True;TrustServerCertificate=True;");
             return new SQLServerContext(optionsBuilder.Options);
         }
     }

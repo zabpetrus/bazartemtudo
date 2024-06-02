@@ -4126,7 +4126,8 @@
       "Microsoft.EntityFrameworkCore >= 8.0.6",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.6",
-      "Microsoft.EntityFrameworkCore.Tools >= 8.0.6"
+      "Microsoft.EntityFrameworkCore.Tools >= 8.0.6",
+      "Microsoft.Extensions.DependencyInjection >= 8.0.0"
     ]
   },
   "packageFolders": {
@@ -4202,6 +4203,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[8.0.6, )"
+          },
+          "Microsoft.Extensions.DependencyInjection": {
+            "target": "Package",
+            "version": "[8.0.0, )"
           }
         },
         "imports": [

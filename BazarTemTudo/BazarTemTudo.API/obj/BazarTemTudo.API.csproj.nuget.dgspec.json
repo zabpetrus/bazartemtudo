@@ -66,6 +66,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Flunt": {
               "target": "Package",
               "version": "[2.0.5, )"
@@ -89,6 +93,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.6, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -150,7 +158,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Domain\\BazarTemTudo.Domain.csproj": {
+                "projectPath": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Domain\\BazarTemTudo.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -168,6 +180,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Flunt": {
               "target": "Package",
               "version": "[2.0.5, )"
@@ -191,6 +207,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.6, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [
@@ -282,6 +302,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.6, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [
@@ -373,6 +397,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.6, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [
@@ -424,6 +452,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Application\\BazarTemTudo.Application.csproj": {
+                "projectPath": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Application\\BazarTemTudo.Application.csproj"
+              },
               "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Domain\\BazarTemTudo.Domain.csproj": {
                 "projectPath": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Domain\\BazarTemTudo.Domain.csproj"
               }
@@ -445,6 +476,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Flunt": {
               "target": "Package",
               "version": "[2.0.5, )"
@@ -468,6 +503,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.6, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "Npgsql": {
               "target": "Package",
@@ -567,6 +606,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.6, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",

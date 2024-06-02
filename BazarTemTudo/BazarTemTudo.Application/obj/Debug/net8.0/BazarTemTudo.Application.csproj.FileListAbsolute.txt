@@ -13,3 +13,6 @@ J:\bazar\BazarTemTudo\BazarTemTudo.Application\obj\Debug\net8.0\refint\BazarTemT
 J:\bazar\BazarTemTudo\BazarTemTudo.Application\obj\Debug\net8.0\BazarTemTudo.Application.pdb
 J:\bazar\BazarTemTudo\BazarTemTudo.Application\obj\Debug\net8.0\BazarTemTudo.Application.genruntimeconfig.cache
 J:\bazar\BazarTemTudo\BazarTemTudo.Application\obj\Debug\net8.0\ref\BazarTemTudo.Application.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Application\bin\Debug\net8.0\BazarTemTudo.Domain.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Application\bin\Debug\net8.0\BazarTemTudo.Domain.pdb
+J:\bazar\BazarTemTudo\BazarTemTudo.Application\obj\Debug\net8.0\BazarTem.3A2353AA.Up2Date

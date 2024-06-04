@@ -10,6 +10,7 @@ namespace BazarTemTudo.Application.Service._Base
 {
     /*
        Classe para abstração. Implementando Flunt e a Interface ao mesmo tempo
+        Não funciona! Se colocar, a injeção de dependencia fica anulada!
      */
     public abstract class AppServiceBase<TEntity> : Notifiable<Notification>, IAppServiceBase<TEntity> where TEntity : class
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BazarTemTudo.Domain.Interface._Base
+namespace BazarTemTudo.Domain.Interface.Service._Base
 {
     public interface IServiceBase<TEntity> where TEntity : Entity
     {

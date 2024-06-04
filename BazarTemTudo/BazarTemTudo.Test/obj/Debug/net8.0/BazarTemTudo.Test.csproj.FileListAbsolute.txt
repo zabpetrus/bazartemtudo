@@ -23,16 +23,8 @@ J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.EntityFramewo
 J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
-J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
-J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
-J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
 J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.Identity.Client.dll
 J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
 J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
@@ -62,7 +54,6 @@ J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\System.Composition.Type
 J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\System.Drawing.Common.dll
 J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\System.IO.Pipelines.dll
 J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\System.Memory.Data.dll
 J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\System.Runtime.Caching.dll
 J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
@@ -213,3 +204,10 @@ J:\bazar\BazarTemTudo\BazarTemTudo.Test\obj\Debug\net8.0\refint\BazarTemTudo.Tes
 J:\bazar\BazarTemTudo\BazarTemTudo.Test\obj\Debug\net8.0\BazarTemTudo.Test.pdb
 J:\bazar\BazarTemTudo\BazarTemTudo.Test\obj\Debug\net8.0\BazarTemTudo.Test.genruntimeconfig.cache
 J:\bazar\BazarTemTudo\BazarTemTudo.Test\obj\Debug\net8.0\ref\BazarTemTudo.Test.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Test\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll

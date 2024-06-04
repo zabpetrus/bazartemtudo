@@ -1,5 +1,5 @@
 ﻿using BazarTemTudo.Domain.Entities;
-using BazarTemTudo.Domain.Interface._Base;
+using BazarTemTudo.Domain.Interface.Service._Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;

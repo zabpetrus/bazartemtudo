@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace BazarTemTudo.InfraData.Configuration
 {
-    public class PerfilUsuarioConfig : IEntityTypeConfiguration<PerfilUsuario>
+    public class UsuarioPerfilConfig : IEntityTypeConfiguration<UsuarioPerfil>
     {
-        public void Configure(EntityTypeBuilder<PerfilUsuario> builder)
+        public void Configure(EntityTypeBuilder<UsuarioPerfil> builder)
         {
             builder.ToTable("PerfilUsuario");
 

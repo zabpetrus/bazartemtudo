@@ -1,5 +1,9 @@
-﻿using BazarTemTudo.Domain.Entities;
+﻿using AutoMapper;
+using BazarTemTudo.Domain.Entities;
+using BazarTemTudo.Domain.Interface;
 using BazarTemTudo.Domain.Service._Base;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,56 +12,82 @@ using System.Threading.Tasks;
 
 namespace BazarTemTudo.Domain.Service
 {
-    public class ClienteService : ServiceBase<Clientes>
+    public class ClienteService : IClienteService
     {
-        public override void Add(Clientes obj)
+        private readonly IClienteService _clienteService;
+        private readonly IMapper _mapper;
+        private readonly ILogger _logger;
+
+        public ClienteService() { }
+
+        public ClienteService(IMapper mapper, ILogger<ClienteService>  logger)
         {
-            throw new NotImplementedException();
+            _mapper = mapper;
+            _logger = logger;
         }
 
-        public override Task AddAsync(Clientes obj)
+
+        #if TESTING
+                public ClienteService(IClienteService clienteService)
+                {
+                    _clienteService = clienteService;
+                }
+        #endif
+
+        public void Add(Clientes obj)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Hello World");
         }
 
-        public override IEnumerable<Clientes> GetAll()
+        public Task AddAsync(Clientes obj)
         {
-            throw new NotImplementedException();
+            return Task.Run(() => Console.WriteLine("Cliente adicionado de forma assíncrona"));
         }
 
-        public override Task<IEnumerable<Clientes>> GetAllAsync()
+        public IEnumerable<Clientes> GetAll()
         {
-            throw new NotImplementedException();
+            List<Clientes> lista = new List<Clientes>();
+            lista.Add(new Clientes("Juwanna", "123", "hermooso@gamil.com", new DateTime(2024, 9, 12)));
+            return lista;
         }
 
-        public override Clientes GetById(long id)
+        public Task<IEnumerable<Clientes>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var lista = new List<Clientes>();
+            lista.Add(new Clientes("Yelan", "1238877", "favonius@gmail.com", new DateTime(2024, 9, 12)));
+            return Task.FromResult<IEnumerable<Clientes>>(lista);
+
         }
 
-        public override Task<Clientes> GetByIdAsync(long id)
+        public Clientes GetById(long id)
         {
-            throw new NotImplementedException();
+            return new Clientes { Nome = "foo", CPF = "123455" };
         }
 
-        public override void Remove(Clientes obj)
+        public Task<Clientes> GetByIdAsync(long id)
         {
-            throw new NotImplementedException();
+           return Task.FromResult(new Clientes("bams", "123456", "foo@mail.com", new DateTime(5,5,1985)));
+
         }
 
-        public override Task RemoveAsync(Clientes obj)
+        public void Remove(Clientes obj)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Hello");
         }
 
-        public override void Update(Clientes obj)
+        public Task RemoveAsync(Clientes obj)
         {
-            throw new NotImplementedException();
+           return Task.FromResult(new Clientes("Pedrita", "4123456", "foo@mail.com", new DateTime(5, 5, 1985)));
         }
 
-        public override Task UpdateAsync(Clientes obj)
+        public void Update(Clientes obj)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("safjajfasf");
+        }
+
+        public Task UpdateAsync(Clientes obj)
+        {
+            return Task.FromResult(new Clientes("ManolCastor", "4123456", "ak@mail.com", new DateTime(6, 5, 1985)));
         }
     }
 }

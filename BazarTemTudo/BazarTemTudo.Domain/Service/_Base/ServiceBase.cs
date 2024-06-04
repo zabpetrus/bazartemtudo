@@ -1,5 +1,5 @@
 ﻿using BazarTemTudo.Domain.Entities._Base;
-using BazarTemTudo.Domain.Interface._Base;
+using BazarTemTudo.Domain.Interface.Service._Base;
 using Flunt.Notifications;
 using System;
 using System.Collections.Generic;
@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace BazarTemTudo.Domain.Service._Base
 {
+    /*Não estou usando por causa da injeção de dependencia*/
     public abstract class ServiceBase<TEntity> : Notifiable<Notification>, IServiceBase<TEntity> where TEntity : Entity
     {
         public abstract void Add(TEntity obj);

@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("BazarTemTudo.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcbdba7f035cde6461c8dbd2e6b7edbbc8e98ede")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c9709144842f730ff2e6eb4bf862832b7ef1220")]
 [assembly: System.Reflection.AssemblyProductAttribute("BazarTemTudo.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BazarTemTudo.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

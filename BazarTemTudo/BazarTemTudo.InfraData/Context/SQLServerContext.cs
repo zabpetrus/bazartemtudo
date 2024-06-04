@@ -26,7 +26,7 @@ namespace BazarTemTudo.InfraData.Context
         public DbSet<ItensPedidos> ItensPedidos { get; set; }
         public DbSet<NotaFiscal> NotaFiscais { get; set; }
         public DbSet<Pedidos> Pedidos { get; set; }
-        public DbSet<PerfilUsuario> PerfilUsuarios { get; set; }
+        public DbSet<UsuarioPerfil> PerfilUsuarios { get; set; }
         public DbSet<Produtos> Produtos { get; set; }
         public DbSet<RequisicaoCompra> RequisicaoCompras { get; set; }
         public DbSet<Transportadoras> Transportadoras { get; set; }
@@ -46,7 +46,7 @@ namespace BazarTemTudo.InfraData.Context
             modelBuilder.ApplyConfiguration(new ItensPedidosConfig());
             modelBuilder.ApplyConfiguration(new NotaFiscalConfig());
             modelBuilder.ApplyConfiguration(new PedidosConfig());
-            modelBuilder.ApplyConfiguration(new PerfilUsuarioConfig());
+            modelBuilder.ApplyConfiguration(new UsuarioPerfilConfig());
             modelBuilder.ApplyConfiguration(new ProdutosConfig());
             modelBuilder.ApplyConfiguration(new RequisicaoCompraConfig());
             modelBuilder.ApplyConfiguration(new TransportadorasConfig());
@@ -63,11 +63,10 @@ namespace BazarTemTudo.InfraData.Context
             modelBuilder.Entity<ItensPedidos>().Ignore(a => a.Notifications);
             modelBuilder.Entity<NotaFiscal>().Ignore(a => a.Notifications);
             modelBuilder.Entity<Pedidos>().Ignore(a => a.Notifications);
-            modelBuilder.Entity<PerfilUsuario>().Ignore(a => a.Notifications);
+            modelBuilder.Entity<UsuarioPerfil>().Ignore(a => a.Notifications);
             modelBuilder.Entity<Produtos>().Ignore(a => a.Notifications);
             modelBuilder.Entity<RequisicaoCompra>().Ignore(a => a.Notifications);
             modelBuilder.Entity<Transportadoras>().Ignore(a => a.Notifications);
-            modelBuilder.Entity<Usuarios>().Ignore(a => a.Notifications);
         }
 
 

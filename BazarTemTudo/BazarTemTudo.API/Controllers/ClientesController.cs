@@ -21,8 +21,6 @@ namespace BazarTemTudo.API.Controllers
             _clientesAppService = clientesAppService;
         }
 
-        public ClientesController() { }
-
 
         /// <summary>
         /// Get

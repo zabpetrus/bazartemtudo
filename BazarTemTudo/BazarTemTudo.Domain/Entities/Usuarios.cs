@@ -1,4 +1,5 @@
 ﻿using BazarTemTudo.Domain.Entities._Base;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace BazarTemTudo.Domain.Entities
 {
-    public class Usuarios : Entity
+    public class Usuarios : IdentityUser
     {
-        public string Nome { get; set; } = string.Empty;
+        public Guid UserID { get; set; } = Guid.NewGuid();
 
-        public string Email {  get; set; } = string.Empty;
+        public string Nome { get; set; } = string.Empty;
 
         public string CPF {  get; set; } = string.Empty;
 

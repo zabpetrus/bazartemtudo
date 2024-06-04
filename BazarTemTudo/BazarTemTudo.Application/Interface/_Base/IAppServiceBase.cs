@@ -27,7 +27,9 @@ namespace BazarTemTudo.Application.Interface._Base
 
         void Remove(TEntity obj);
 
+
         //Metodos assincronos
+
         Task<IEnumerable<TEntity>> GetAllAsync();
 
         Task<TEntity> GetByIdAsync(long id);

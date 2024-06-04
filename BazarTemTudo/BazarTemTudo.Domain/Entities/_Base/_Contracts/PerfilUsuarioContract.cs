@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace BazarTemTudo.Domain.Entities._Base._Contracts
 {
-    public class PerfilUsuarioContract : Contract<PerfilUsuario>
+    public class PerfilUsuarioContract : Contract<UsuarioPerfil>
     {
-        public PerfilUsuarioContract(PerfilUsuario perfilUsuario) 
+        public PerfilUsuarioContract(UsuarioPerfil perfilUsuario) 
         {
             Requires()
             .IsNotNullOrEmpty(perfilUsuario.Nome, "Nome", "O nome é obrigatório")

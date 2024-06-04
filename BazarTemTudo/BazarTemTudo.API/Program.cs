@@ -1,6 +1,21 @@
+using AutoMapper;
+using BazarTemTudo.Application.Interface;
+using BazarTemTudo.Application.Service;
+using BazarTemTudo.Domain.Interface;
+using BazarTemTudo.Domain.Service;
+using BazarTemTudo.InfraData.Mapping;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddSingleton<IClientesAppService, ClienteAppService>();
+builder.Services.AddScoped<IClienteService, ClienteService>();
+
+
+builder.Services.AddAutoMapper(typeof(BazarMapping));
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

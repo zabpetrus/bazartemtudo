@@ -11,10 +11,11 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using BazarTemTudo.Domain.Interface;
 using Microsoft.Extensions.DependencyInjection;
+using BazarTemTudo.Domain.Entities;
 
 namespace BazarTemTudo.Application.Service
 {
-    public class ClienteAppService : AppServiceBase<ClientesViewModel>
+    public class ClienteAppService : IClientesAppService
     {
 
         private readonly IClientesAppService _clientesAppService;
@@ -23,69 +24,81 @@ namespace BazarTemTudo.Application.Service
         private readonly IMapper _mapper;
 
 
-        [ActivatorUtilitiesConstructor]
+        public ClienteAppService() { }
+
         public ClienteAppService(IClienteService clienteService, ILogger logger, IMapper mapper)
         {
-            _clienteService = clienteService;
-            _logger = logger;
-            _mapper = mapper;
+            _clienteService = clienteService ?? throw new ArgumentNullException(nameof(clienteService));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        public ClienteAppService(IClientesAppService clientesAppService)
+
+        #if TESTING
+                public ClienteAppService(IClientesAppService clientesAppService)
+                {
+                    _clientesAppService = clientesAppService;
+                }
+        #endif
+
+        public void Add(ClientesViewModel obj)
         {
-            _clientesAppService = clientesAppService;
+            _clienteService.Add( _mapper.Map<ClientesViewModel, Clientes>(obj));           
         }
 
-      
-        public override void Add(ClientesViewModel obj)
+        public Task AddAsync(ClientesViewModel obj)
         {
-            Console.WriteLine("123");
+            return _clienteService.AddAsync(_mapper.Map<ClientesViewModel, Clientes>(obj));
+            
         }
 
-        public override Task AddAsync(ClientesViewModel obj)
+        public  IEnumerable<ClientesViewModel> GetAll()
         {
-            return Task.Run(() => Console.WriteLine("Cliente adicionado de forma assíncrona"));
-        }
-
-        public override IEnumerable<ClientesViewModel> GetAll()
-        {
-            return (IEnumerable<ClientesViewModel>)Task.Run(() => new List<ClientesViewModel>());
+            var allclientes = _clienteService.GetAll(); 
+            return _mapper.Map<List<ClientesViewModel>>(allclientes);             
           
         }
 
-        public override Task<IEnumerable<ClientesViewModel>> GetAllAsync()
+        public async Task<IEnumerable<ClientesViewModel>> GetAllAsync()
         {
-            return null;
+            var res = _clienteService.GetAllAsync();
+            return _mapper.Map<List<ClientesViewModel>> (await res);              
         }
 
-        public override ClientesViewModel GetById(long id)
+        public ClientesViewModel GetById(long id)
         {
-            return new ClientesViewModel { Nome = "foo", CPF = "123455" };
+            var obj = _clienteService.GetById(id);
+            return _mapper.Map<ClientesViewModel>(obj);
         }
 
-        public override Task<ClientesViewModel> GetByIdAsync(long id)
+        public async Task<ClientesViewModel> GetByIdAsync(long id)
         {
-            throw new NotImplementedException();
+            var result = _clienteService.GetByIdAsync(id);
+            return _mapper.Map<ClientesViewModel> (await result);
         }
 
-        public override void Remove(ClientesViewModel obj)
-        {
-            throw new NotImplementedException();
+        public void Remove(ClientesViewModel obj)
+        { 
+            var res = _mapper.Map<ClientesViewModel, Clientes>(obj);  
+            _clienteService.Remove(res);
         }
 
-        public override Task RemoveAsync(ClientesViewModel obj)
+        public Task RemoveAsync(ClientesViewModel obj)
         {
-            throw new NotImplementedException();
+            var res = _mapper.Map<Clientes>(obj);
+            return _clienteService.RemoveAsync(res);
         }
 
-        public override void Update(ClientesViewModel obj)
+        public void Update(ClientesViewModel obj)
         {
-            Console.WriteLine("123");
+            var res = _mapper.Map<Clientes>(obj);
+             _clienteService.Update(res);
         }
 
-        public override Task UpdateAsync(ClientesViewModel obj)
+        public Task UpdateAsync(ClientesViewModel obj)
         {
-            throw new NotImplementedException();
+            var res = _mapper.Map<Clientes>(obj);
+            return _clienteService.UpdateAsync(res);
         }
     }
 }

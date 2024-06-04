@@ -20,6 +20,14 @@ namespace BazarTemTudo.InfraData.Mapping
                .ForMember(des => des.DataNascimento, map => map.MapFrom(orig => orig.DataNascimento))
                .IncludeAllDerived();
 
+            CreateMap<ClientesViewModel, Clientes>()
+               .ForMember(des => des.Nome, map => map.MapFrom(orig => orig.Nome))
+               .ForMember(des => des.Email, map => map.MapFrom(orig => orig.Email))
+               .ForMember(des => des.CPF, map => map.MapFrom(orig => orig.CPF))
+               .ForMember(des => des.DataNascimento, map => map.MapFrom(orig => orig.DataNascimento))
+               .IncludeAllDerived();
+
+
         }
     }
 }

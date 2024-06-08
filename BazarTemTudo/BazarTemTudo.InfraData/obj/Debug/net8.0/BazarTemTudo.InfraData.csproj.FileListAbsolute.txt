@@ -2,7 +2,9 @@ J:\bazar\BazarTemTudo\BazarTemTudo.InfraData\bin\Debug\net8.0\BazarTemTudo.Infra
 J:\bazar\BazarTemTudo\BazarTemTudo.InfraData\bin\Debug\net8.0\BazarTemTudo.InfraData.runtimeconfig.json
 J:\bazar\BazarTemTudo\BazarTemTudo.InfraData\bin\Debug\net8.0\BazarTemTudo.InfraData.dll
 J:\bazar\BazarTemTudo\BazarTemTudo.InfraData\bin\Debug\net8.0\BazarTemTudo.InfraData.pdb
+J:\bazar\BazarTemTudo\BazarTemTudo.InfraData\bin\Debug\net8.0\BazarTemTudo.Application.dll
 J:\bazar\BazarTemTudo\BazarTemTudo.InfraData\bin\Debug\net8.0\BazarTemTudo.Domain.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.InfraData\bin\Debug\net8.0\BazarTemTudo.Application.pdb
 J:\bazar\BazarTemTudo\BazarTemTudo.InfraData\bin\Debug\net8.0\BazarTemTudo.Domain.pdb
 J:\bazar\BazarTemTudo\BazarTemTudo.InfraData\obj\Debug\net8.0\BazarTemTudo.InfraData.csproj.AssemblyReference.cache
 J:\bazar\BazarTemTudo\BazarTemTudo.InfraData\obj\Debug\net8.0\BazarTemTudo.InfraData.GeneratedMSBuildEditorConfig.editorconfig
@@ -16,5 +18,3 @@ J:\bazar\BazarTemTudo\BazarTemTudo.InfraData\obj\Debug\net8.0\refint\BazarTemTud
 J:\bazar\BazarTemTudo\BazarTemTudo.InfraData\obj\Debug\net8.0\BazarTemTudo.InfraData.pdb
 J:\bazar\BazarTemTudo\BazarTemTudo.InfraData\obj\Debug\net8.0\BazarTemTudo.InfraData.genruntimeconfig.cache
 J:\bazar\BazarTemTudo\BazarTemTudo.InfraData\obj\Debug\net8.0\ref\BazarTemTudo.InfraData.dll
-J:\bazar\BazarTemTudo\BazarTemTudo.InfraData\bin\Debug\net8.0\BazarTemTudo.Application.dll
-J:\bazar\BazarTemTudo\BazarTemTudo.InfraData\bin\Debug\net8.0\BazarTemTudo.Application.pdb

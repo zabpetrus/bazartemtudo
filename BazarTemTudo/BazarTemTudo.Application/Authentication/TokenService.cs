@@ -20,16 +20,12 @@ namespace BazarTemTudo.Application.Authentication
             _configuration = configuration;
         }
 
-        public string GenerateToken(UsuarioPerfil user)
+        public string GenerateToken(Perfil perifl, Usuarios usuarios)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);
-            var claims = new List<Claim>
-        {
-            new Claim(ClaimTypes.Name, user.UserName),
-            new Claim(ClaimTypes.NameIdentifier, user.Id),
-            new Claim("TipoUsuario", user.tipoUsuario.ToString())
-        };
+            var claims = new List<Claim>();
+            
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {

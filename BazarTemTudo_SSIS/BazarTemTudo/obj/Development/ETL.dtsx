@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="ETL"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{3D966636-B132-4024-9CEA-D1B4171B5CD9}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{50B8E4B8-D807-477F-8DCC-0C68C4325B6D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -238,6 +238,18 @@
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[servicedatabase.mdf]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7728A136-08FD-41B5-8573-C64A246F4EAE}"
+      DTS:ObjectName="servicedatabase.mdf">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=servicedatabase.mdf;Provider=SSISOLEDB.6;Persist Security Info=False;Location=J:\bazar\BazarTemTudo\BazarTemTudo.InfraData\Database;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -1406,9 +1418,17 @@
           Id="Package\CRIAR CARGA"
           TopLeft="190.5,57.5" />
         <NodeLayout
+          Size="311,42"
+          Id="Package\CRIAR TABELAS ATRAVÉS DE DROP TABLE"
+          TopLeft="120,219" />
+        <NodeLayout
           Size="192,42"
           Id="Package\JOGAR PARA CARGA"
           TopLeft="178,135" />
+        <NodeLayout
+          Size="337,42"
+          Id="Package\POPULANDO AS TABELAS (INSERT POR CARGA)"
+          TopLeft="111,319" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição]"
           TopLeft="271,99.5">
@@ -1431,10 +1451,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="311,42"
-          Id="Package\CRIAR TABELAS ATRAVÉS DE DROP TABLE"
-          TopLeft="120,219" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição 1]"
           TopLeft="274.75,177">
@@ -1457,10 +1473,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="337,42"
-          Id="Package\POPULANDO AS TABELAS (INSERT POR CARGA)"
-          TopLeft="111,319" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição 2]"
           TopLeft="277.5,261">

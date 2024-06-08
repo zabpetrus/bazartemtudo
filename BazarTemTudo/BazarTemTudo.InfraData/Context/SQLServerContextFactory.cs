@@ -13,7 +13,7 @@ namespace BazarTemTudo.InfraData.Context
         public SQLServerContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<SQLServerContext>();
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-NSQ6C33\\ATLAS;Initial Catalog=bazartemtudodb;Integrated Security=True;Pooling=False;Encrypt=True;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\Database\\ServiceDB.mdf;Integrated Security=True");
             return new SQLServerContext(optionsBuilder.Options);
         }
     }

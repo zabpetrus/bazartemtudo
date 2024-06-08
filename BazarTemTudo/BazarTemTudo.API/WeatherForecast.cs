@@ -1,4 +1,4 @@
-namespace BazarTemTudo
+namespace BazarTemTudo.API
 {
     public class WeatherForecast
     {

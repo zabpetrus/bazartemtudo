@@ -2,13 +2,18 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>BazarTemTudo_ssis</Name>
-    <LastWriteTime>2024-05-19T16:17:28.0079638Z</LastWriteTime>
+    <LastWriteTime>2024-06-08T15:44:13.0977963Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>ETL.dtsx</Name>
-      <LastWriteTime>2024-05-19T16:13:39.1176016Z</LastWriteTime>
+      <LastWriteTime>2024-06-07T22:31:41.7991692Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>TL2.dtsx</Name>
+      <LastWriteTime>2024-06-08T15:44:13.0746266Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

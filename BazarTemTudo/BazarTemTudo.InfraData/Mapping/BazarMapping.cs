@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using BazarTemTudo.Application.DTO;
+using BazarTemTudo.Application.ViewModels;
 using BazarTemTudo.Domain.Entities;
 
 namespace BazarTemTudo.InfraData.Mapping

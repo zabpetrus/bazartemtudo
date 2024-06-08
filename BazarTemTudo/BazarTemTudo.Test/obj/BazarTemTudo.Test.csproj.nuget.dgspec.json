@@ -62,6 +62,14 @@
               "target": "Package",
               "version": "[8.0.6, )"
             },
+            "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.Data.Sqlite.Core": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.6, )"
@@ -76,6 +84,10 @@
               "target": "Package",
               "version": "[8.0.6, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -86,9 +98,9 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
-            "Microsoft.Identity.Client": {
+            "Microsoft.Extensions.Identity.Core": {
               "target": "Package",
-              "version": "[4.61.1, )"
+              "version": "[8.0.6, )"
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",

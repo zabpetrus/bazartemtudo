@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,27 +11,10 @@ namespace BazarTemTudo.Domain.Entities
 {
     public class Usuarios : IdentityUser
     {
-        public Guid UserID { get; set; } = Guid.NewGuid();
+       
+        public string Nome { get; set; }
 
-        public string Nome { get; set; } = string.Empty;
+        public string Cpf { get; set; } 
 
-        public string CPF {  get; set; } = string.Empty;
-
-        public int Endereco_ID { get; set; }    
-
-        public Endereco Endereco_Usuario { get; set; } = new Endereco();
-
-        public Usuarios(string nome, string email, string cPF, int endereco_ID, Endereco endereco_Usuario)
-        {
-            Nome = nome;
-            Email = email;
-            CPF = cPF;
-            Endereco_ID = endereco_ID;
-            Endereco_Usuario = endereco_Usuario;
-        }
-
-        public Usuarios()
-        {
-        }
     }
 }

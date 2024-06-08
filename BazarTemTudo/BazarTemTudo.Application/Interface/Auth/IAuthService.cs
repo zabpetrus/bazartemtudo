@@ -1,4 +1,4 @@
-﻿using BazarTemTudo.Application.DTO.Auth;
+﻿using BazarTemTudo.Application.ViewModels.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;

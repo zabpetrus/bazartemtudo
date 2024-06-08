@@ -1,6 +1,7 @@
+using BazarTemTudo.API;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BazarTemTudo.Controllers
+namespace BazarTemTudo.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

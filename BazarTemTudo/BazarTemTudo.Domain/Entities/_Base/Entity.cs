@@ -12,13 +12,15 @@ namespace BazarTemTudo.Domain.Entities._Base
     {
         protected Entity()
         {
-            Id = Guid.NewGuid();
+            Not_Id = Guid.NewGuid();
             Data_Registro = DateTime.UtcNow;
             Data_Atualizacao = DateTime.Now;
         }
 
         [Key]
-        public Guid Id { get; private set; }
+        public Guid Not_Id { get; private set; }
+
+        public int Id {  get; set; }
 
         public DateTime Data_Registro { get; private set; }
 

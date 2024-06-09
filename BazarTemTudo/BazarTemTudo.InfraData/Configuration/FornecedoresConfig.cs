@@ -14,8 +14,14 @@ namespace BazarTemTudo.InfraData.Configuration
     {
         public void Configure(EntityTypeBuilder<Fornecedores> builder)
         {
-            builder.ToTable("Fornecedores");    
-            
+            builder.ToTable("Fornecedores");
+
+
+            builder.HasKey(e => e.Id);
+            builder.Property(e => e.Id)
+                  .ValueGeneratedOnAdd()
+                  .IsRequired();
+
         }
     }
 }

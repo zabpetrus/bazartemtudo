@@ -14,6 +14,11 @@ namespace BazarTemTudo.InfraData.Configuration
         public void Configure(EntityTypeBuilder<Checkout> builder)
         {
             builder.ToTable("Checkout");
+
+            builder.HasKey(e => e.Id);
+            builder.Property(e => e.Id)
+                  .ValueGeneratedOnAdd()
+                  .IsRequired();
         }
     }
 }

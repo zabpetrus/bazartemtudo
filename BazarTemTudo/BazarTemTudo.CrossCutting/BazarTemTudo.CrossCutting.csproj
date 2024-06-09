@@ -10,11 +10,11 @@
     <Folder Include="Logging\" />
     <Folder Include="Authentication\" />
     <Folder Include="Authorization\" />
-    <Folder Include="Caching\" />
-    <Folder Include="Validation\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="8.0.0" />
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="Flunt" Version="2.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.6" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.6" />
@@ -35,6 +35,13 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="8.0.6" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.6.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BazarTemTudo.Application\BazarTemTudo.Application.csproj" />
+    <ProjectReference Include="..\BazarTemTudo.Domain\BazarTemTudo.Domain.csproj" />
+    <ProjectReference Include="..\BazarTemTudo.InfraData\BazarTemTudo.InfraData.csproj" />
+    <ProjectReference Include="..\BazarTemTudo.Test\BazarTemTudo.Test.csproj" />
   </ItemGroup>
 
 </Project>

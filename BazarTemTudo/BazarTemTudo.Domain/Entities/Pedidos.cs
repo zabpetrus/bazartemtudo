@@ -12,22 +12,23 @@ namespace BazarTemTudo.Domain.Entities
     {
         public string Codigo_Pedido {  get; set; } = string.Empty;
 
-        public Clientes Clientes_Id { get; set; } = new Clientes();
+        public int ClienteId { get; set; } = 1;
 
         public DateTime Data_Pedido { get; set; }
 
-        public Endereco Endereco_Entrega { get; set; } = new Endereco();
+        public int Endereco_entrega_Id { get; set; } = 1;
 
         public StatusPedido Status_Pedido { get; set; } = StatusPedido.Pendente;
 
-        public Pedidos(string codigo_Pedido, Clientes clientes_Id, DateTime data_Pedido, Endereco endereco_Entrega, StatusPedido status_Pedido)
-        {
-            Codigo_Pedido = codigo_Pedido;
-            Clientes_Id = clientes_Id;
-            Data_Pedido = data_Pedido;
-            Endereco_Entrega = endereco_Entrega;
-            Status_Pedido = status_Pedido;
-        }
+
+        //Navegação
+       // public Clientes Cliente { get; set; }
+
+        //public Endereco Endereco_entrega { get; set; }  
+
+
+
+        
 
         public Pedidos()
         {

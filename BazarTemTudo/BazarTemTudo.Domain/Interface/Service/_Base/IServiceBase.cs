@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BazarTemTudo.Domain.Interface.Service._Base
 {
-    public interface IServiceBase<TEntity> where TEntity : Entity
+    public interface IServiceBase<TEntity> where TEntity : class
     {
         //Metodos sincronos
         void Add(TEntity obj);
@@ -20,15 +20,7 @@ namespace BazarTemTudo.Domain.Interface.Service._Base
 
         void Remove(TEntity obj);
 
-        //Metodos assincronos
-        Task<IEnumerable<TEntity>> GetAllAsync();
-
-        Task<TEntity> GetByIdAsync(long id);
-
-        Task UpdateAsync(TEntity obj);
-
-        Task AddAsync(TEntity obj);
-
-        Task RemoveAsync(TEntity obj);
+        IEnumerable<TEntity> FindAll( string args );
+      
     }
 }

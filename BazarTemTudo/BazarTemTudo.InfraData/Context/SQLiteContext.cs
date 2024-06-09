@@ -23,7 +23,7 @@ namespace BazarTemTudo.InfraData.Context
         {
         }
 
-        /*
+        
          public DbSet<Checkout> Checkout { get; set; }
          public DbSet<Clientes> Clientes { get; set; }
          public DbSet<DespachoMercadorias> DespachoMercadorias { get; set; }
@@ -35,14 +35,16 @@ namespace BazarTemTudo.InfraData.Context
          public DbSet<Pedidos> Pedidos { get; set; }
          public DbSet<Produtos> Produtos { get; set; }
          public DbSet<RequisicaoCompra> RequisicaoCompras { get; set; }
-         public DbSet<Transportadoras> Transportadoras { get; set; }  */
+         public DbSet<Transportadoras> Transportadoras { get; set; }  
+
+
         public DbSet<Usuarios> Usuarios { get; set; }
 
     
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {   
-            /*
+           
             modelBuilder.ApplyConfiguration(new ClientesConfig());
             modelBuilder.ApplyConfiguration(new CheckoutConfig());
             modelBuilder.ApplyConfiguration(new DespachoMercadoriasConfig());
@@ -56,11 +58,11 @@ namespace BazarTemTudo.InfraData.Context
             modelBuilder.ApplyConfiguration(new RequisicaoCompraConfig());
             modelBuilder.ApplyConfiguration(new TransportadorasConfig());
             modelBuilder.ApplyConfiguration(new UsuarioConfig());
-            */
+         
 
             modelBuilder.Entity<Notification>().HasNoKey();
 
-            /*
+         
             modelBuilder.Entity<Checkout>().Ignore(a => a.Notifications);
             modelBuilder.Entity<Clientes>().Ignore(a => a.Notifications);
             modelBuilder.Entity<DespachoMercadorias>().Ignore(a => a.Notifications);
@@ -72,7 +74,7 @@ namespace BazarTemTudo.InfraData.Context
             modelBuilder.Entity<Pedidos>().Ignore(a => a.Notifications);
             modelBuilder.Entity<Produtos>().Ignore(a => a.Notifications);
             modelBuilder.Entity<RequisicaoCompra>().Ignore(a => a.Notifications);
-            modelBuilder.Entity<Transportadoras>().Ignore(a => a.Notifications);  */
+            modelBuilder.Entity<Transportadoras>().Ignore(a => a.Notifications);  
 
             base.OnModelCreating(modelBuilder);
         }

@@ -17,10 +17,11 @@ namespace BazarTemTudo.Domain.Entities._Base
             Data_Atualizacao = DateTime.Now;
         }
 
-        [Key]
+       
         public Guid Not_Id { get; private set; }
 
-        public int Id {  get; set; }
+        [Key]
+        public int? Id {  get; set; }
 
         public DateTime Data_Registro { get; private set; }
 

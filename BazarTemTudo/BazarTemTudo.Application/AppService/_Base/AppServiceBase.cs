@@ -34,5 +34,7 @@ namespace BazarTemTudo.Application.AppService._Base
         public abstract void Update(TEntity obj);
 
         public abstract Task UpdateAsync(TEntity obj);
+
+        public abstract List<TEntity> Search( string query );
     }
 }

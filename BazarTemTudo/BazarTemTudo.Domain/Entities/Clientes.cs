@@ -20,6 +20,13 @@ namespace BazarTemTudo.Domain.Entities
 
         public DateTime DataNascimento;
 
+
+        // Propriedade de navegação para os pedidos associados a este cliente
+       // public ICollection<Pedidos> Pedidos { get; set; }
+
+
+
+
         public Clientes() {  }
 
         public Clientes(string nome, string cPF, string email, DateTime dataNascimento)

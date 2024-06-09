@@ -14,7 +14,11 @@ namespace BazarTemTudo.InfraData.Configuration
         public void Configure(EntityTypeBuilder<Usuarios> builder)
         {
             builder.ToTable("Usuarios");
-            builder.HasKey(x => x.Id);
+
+            builder.HasKey(e => e.Id);
+            builder.Property(e => e.Id)
+                  .ValueGeneratedOnAdd()
+                  .IsRequired();
 
 
         }

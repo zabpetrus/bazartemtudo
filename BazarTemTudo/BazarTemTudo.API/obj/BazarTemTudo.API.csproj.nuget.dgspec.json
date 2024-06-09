@@ -70,6 +70,10 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "Autofac": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Flunt": {
               "target": "Package",
               "version": "[2.0.5, )"
@@ -216,6 +220,10 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "Autofac": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Flunt": {
               "target": "Package",
               "version": "[2.0.5, )"
@@ -325,7 +333,20 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Application\\BazarTemTudo.Application.csproj": {
+                "projectPath": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Application\\BazarTemTudo.Application.csproj"
+              },
+              "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Domain\\BazarTemTudo.Domain.csproj": {
+                "projectPath": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Domain\\BazarTemTudo.Domain.csproj"
+              },
+              "J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\BazarTemTudo.InfraData.csproj": {
+                "projectPath": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\BazarTemTudo.InfraData.csproj"
+              },
+              "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Test\\BazarTemTudo.Test.csproj": {
+                "projectPath": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Test\\BazarTemTudo.Test.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -343,6 +364,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Autofac": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Flunt": {
               "target": "Package",
               "version": "[2.0.5, )"
@@ -473,6 +502,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[13.0.1, )"
+            },
+            "Autofac": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "Flunt": {
               "target": "Package",
@@ -612,6 +645,10 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "Autofac": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Flunt": {
               "target": "Package",
               "version": "[2.0.5, )"
@@ -747,6 +784,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Autofac": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Flunt": {
               "target": "Package",
               "version": "[2.0.5, )"

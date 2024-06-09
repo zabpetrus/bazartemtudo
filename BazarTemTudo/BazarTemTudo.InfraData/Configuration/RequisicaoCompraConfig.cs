@@ -13,7 +13,12 @@ namespace BazarTemTudo.InfraData.Configuration
     {
         public void Configure(EntityTypeBuilder<RequisicaoCompra> builder)
         {
-            builder.ToTable("RequisicaoCompra"); 
+            builder.ToTable("RequisicaoCompra");
+
+            builder.HasKey(e => e.Id);
+            builder.Property(e => e.Id)
+                  .ValueGeneratedOnAdd()
+                  .IsRequired();
         }
     }
 }

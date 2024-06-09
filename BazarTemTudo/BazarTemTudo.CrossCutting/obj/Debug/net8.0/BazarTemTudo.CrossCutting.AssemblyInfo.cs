@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BazarTemTudo.CrossCutting")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04e84569aefae299b97c5388131f13ba7698ae55")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2eba94bb3be117ab01bfdc7a3fcf0af3d0335174")]
 [assembly: System.Reflection.AssemblyProductAttribute("BazarTemTudo.CrossCutting")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BazarTemTudo.CrossCutting")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

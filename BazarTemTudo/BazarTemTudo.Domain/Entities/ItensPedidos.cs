@@ -9,13 +9,9 @@ namespace BazarTemTudo.Domain.Entities
 {
     public class ItensPedidos : Entity
     {
-        public int Pedidos_ID { get; set; }
-
-        public Pedidos Pedido {  get; set; } = new Pedidos();
+        public int Pedidos_ID { get; set; }            
 
         public int Produtos_ID { get; set; }    
-
-        public Produtos Produto { get; set; } = new Produtos();
 
         public int Quantidade {  get; set; }
 
@@ -23,16 +19,11 @@ namespace BazarTemTudo.Domain.Entities
 
         public bool disponivel_estoque {  get; set; }
 
-        public ItensPedidos(int pedidos_ID, Pedidos pedido, int produtos_ID, Produtos produto, int quantidade, decimal preco, bool disponivel_estoque)
-        {
-            Pedidos_ID = pedidos_ID;
-            Pedido = pedido;
-            Produtos_ID = produtos_ID;
-            Produto = produto;
-            Quantidade = quantidade;
-            Preco = preco;
-            this.disponivel_estoque = disponivel_estoque;
-        }
+        //Links
+
+       // public Pedidos Pedido { get; set; } = new Pedidos();
+
+        //public Produtos Produto { get; set; } = new Produtos();
 
         public ItensPedidos()
         {

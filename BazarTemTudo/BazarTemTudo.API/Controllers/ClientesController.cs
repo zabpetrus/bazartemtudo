@@ -46,8 +46,14 @@ namespace BazarTemTudo.API.Controllers
         /// </summary>
         /// <param name="value">A Value</param>
         [HttpPost]
-        public void Post([FromBody] ClientesViewModel clientesViewModel)
+        public void Post(string nome, string cpf, DateTime dataNascimento, string email )
         {
+            ClientesViewModel clientesViewModel = new ClientesViewModel();
+            clientesViewModel.Nome = nome;
+            clientesViewModel.Email = email;
+            clientesViewModel.CPF = cpf;
+            clientesViewModel.DataNascimento = dataNascimento;
+
             _clientesAppService.Add(clientesViewModel);
         }
         /// <summary>

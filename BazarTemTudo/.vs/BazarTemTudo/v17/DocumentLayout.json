@@ -3,36 +3,24 @@
   "WorkspaceRootPath": "J:\\bazar\\BazarTemTudo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{809A2C46-D1C5-498F-9561-1F0867AE25D8}|BazarTemTudo.API\\BazarTemTudo.API.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.api\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{809A2C46-D1C5-498F-9561-1F0867AE25D8}|BazarTemTudo.API\\BazarTemTudo.API.csproj|solutionrelative:bazartemtudo.api\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{F2379B61-1821-4048-92A3-309B8446FC08}|BazarTemTudo.InfraData\\BazarTemTudo.InfraData.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.infradata\\repository\\_base\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2379B61-1821-4048-92A3-309B8446FC08}|BazarTemTudo.InfraData\\BazarTemTudo.InfraData.csproj|solutionrelative:bazartemtudo.infradata\\repository\\_base\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2379B61-1821-4048-92A3-309B8446FC08}|BazarTemTudo.InfraData\\BazarTemTudo.InfraData.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.infradata\\context\\sqlitecontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F2379B61-1821-4048-92A3-309B8446FC08}|BazarTemTudo.InfraData\\BazarTemTudo.InfraData.csproj|solutionrelative:bazartemtudo.infradata\\context\\sqlitecontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{809A2C46-D1C5-498F-9561-1F0867AE25D8}|BazarTemTudo.API\\BazarTemTudo.API.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.api\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{809A2C46-D1C5-498F-9561-1F0867AE25D8}|BazarTemTudo.API\\BazarTemTudo.API.csproj|solutionrelative:bazartemtudo.api\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52D7C1EB-E373-4086-9D3E-C56E4C82060F}|BazarTemTudo.Domain\\BazarTemTudo.Domain.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.domain\\entities\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52D7C1EB-E373-4086-9D3E-C56E4C82060F}|BazarTemTudo.Domain\\BazarTemTudo.Domain.csproj|solutionrelative:bazartemtudo.domain\\entities\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{84B4328F-E013-41CD-8986-A749C12320D7}|BazarTemTudo.CrossCutting\\BazarTemTudo.CrossCutting.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.crosscutting\\validation\\applicationvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84B4328F-E013-41CD-8986-A749C12320D7}|BazarTemTudo.CrossCutting\\BazarTemTudo.CrossCutting.csproj|solutionrelative:bazartemtudo.crosscutting\\validation\\applicationvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2379B61-1821-4048-92A3-309B8446FC08}|BazarTemTudo.InfraData\\BazarTemTudo.InfraData.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.infradata\\context\\sqlitecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F2379B61-1821-4048-92A3-309B8446FC08}|BazarTemTudo.InfraData\\BazarTemTudo.InfraData.csproj|solutionrelative:bazartemtudo.infradata\\context\\sqlitecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2C26657-B54D-4914-AAF5-C6F5410467BD}|BazarTemTudo.Application\\BazarTemTudo.Application.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.application\\appservice\\clienteappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2C26657-B54D-4914-AAF5-C6F5410467BD}|BazarTemTudo.Application\\BazarTemTudo.Application.csproj|solutionrelative:bazartemtudo.application\\appservice\\clienteappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{809A2C46-D1C5-498F-9561-1F0867AE25D8}|BazarTemTudo.API\\BazarTemTudo.API.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{809A2C46-D1C5-498F-9561-1F0867AE25D8}|BazarTemTudo.API\\BazarTemTudo.API.csproj|solutionrelative:bazartemtudo.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F2379B61-1821-4048-92A3-309B8446FC08}|BazarTemTudo.InfraData\\BazarTemTudo.InfraData.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.infradata\\context\\sqlservercontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F2379B61-1821-4048-92A3-309B8446FC08}|BazarTemTudo.InfraData\\BazarTemTudo.InfraData.csproj|solutionrelative:bazartemtudo.infradata\\context\\sqlservercontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F2379B61-1821-4048-92A3-309B8446FC08}|BazarTemTudo.InfraData\\BazarTemTudo.InfraData.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.infradata\\context\\postgrescontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F2379B61-1821-4048-92A3-309B8446FC08}|BazarTemTudo.InfraData\\BazarTemTudo.InfraData.csproj|solutionrelative:bazartemtudo.infradata\\context\\postgrescontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{809A2C46-D1C5-498F-9561-1F0867AE25D8}|BazarTemTudo.API\\BazarTemTudo.API.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{809A2C46-D1C5-498F-9561-1F0867AE25D8}|BazarTemTudo.API\\BazarTemTudo.API.csproj|solutionrelative:bazartemtudo.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{84B4328F-E013-41CD-8986-A749C12320D7}|BazarTemTudo.CrossCutting\\BazarTemTudo.CrossCutting.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.crosscutting\\bazartemtudo.crosscutting.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{84B4328F-E013-41CD-8986-A749C12320D7}|BazarTemTudo.CrossCutting\\BazarTemTudo.CrossCutting.csproj|solutionrelative:bazartemtudo.crosscutting\\bazartemtudo.crosscutting.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,24 +30,87 @@
       "DocumentGroups": [
         {
           "DockedHeight": 274,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 24,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Usuarios.cs",
-              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Domain\\Entities\\Usuarios.cs",
-              "RelativeDocumentMoniker": "BazarTemTudo.Domain\\Entities\\Usuarios.cs",
-              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Domain\\Entities\\Usuarios.cs",
-              "RelativeToolTip": "BazarTemTudo.Domain\\Entities\\Usuarios.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T17:39:08.009Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:1:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+              "Name": "ST:18:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:19:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:20:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:21:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:17:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:16:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:10:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:9:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:8:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:7:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
             },
             {
               "$type": "Bookmark",
@@ -67,97 +118,71 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SQLiteContext.cs",
-              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\Context\\SQLiteContext.cs",
-              "RelativeDocumentMoniker": "BazarTemTudo.InfraData\\Context\\SQLiteContext.cs",
-              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\Context\\SQLiteContext.cs",
-              "RelativeToolTip": "BazarTemTudo.InfraData\\Context\\SQLiteContext.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAuwBMAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T23:20:30.609Z",
-              "EditorCaption": ""
+              "Name": "ST:1:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SQLiteContextFactory.cs",
-              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\Context\\SQLiteContextFactory.cs",
-              "RelativeDocumentMoniker": "BazarTemTudo.InfraData\\Context\\SQLiteContextFactory.cs",
-              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\Context\\SQLiteContextFactory.cs",
-              "RelativeToolTip": "BazarTemTudo.InfraData\\Context\\SQLiteContextFactory.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAswB0AAAAAAAAA",
+              "Title": "ClientesController.cs",
+              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\Controllers\\ClientesController.cs",
+              "RelativeDocumentMoniker": "BazarTemTudo.API\\Controllers\\ClientesController.cs",
+              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\Controllers\\ClientesController.cs",
+              "RelativeToolTip": "BazarTemTudo.API\\Controllers\\ClientesController.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAwwDAAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T23:20:35.855Z",
+              "WhenOpened": "2024-06-09T20:31:56.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ClienteAppService.cs",
+              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Application\\AppService\\ClienteAppService.cs",
+              "RelativeDocumentMoniker": "BazarTemTudo.Application\\AppService\\ClienteAppService.cs",
+              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Application\\AppService\\ClienteAppService.cs",
+              "RelativeToolTip": "BazarTemTudo.Application\\AppService\\ClienteAppService.cs",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAmwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T20:31:42.3Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "README.md",
-              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\README.md",
-              "RelativeDocumentMoniker": "BazarTemTudo.API\\README.md",
-              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\README.md",
-              "RelativeToolTip": "BazarTemTudo.API\\README.md",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-06-08T15:57:19.607Z",
+              "Title": "RepositoryBase.cs",
+              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\Repository\\_Base\\RepositoryBase.cs",
+              "RelativeDocumentMoniker": "BazarTemTudo.InfraData\\Repository\\_Base\\RepositoryBase.cs",
+              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\Repository\\_Base\\RepositoryBase.cs",
+              "RelativeToolTip": "BazarTemTudo.InfraData\\Repository\\_Base\\RepositoryBase.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAYwBUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T20:13:31.62Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\appsettings.json",
-              "RelativeDocumentMoniker": "BazarTemTudo.API\\appsettings.json",
-              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\appsettings.json",
-              "RelativeToolTip": "BazarTemTudo.API\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAByAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-07T23:21:54.733Z",
+              "DocumentIndex": 2,
+              "Title": "ApplicationValidator.cs",
+              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.CrossCutting\\Validation\\ApplicationValidator.cs",
+              "RelativeDocumentMoniker": "BazarTemTudo.CrossCutting\\Validation\\ApplicationValidator.cs",
+              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.CrossCutting\\Validation\\ApplicationValidator.cs",
+              "RelativeToolTip": "BazarTemTudo.CrossCutting\\Validation\\ApplicationValidator.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAAAoAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T20:17:38.762Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\Program.cs",
-              "RelativeDocumentMoniker": "BazarTemTudo.API\\Program.cs",
-              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\Program.cs",
-              "RelativeToolTip": "BazarTemTudo.API\\Program.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAawCgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T23:20:01.442Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PostgresContextFactory.cs",
-              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\Context\\PostgresContextFactory.cs",
-              "RelativeDocumentMoniker": "BazarTemTudo.InfraData\\Context\\PostgresContextFactory.cs",
-              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\Context\\PostgresContextFactory.cs",
-              "RelativeToolTip": "BazarTemTudo.InfraData\\Context\\PostgresContextFactory.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABYAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T16:59:47.327Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SQLServerContextFactory.cs",
-              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\Context\\SQLServerContextFactory.cs",
-              "RelativeDocumentMoniker": "BazarTemTudo.InfraData\\Context\\SQLServerContextFactory.cs",
-              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\Context\\SQLServerContextFactory.cs",
-              "RelativeToolTip": "BazarTemTudo.InfraData\\Context\\SQLServerContextFactory.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T17:00:47.698Z",
+              "Title": "BazarTemTudo.CrossCutting",
+              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.CrossCutting\\BazarTemTudo.CrossCutting.csproj",
+              "RelativeDocumentMoniker": "BazarTemTudo.CrossCutting\\BazarTemTudo.CrossCutting.csproj",
+              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.CrossCutting\\BazarTemTudo.CrossCutting.csproj",
+              "RelativeToolTip": "BazarTemTudo.CrossCutting\\BazarTemTudo.CrossCutting.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-09T20:17:20.171Z",
               "EditorCaption": ""
             }
           ]

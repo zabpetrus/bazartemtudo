@@ -8,10 +8,10 @@ namespace BazarTemTudo.Domain.Entities.Enums
 {
     public enum StatusPedido
     {
-        Pendente,
-	    Em_processamento,
-	    Enviado,
-	    Entregue,
-	    Cancelado
+        Pendente = 1,
+	    Em_processamento = 2,
+	    Enviado = 3,
+	    Entregue = 4,
+	    Cancelado = 5
     }
 }

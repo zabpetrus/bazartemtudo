@@ -12,13 +12,8 @@ namespace BazarTemTudo.Domain.Entities
     {
 
         public int Fornecedor_ID { get; set; }
-
-        public Fornecedores Fornecedor { get; set; } = new Fornecedores();
-
-
+       
         public int Produto_ID { get; set; }
-
-        public Produtos Produto {  get; set; } = new Produtos();
 
         public int Quantidade { get; set; }
 
@@ -28,17 +23,13 @@ namespace BazarTemTudo.Domain.Entities
 
         public DateTime Data_Emissao { get; set; }
 
-        public RequisicaoCompra(int fornecedor_ID, Fornecedores fornecedor, int produto_ID, Produtos produto, int quantidade, StatusPedido status_Pedido, decimal? total_Compra, DateTime data_Emissao)
-        {
-            Fornecedor_ID = fornecedor_ID;
-            Fornecedor = fornecedor;
-            Produto_ID = produto_ID;
-            Produto = produto;
-            Quantidade = quantidade;
-            Status_Pedido = status_Pedido;
-            Total_Compra = total_Compra;
-            Data_Emissao = data_Emissao;
-        }
+        //Mapeamento
+
+        public Fornecedores Fornecedor { get; set; } = new Fornecedores();
+
+        public Produtos Produto { get; set; } = new Produtos();
+
+
 
         public RequisicaoCompra()
         {

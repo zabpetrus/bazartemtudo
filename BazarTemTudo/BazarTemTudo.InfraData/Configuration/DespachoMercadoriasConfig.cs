@@ -14,6 +14,12 @@ namespace BazarTemTudo.InfraData.Configuration
         public void Configure(EntityTypeBuilder<DespachoMercadorias> builder)
         {
             builder.ToTable("DespachoMercadorias");
+
+
+            builder.HasKey(e => e.Id);
+            builder.Property(e => e.Id)
+                  .ValueGeneratedOnAdd()
+                  .IsRequired();
         }
     }
 }

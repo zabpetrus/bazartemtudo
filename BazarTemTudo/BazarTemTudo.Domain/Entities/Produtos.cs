@@ -23,19 +23,10 @@ namespace BazarTemTudo.Domain.Entities
       
         public int Fornecedor_ID { get; set; }  
 
-        public Fornecedores Fornecedor { get; set; } = new Fornecedores();
+        //Links
+       // public Fornecedores Fornecedor { get; set; } = new Fornecedores();
 
-        public Produtos(string nome_Produto, string descricao, string sKU, string uPC, decimal valor, decimal frete_Produto, int fornecedor_ID, Fornecedores fornecedor)
-        {
-            Nome_Produto = nome_Produto;
-            Descricao = descricao;
-            SKU = sKU;
-            UPC = uPC;
-            Valor = valor;
-            Frete_Produto = frete_Produto;
-            Fornecedor_ID = fornecedor_ID;
-            Fornecedor = fornecedor;
-        }
+       
 
         public Produtos()
         {

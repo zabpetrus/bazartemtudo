@@ -1,4 +1,5 @@
 ﻿using BazarTemTudo.Domain.Entities._Base;
+using BazarTemTudo.Domain.Entities.Enums;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,9 @@ namespace BazarTemTudo.Domain.Entities
        
         public string Nome { get; set; }
 
-        public string Cpf { get; set; } 
+        public string Cpf { get; set; }
+
+        public virtual TipoUsuario TipoUsuario { get; set; }
 
     }
 }

@@ -14,6 +14,12 @@ namespace BazarTemTudo.InfraData.Configuration
         public void Configure(EntityTypeBuilder<Estoque> builder)
         {
             builder.ToTable("Estoque");
+
+
+            builder.HasKey(e => e.Id);
+            builder.Property(e => e.Id)
+                  .ValueGeneratedOnAdd()
+                  .IsRequired();
         }
     }
 }

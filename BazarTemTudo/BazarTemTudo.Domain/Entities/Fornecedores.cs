@@ -13,9 +13,7 @@ namespace BazarTemTudo.Domain.Entities
 
         public string CNPJ {  get; set; } = string.Empty;
 
-        public int Endereco_ID { get; set; }
-
-        public Endereco Endereco_Fornecedor { get; set; } = new Endereco();
+        public int Endereco_ID { get; set; }          
 
         public string Telefone {  get; set; } = string.Empty;
 
@@ -23,16 +21,8 @@ namespace BazarTemTudo.Domain.Entities
 
         public string Website { get; set; } = string.Empty;
 
-        public Fornecedores(string nome_Fornecedor, string cNPJ, int endereco_ID, Endereco endereco_Fornecedor, string telefone, string email, string website)
-        {
-            Nome_Fornecedor = nome_Fornecedor;
-            CNPJ = cNPJ;
-            Endereco_ID = endereco_ID;
-            Endereco_Fornecedor = endereco_Fornecedor;
-            Telefone = telefone;
-            Email = email;
-            Website = website;
-        }
+        // links
+       // public Endereco Endereco_Fornecedor { get; set; } = new Endereco();
 
         public Fornecedores()
         {

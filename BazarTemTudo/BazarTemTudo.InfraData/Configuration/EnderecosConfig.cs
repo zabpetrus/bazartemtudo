@@ -14,6 +14,32 @@ namespace BazarTemTudo.InfraData.Configuration
         public void Configure(EntityTypeBuilder<Endereco> builder)
         {
             builder.ToTable("Enderecos");
+
+            builder.HasKey(e => e.Id);
+            builder.Property(e => e.Id)
+                  .ValueGeneratedOnAdd()
+                  .IsRequired();
+
+            builder.Property(e => e.Rua)
+             .HasMaxLength(100)
+             .IsRequired();
+
+            builder.Property(e => e.Pais)
+            .HasMaxLength(50)
+            .IsRequired();
+
+            builder.Property(e => e.Rua)
+            .HasMaxLength(100)
+            .IsRequired();
+
+            builder.Property(e => e.Estado)
+            .HasMaxLength(50)
+            .IsRequired();
+
+            builder.Property(e => e.Cep)
+            .HasMaxLength(20)
+            .IsRequired();
+
         }
     }
 }

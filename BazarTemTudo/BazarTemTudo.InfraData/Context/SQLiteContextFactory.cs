@@ -17,7 +17,7 @@ namespace BazarTemTudo.InfraData.Context
 
         public SQLiteContext CreateDbContext(string[] args)
         {
-            var ConnectionString = "data source=J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\Database\\bazarDatabase.db";
+            var ConnectionString = _configuration.GetConnectionString("DefaultConnection");
             var optionsBuilder = new DbContextOptionsBuilder<SQLiteContext>();
             if (args.Length == 0)
             {

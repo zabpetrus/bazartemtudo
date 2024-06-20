@@ -1,0 +1,4 @@
+[build]
+  base = "BazarTemTudo/BazarTemTudo.API"  # Caminho para o diretório da API dentro do repositório
+  command = "dotnet publish -c Release -o publish_output"
+  publish = "BazarTemTudo/BazarTemTudo.API/publish_output"

@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BazarTemTudo.API.Controllers
 {
+    /// <summary>
+    /// Weather Forecast Controller
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -18,7 +21,10 @@ namespace BazarTemTudo.API.Controllers
         {
             _logger = logger;
         }
-
+        /// <summary>
+        /// Get
+        /// </summary>
+        /// <returns>An IEnumerable of WeatherForecast.</returns>
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {

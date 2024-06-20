@@ -7,9 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Logging\" />
-    <Folder Include="Authentication\" />
-    <Folder Include="Authorization\" />
+    <Compile Remove="Authentication\**" />
+    <Compile Remove="Authorization\**" />
+    <EmbeddedResource Remove="Authentication\**" />
+    <EmbeddedResource Remove="Authorization\**" />
+    <None Remove="Authentication\**" />
+    <None Remove="Authorization\**" />
   </ItemGroup>
 
   <ItemGroup>

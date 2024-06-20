@@ -23,9 +23,9 @@ namespace BazarTemTudo.Application.Interface._Base
 
         IEnumerable<TEntity> GetAll();
 
-        void Update(TEntity obj);
+        void Update(long id, TEntity obj);
 
-        void Remove(TEntity obj);
+         void RemoveById(long id);
 
 
     }

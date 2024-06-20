@@ -1,3 +1,11 @@
+J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.csproj.AssemblyReference.cache
+J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.GeneratedMSBuildEditorConfig.editorconfig
+J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.AssemblyInfoInputs.cache
+J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.AssemblyInfo.cs
+J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.csproj.CoreCompileInputs.cache
+J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.MvcApplicationPartsAssemblyInfo.cs
+J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.MvcApplicationPartsAssemblyInfo.cache
+J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.sourcelink.json
 J:\bazar\BazarTemTudo\BazarTemTudo.API\bin\Debug\net8.0\testhost.dll
 J:\bazar\BazarTemTudo\BazarTemTudo.API\bin\Debug\net8.0\BazarTemTudo.Test.deps.json
 J:\bazar\BazarTemTudo\BazarTemTudo.API\bin\Debug\net8.0\BazarTemTudo.Test.runtimeconfig.json
@@ -362,14 +370,6 @@ J:\bazar\BazarTemTudo\BazarTemTudo.API\bin\Debug\net8.0\BazarTemTudo.CrossCuttin
 J:\bazar\BazarTemTudo\BazarTemTudo.API\bin\Debug\net8.0\BazarTemTudo.Domain.pdb
 J:\bazar\BazarTemTudo\BazarTemTudo.API\bin\Debug\net8.0\BazarTemTudo.InfraData.pdb
 J:\bazar\BazarTemTudo\BazarTemTudo.API\bin\Debug\net8.0\BazarTemTudo.Test.pdb
-J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.csproj.AssemblyReference.cache
-J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.GeneratedMSBuildEditorConfig.editorconfig
-J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.AssemblyInfoInputs.cache
-J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.AssemblyInfo.cs
-J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.csproj.CoreCompileInputs.cache
-J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.MvcApplicationPartsAssemblyInfo.cs
-J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.MvcApplicationPartsAssemblyInfo.cache
-J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.sourcelink.json
 J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\staticwebassets.build.json
 J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\staticwebassets.development.json
 J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\staticwebassets\msbuild.BazarTemTudo.API.Microsoft.AspNetCore.StaticWebAssets.props

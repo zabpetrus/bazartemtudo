@@ -18,11 +18,11 @@ namespace BazarTemTudo.Domain.Interface.Repository._Base
 
         void CreateMultiples(IEnumerable<TEntity> entities);
 
-        void Update(TEntity entity);
+        void Update(long id, TEntity entity);
 
         void UpdateMultiples(IEnumerable<TEntity> entities);
 
-        void Delete(TEntity entity);
+        bool Delete(long id);
 
         void DeleteMultiples(IEnumerable<TEntity> entities);
 

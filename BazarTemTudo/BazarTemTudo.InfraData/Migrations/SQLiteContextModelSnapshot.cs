@@ -17,463 +17,82 @@ namespace BazarTemTudo.InfraData.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
 
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.Checkout", b =>
+            modelBuilder.Entity("BazarTemTudo.Domain.Entities.Carga", b =>
                 {
-                    b.Property<int?>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("DataDespacho")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Atualizacao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Registro")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("Not_Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Pedido_ClienteId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Pedido_Id")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Status_Despacho")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<decimal>("Total_Pedido")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Pedido_ClienteId");
-
-                    b.ToTable("Checkout", (string)null);
-                });
-
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.Clientes", b =>
-                {
-                    b.Property<int?>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("CPF")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Atualizacao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Registro")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Clientes", (string)null);
-                });
-
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.DespachoMercadorias", b =>
-                {
-                    b.Property<int?>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("Data_Atualizacao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Liberacao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Registro")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("Not_Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Status_Entrega")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Transportadora_ID")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("DespachoMercadorias", (string)null);
-                });
-
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.Endereco", b =>
-                {
-                    b.Property<int?>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Cep")
                         .IsRequired()
-                        .HasMaxLength(20)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Cidade")
+                    b.Property<string>("CodigoPedido")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Complemento1")
+                    b.Property<string>("Cpf")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Complemento2")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Atualizacao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Registro")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Estado")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("Not_Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Numero")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Pais")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Rua")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Enderecos", (string)null);
-                });
-
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.Estoque", b =>
-                {
-                    b.Property<int?>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("Data_Atualizacao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Registro")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Estoque_Minimo")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<Guid>("Not_Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Produtos_ID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Estoque", (string)null);
-                });
-
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.Fornecedores", b =>
-                {
-                    b.Property<int?>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("CNPJ")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Atualizacao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Registro")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Endereco_ID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Nome_Fornecedor")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("Not_Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Telefone")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Website")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Fornecedores", (string)null);
-                });
-
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.ItensPedidos", b =>
-                {
-                    b.Property<int?>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("Data_Atualizacao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Registro")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("Not_Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Pedidos_ID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<decimal>("Preco")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Produtos_ID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("disponivel_estoque")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ItensPedidos", (string)null);
-                });
-
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.NotaFiscal", b =>
-                {
-                    b.Property<int?>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("Data_Atualizacao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Emissao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Registro")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("Not_Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Pedidos_ID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<decimal>("Valor_Total")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("NotaFiscal", (string)null);
-                });
-
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.Pedidos", b =>
-                {
-                    b.Property<int?>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("ClienteId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Codigo_Pedido")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Atualizacao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Pedido")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Registro")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Endereco_entrega_Id")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<Guid>("Not_Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Status_Pedido")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Pedidos", (string)null);
-                });
-
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.Produtos", b =>
-                {
-                    b.Property<int?>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("Data_Atualizacao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Registro")
+                    b.Property<DateTime>("DataPedido")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Fornecedor_ID")
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("EnderecoEntrega")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Fornecedor")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FornecedorCnpj")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Frete")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NomeComprador")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NomeProduto")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pais")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Qte")
                         .HasColumnType("INTEGER");
 
-                    b.Property<decimal>("Frete_Produto")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Nome_Produto")
+                    b.Property<string>("Sku")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("Not_Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("SKU")
+                    b.Property<string>("Uf")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("UPC")
+                    b.Property<string>("Upc")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Valor")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
-
-                    b.ToTable("Produtos", (string)null);
-                });
-
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.RequisicaoCompra", b =>
-                {
-                    b.Property<int?>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("Data_Atualizacao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Emissao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Registro")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("FornecedorId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Fornecedor_ID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<Guid>("Not_Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("ProdutoId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Produto_ID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Status_Pedido")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<decimal?>("Total_Compra")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FornecedorId");
-
-                    b.HasIndex("ProdutoId");
-
-                    b.ToTable("RequisicaoCompra", (string)null);
-                });
-
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.Transportadoras", b =>
-                {
-                    b.Property<int?>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("CNPJ")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("CustoFrete")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Atualizacao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("Data_Registro")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NomeTransportadora")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("Not_Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("TipoServico")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Transportadoras", (string)null);
+                    b.ToTable("Carga");
                 });
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.Usuarios", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("AccessFailedCount")
@@ -683,36 +302,6 @@ namespace BazarTemTudo.InfraData.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.Checkout", b =>
-                {
-                    b.HasOne("BazarTemTudo.Domain.Entities.Pedidos", "Pedido_Cliente")
-                        .WithMany()
-                        .HasForeignKey("Pedido_ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Pedido_Cliente");
-                });
-
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.RequisicaoCompra", b =>
-                {
-                    b.HasOne("BazarTemTudo.Domain.Entities.Fornecedores", "Fornecedor")
-                        .WithMany()
-                        .HasForeignKey("FornecedorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BazarTemTudo.Domain.Entities.Produtos", "Produto")
-                        .WithMany()
-                        .HasForeignKey("ProdutoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Fornecedor");
-
-                    b.Navigation("Produto");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

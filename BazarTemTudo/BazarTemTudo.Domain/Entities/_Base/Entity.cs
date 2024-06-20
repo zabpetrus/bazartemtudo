@@ -21,7 +21,7 @@ namespace BazarTemTudo.Domain.Entities._Base
         public Guid Not_Id { get; private set; }
 
         [Key]
-        public int? Id {  get; set; }
+        public long? Id {  get; set; }
 
         public DateTime Data_Registro { get; private set; }
 

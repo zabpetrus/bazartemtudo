@@ -8,26 +8,12 @@ namespace BazarTemTudo.Application.ViewModels
 {
     public class PerfilUsuarioViewModel
     {
-        public int Perfil_Usuario_ID { get; set; }
+        public int Id { get; set; }
 
-        public UsuariosViewModel usuario { get; set; } = new UsuariosViewModel();
+        public string Nome { get; set; }
 
-        public string Nome { get; set; } = string.Empty;
+        public string Descricao { get; set; }
 
-        public string Email { get; set; } = string.Empty;
-
-        public string CPF { get; set; } = string.Empty;
-
-        public PerfilUsuarioViewModel(UsuariosViewModel usuario, string nome, string email, string cPF)
-        {
-            this.usuario = usuario;
-            Nome = nome;
-            Email = email;
-            CPF = cPF;
-        }
-
-        public PerfilUsuarioViewModel()
-        {
-        }
+        public PerfilUsuarioViewModel(){ }
     }
 }

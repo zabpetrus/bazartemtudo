@@ -17,6 +17,7 @@ namespace BazarTemTudo.Application.ViewModels
         public int Endereco_ID { get; set; }
 
         public EnderecoViewModel Endereco_Usuario { get; set; } = new EnderecoViewModel();
+        public string Senha { get; set; }
 
         public UsuariosViewModel(string nome, string email, string cPF, int endereco_ID, EnderecoViewModel endereco_Usuario)
         {

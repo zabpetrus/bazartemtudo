@@ -1,0 +1,16 @@
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\obj\Debug\net8.0\BazarTemTudo.Infra.Filesystem.csproj.AssemblyReference.cache
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\obj\Debug\net8.0\BazarTemTudo.Infra.Filesystem.GeneratedMSBuildEditorConfig.editorconfig
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\obj\Debug\net8.0\BazarTemTudo.Infra.Filesystem.AssemblyInfoInputs.cache
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\obj\Debug\net8.0\BazarTemTudo.Infra.Filesystem.AssemblyInfo.cs
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\obj\Debug\net8.0\BazarTemTudo.Infra.Filesystem.csproj.CoreCompileInputs.cache
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\obj\Debug\net8.0\BazarTemTudo.Infra.Filesystem.sourcelink.json
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\bin\Debug\net8.0\BazarTemTudo.Infra.Filesystem.deps.json
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\bin\Debug\net8.0\BazarTemTudo.Infra.Filesystem.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\bin\Debug\net8.0\BazarTemTudo.Infra.Filesystem.pdb
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\bin\Debug\net8.0\BazarTemTudo.Domain.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\bin\Debug\net8.0\BazarTemTudo.Domain.pdb
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\obj\Debug\net8.0\BazarTem.6925BA18.Up2Date
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\obj\Debug\net8.0\BazarTemTudo.Infra.Filesystem.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\obj\Debug\net8.0\refint\BazarTemTudo.Infra.Filesystem.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\obj\Debug\net8.0\BazarTemTudo.Infra.Filesystem.pdb
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\obj\Debug\net8.0\ref\BazarTemTudo.Infra.Filesystem.dll

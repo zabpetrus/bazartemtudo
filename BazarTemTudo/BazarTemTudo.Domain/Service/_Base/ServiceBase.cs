@@ -37,19 +37,7 @@ namespace BazarTemTudo.Domain.Service._Base
             return _repository.GetById(id);
         }
 
-      
-        public void Remove(TEntity obj)
-        {
-             _repository.Delete(obj);   
-        }
-  
-
-        public void Update(TEntity obj)
-        {
-            _repository.Update(obj);
-        }
-
-     
+              
         public void Dispose()
         {
             _repository.Dispose();
@@ -58,6 +46,16 @@ namespace BazarTemTudo.Domain.Service._Base
         public IEnumerable<TEntity> FindAll(string args)
         {
             return _repository.SearchAll(args); 
+        }
+
+        public void Update(long id, TEntity obj)
+        {
+            _repository.Update(id, obj);
+        }
+
+        public bool RemoveById(long id)
+        {
+            return _repository.Delete(id);
         }
     }
 }

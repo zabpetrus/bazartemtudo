@@ -1,5 +1,8 @@
-﻿using BazarTemTudo.Application.Interface._Base;
+﻿using AutoMapper;
+using BazarTemTudo.Application.Interface._Base;
+using BazarTemTudo.Domain.Interface.Service._Base;
 using Flunt.Notifications;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,33 +11,86 @@ using System.Threading.Tasks;
 
 namespace BazarTemTudo.Application.AppService._Base
 {
-    /*
-       Classe para abstração. Implementando Flunt e a Interface ao mesmo tempo
-        Não funciona! Se colocar, a injeção de dependencia fica anulada!
-     */
-    public abstract class AppServiceBase<TEntity> : Notifiable<Notification>, IAppServiceBase<TEntity> where TEntity : class
+    public class AppServiceBase<VM, M> : IAppServiceBase<VM> where VM : class where M : class
     {
+        private readonly IServiceBase<M> _serviceBase;
+        private readonly IMapper _mapper;
+        private readonly ILogger<AppServiceBase<VM, M>> _logger;
 
-        public abstract void Add(TEntity obj);
+        public AppServiceBase(IServiceBase<M> serviceBase, IMapper mapper, ILogger<AppServiceBase<VM, M>> logger)
+        {
+            _serviceBase = serviceBase;
+            _mapper = mapper;
+            _logger = logger;
+        }
 
-        public abstract Task AddAsync(TEntity obj);
+        public void Add(VM obj)
+        {
+            try
+            {
+                var res = _mapper.Map<M>(obj);
+                _serviceBase.Add(res);
+            }
+            catch (Exception ex)
+            {
+               throw new Exception(ex.ToString(), ex);
+            }
+        }
 
-        public abstract IEnumerable<TEntity> GetAll();
+        public IEnumerable<VM> GetAll()
+        {
+            try
+            {
+               var res = _serviceBase.GetAll();
+               return _mapper.Map<List<VM>>(res);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString(), ex);
+            }
+        }
 
-        public abstract Task<IEnumerable<TEntity>> GetAllAsync();
+        public VM GetById(long id)
+        {
+            try
+            {
 
-        public abstract TEntity GetById(long id);
+                var res = _serviceBase.GetById(id);
+                return _mapper.Map<VM>(res);
+                
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString(), ex);
+            }
+        }
 
-        public abstract Task<TEntity> GetByIdAsync(long id);
+      
+        public void RemoveById(long id)
+        {
+            try
+            {
+                var res = _serviceBase.RemoveById(id);
+                if (!res) { throw new Exception("Não foi possivel excluir o registro!"); }             
 
-        public abstract void Remove(TEntity obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString(), ex);
+            }
+        }
 
-        public abstract Task RemoveAsync(TEntity obj);
-
-        public abstract void Update(TEntity obj);
-
-        public abstract Task UpdateAsync(TEntity obj);
-
-        public abstract List<TEntity> Search( string query );
+        public void Update(long id, VM obj)
+        {
+            try
+            {
+                var res = _mapper.Map<M>(obj);
+                _serviceBase.Update(id, res);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString(), ex);
+            }
+        }
     }
 }

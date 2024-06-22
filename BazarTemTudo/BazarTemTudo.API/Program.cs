@@ -8,6 +8,7 @@ using BazarTemTudo.Domain.Interface;
 using BazarTemTudo.Domain.Interface.Repository;
 using BazarTemTudo.Domain.Interface.Service;
 using BazarTemTudo.Domain.Service;
+using BazarTemTudo.Infra.Filesystem.FileUpload;
 using BazarTemTudo.InfraData.Context;
 using BazarTemTudo.InfraData.Mapping;
 using BazarTemTudo.InfraData.Repository;
@@ -19,6 +20,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,10 +28,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 
-builder.Services.AddDbContext<SQLiteContext>(options =>
+builder.Services.AddDbContext<ApplicationDBContext>(options =>
     options.UseSqlite(
         builder.Configuration.GetConnectionString("DefaultConnection")
     )
+    .UseSqlServer(
+        builder.Configuration.GetConnectionString("SecondConnection"))
 );
 
 
@@ -60,7 +64,7 @@ builder.Services.AddIdentity<Usuarios, IdentityRole>(options =>
 {
     // Configurações do Identity
 })
-    .AddEntityFrameworkStores<SQLiteContext>()
+    .AddEntityFrameworkStores<ApplicationDBContext>()
     .AddDefaultTokenProviders();
 
 
@@ -84,9 +88,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.User.AllowedUserNameCharacters =
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
     options.User.RequireUniqueEmail = false;
-});
-
- 
+});      
 
 
 
@@ -99,23 +101,7 @@ builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddSwaggerGen();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "API de Pedidos", Version = "v1" });
-
-    // Configurar Swagger para upload de arquivos
-    var fileUploadSchema = new OpenApiSchema
-    {
-        Type = "object",
-        Properties =
-        {
-            ["file"] = new OpenApiSchema
-            {
-                Type = "string",
-                Format = "binary"
-            }
-        }
-    };
-
-    c.MapType<IFormFile>(() => fileUploadSchema);
+    c.OperationFilter<FileUploadFilter>();
 });
 
 var app = builder.Build();

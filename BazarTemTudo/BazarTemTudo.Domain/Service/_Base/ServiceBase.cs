@@ -57,5 +57,10 @@ namespace BazarTemTudo.Domain.Service._Base
         {
             return _repository.Delete(id);
         }
+
+        public void AddRange(IEnumerable<TEntity> entities)
+        {
+            _repository.CreateMultiples(entities);  
+        }
     }
 }

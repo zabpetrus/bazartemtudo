@@ -10,5 +10,6 @@ namespace BazarTemTudo.Domain.Interface.Service
 {
     public interface ICargaService : IServiceBase<Carga>
     {
+       
     }
 }

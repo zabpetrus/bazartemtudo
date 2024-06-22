@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BazarTemTudo.InfraData.Migrations
 {
-    [DbContext(typeof(SQLiteContext))]
+    [DbContext(typeof(ApplicationDBContext))]
     [Migration("20240620021650_InitialMigration")]
     partial class InitialMigration
     {

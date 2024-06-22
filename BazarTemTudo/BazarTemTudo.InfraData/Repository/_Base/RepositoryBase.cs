@@ -10,11 +10,11 @@ namespace BazarTemTudo.InfraData.Repository._Base
 {
     public class RepositoryBase<T> : IRepositoryBase<T>, IDisposable where T : class
     {
-        protected readonly SQLiteContext _context;
+        protected readonly ApplicationDBContext _context;
 
         private bool _disposed = false;
 
-        public RepositoryBase(SQLiteContext context)
+        public RepositoryBase(ApplicationDBContext context)
         {
             _context = context;
         }
@@ -43,9 +43,12 @@ namespace BazarTemTudo.InfraData.Repository._Base
             using var transaction = _context.Database.BeginTransaction();
             try
             {
-                _context.AddRange(entities);
+                
+                _context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+                _context.Set<T>().AddRange(entities);
                 _context.SaveChanges();
                 transaction.Commit();
+
             }
             catch (Exception ex)
             {

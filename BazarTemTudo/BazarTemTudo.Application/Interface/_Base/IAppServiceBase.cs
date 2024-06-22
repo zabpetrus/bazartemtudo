@@ -25,7 +25,9 @@ namespace BazarTemTudo.Application.Interface._Base
 
         void Update(long id, TEntity obj);
 
-         void RemoveById(long id);
+        void RemoveById(long id);
+
+        void AddRange(IEnumerable<TEntity> entities);
 
 
     }

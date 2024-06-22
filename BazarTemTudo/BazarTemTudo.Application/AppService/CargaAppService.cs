@@ -21,6 +21,6 @@ namespace BazarTemTudo.Application.AppService
         public CargaAppService(ICargaService serviceBase, IMapper mapper, ILogger<AppServiceBase<CargaViewModel, Carga>> logger) : base(serviceBase, mapper, logger)
         {
             _cargaService = serviceBase;
-        }
+        }        
     }
 }

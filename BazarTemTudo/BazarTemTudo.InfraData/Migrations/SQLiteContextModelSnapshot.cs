@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BazarTemTudo.InfraData.Migrations
 {
-    [DbContext(typeof(SQLiteContext))]
+    [DbContext(typeof(ApplicationDBContext))]
     partial class SQLiteContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -19,73 +19,94 @@ namespace BazarTemTudo.InfraData.Migrations
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.Carga", b =>
                 {
-                    b.Property<string>("Cep")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("CodigoPedido")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Cpf")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("DataPedido")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Descricao")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("EnderecoEntrega")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Fornecedor")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("FornecedorCnpj")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("Frete")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NomeComprador")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NomeProduto")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Pais")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Qte")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Sku")
+                    b.Property<string>("buyer_email")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Uf")
+                    b.Property<string>("buyer_name")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Upc")
+                    b.Property<string>("buyer_phone_number")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Valor")
+                    b.Property<string>("cpf")
+                        .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<string>("currency")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("item_price")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("order_id")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("order_item_id")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("payments_date")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("product_name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("purchase_date")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("quantity_purchased")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ship_address_1")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ship_address_2")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ship_address_3")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ship_city")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ship_country")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ship_postal_code")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ship_service_level")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ship_state")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("sku")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("upc")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Carga");
                 });

@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 
 namespace BazarTemTudo.Application.Interface
 {
-    public interface ICargaAppService :IAppServiceBase<CargaViewModel>
+    public interface ICargaAppService : IAppServiceBase<CargaViewModel>
     {
+        //Exclusivo de carga... Não precisa ser repetido para as outras...
+      
     }
 }

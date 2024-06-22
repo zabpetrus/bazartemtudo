@@ -21,6 +21,9 @@ namespace BazarTemTudo.Domain.Interface.Service._Base
         bool RemoveById(long id);
 
         IEnumerable<TEntity> FindAll( string args );
-      
+
+        void AddRange(IEnumerable<TEntity> entities);
+
+
     }
 }

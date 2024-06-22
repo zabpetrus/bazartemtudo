@@ -17,7 +17,7 @@ namespace BazarTemTudo.InfraData.AuxiliarContexts
         public PostgresContext CreateDbContext(string[] args)
         {
 
-            var optionsBuilder = new DbContextOptionsBuilder<SQLiteContext>();
+            var optionsBuilder = new DbContextOptionsBuilder<ApplicationDBContext>();
             optionsBuilder.UseSqlite("data source=J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\Database\\bazarDatabase.db");
             return new PostgresContext(optionsBuilder.Options);
         }

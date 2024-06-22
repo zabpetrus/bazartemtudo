@@ -14,3 +14,5 @@ J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\obj\Debug\net8.0\BazarTemTud
 J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\obj\Debug\net8.0\refint\BazarTemTudo.Infra.Filesystem.dll
 J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\obj\Debug\net8.0\BazarTemTudo.Infra.Filesystem.pdb
 J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\obj\Debug\net8.0\ref\BazarTemTudo.Infra.Filesystem.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\bin\Debug\net8.0\BazarTemTudo.Application.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.Infra.Filesystem\bin\Debug\net8.0\BazarTemTudo.Application.pdb

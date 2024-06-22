@@ -15,6 +15,8 @@ namespace BazarTemTudo.InfraData.Mapping
         {
             CreateMap<Clientes, ClientesViewModel>();
             CreateMap<ClientesViewModel, Clientes>();
+            CreateMap<Carga, CargaViewModel>();
+            CreateMap<CargaViewModel, Carga>();
         }
     }
 }

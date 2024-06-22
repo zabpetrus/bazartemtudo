@@ -12,10 +12,10 @@ using System.Threading.Tasks;
 
 namespace BazarTemTudo.InfraData.Context
 {
-    public class SQLiteContext : IdentityDbContext<Usuarios>
+    public class ApplicationDBContext : IdentityDbContext<Usuarios>
     {
 
-        public SQLiteContext(DbContextOptions<SQLiteContext> options) : base(options)
+        public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
         {
         }
 
@@ -25,7 +25,7 @@ namespace BazarTemTudo.InfraData.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Notification>().HasNoKey();
-            modelBuilder.Entity<Carga>().HasNoKey();
+            //modelBuilder.Entity<Carga>().HasNoKey();
             base.OnModelCreating(modelBuilder);
         }
 

@@ -12,7 +12,7 @@ namespace BazarTemTudo.InfraData.Repository
 {
     public class CargaRepository : RepositoryBase<Carga>, ICargaRepository
     {
-        public CargaRepository(SQLiteContext context) : base(context)
+        public CargaRepository(ApplicationDBContext context) : base(context)
         {
         }
     }

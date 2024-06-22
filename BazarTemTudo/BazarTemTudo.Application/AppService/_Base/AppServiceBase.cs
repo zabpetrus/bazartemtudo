@@ -37,6 +37,19 @@ namespace BazarTemTudo.Application.AppService._Base
             }
         }
 
+        public void AddRange(IEnumerable<VM> entities)
+        {
+            try
+            {
+                var all = _mapper.Map<List<M>>(entities);
+                _serviceBase.AddRange(all);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString(), ex);
+            }
+        }
+
         public IEnumerable<VM> GetAll()
         {
             try

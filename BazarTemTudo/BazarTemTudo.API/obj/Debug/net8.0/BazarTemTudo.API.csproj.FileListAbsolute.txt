@@ -384,3 +384,5 @@ J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\refint\BazarTemTudo.API.
 J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.pdb
 J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\BazarTemTudo.API.genruntimeconfig.cache
 J:\bazar\BazarTemTudo\BazarTemTudo.API\obj\Debug\net8.0\ref\BazarTemTudo.API.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.API\bin\Debug\net8.0\BazarTemTudo.Infra.Filesystem.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.API\bin\Debug\net8.0\BazarTemTudo.Infra.Filesystem.pdb

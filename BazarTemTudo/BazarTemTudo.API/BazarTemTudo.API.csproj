@@ -30,7 +30,7 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="8.0.6" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.6.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.6.0" />
   </ItemGroup>
 
@@ -38,6 +38,7 @@
     <ProjectReference Include="..\BazarTemTudo.Application\BazarTemTudo.Application.csproj" />
     <ProjectReference Include="..\BazarTemTudo.CrossCutting\BazarTemTudo.CrossCutting.csproj" />
     <ProjectReference Include="..\BazarTemTudo.Domain\BazarTemTudo.Domain.csproj" />
+    <ProjectReference Include="..\BazarTemTudo.Infra.Filesystem\BazarTemTudo.Infra.Filesystem.csproj" />
     <ProjectReference Include="..\BazarTemTudo.InfraData\BazarTemTudo.InfraData.csproj" />
     <ProjectReference Include="..\BazarTemTudo.Test\BazarTemTudo.Test.csproj" />
   </ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using BazarTemTudo.Domain.Entities;
+using BazarTemTudo.InfraData.Context.Configuration;
 using Flunt.Notifications;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -25,6 +26,9 @@ namespace BazarTemTudo.InfraData.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Notification>().HasNoKey();
+            modelBuilder.ApplyConfiguration(new CargaConfig());
+
+
             //modelBuilder.Entity<Carga>().HasNoKey();
             base.OnModelCreating(modelBuilder);
         }

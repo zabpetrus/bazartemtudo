@@ -66,11 +66,21 @@ namespace BazarTemTudo.API.Controllers
         /// Listar Carga Banco
         /// </summary>
         [HttpGet]
-        public IActionResult ListarCargaBanco()
+        public IActionResult ListarArquivos()
         {
             var data = _appService.GetAll();
             var jsonResult =data.ToJson();
             return Ok(jsonResult);
+        }
+
+
+
+     
+
+        [HttpDelete]
+        public IActionResult DeleteCarga()
+        {
+            return Ok();
         }
     }
 }

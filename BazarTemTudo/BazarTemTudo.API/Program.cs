@@ -16,17 +16,40 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+
+if (builder.Configuration.GetSection("DatabaseProvider").Value == "SQLite")
+{
+    var conexao1 = builder.Configuration.GetConnectionString("DefaultConnection");
+    builder.Services.AddDbContextPool<ApplicationDBContext>(options => options.UseSqlite(conexao1));
+}
+
+else if (builder.Configuration.GetSection("DatabaseProvider").Value == "SQLServer")
+{
+    var conexao2 = builder.Configuration.GetConnectionString("SecondConnection");
+    builder.Services.AddDbContextPool<ApplicationDBContext>(options => options.UseSqlServer(conexao2));
+}
+else if (builder.Configuration.GetSection("DatabaseProvider").Value == "PostgreSQL")
+{
+    var conexao3 = builder.Configuration.GetConnectionString("ThirdConnection");
+    builder.Services.AddDbContextPool<ApplicationDBContext>(options => options.UseNpgsql(conexao3));
+}
+else
+{
+    throw new InvalidOperationException("Provider de banco de dados não suportado ou não especificado.");
+}
 
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
     options.UseSqlite(

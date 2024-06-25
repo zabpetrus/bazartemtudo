@@ -13,7 +13,7 @@ namespace BazarTemTudo.InfraData.Context.Configuration
     {
         public void Configure(EntityTypeBuilder<Carga> builder)
         {
-            builder.ToTable("Carga");
+            
 
             builder.HasKey(e => e.Id);
             builder.Property(e => e.Id)
@@ -42,6 +42,8 @@ namespace BazarTemTudo.InfraData.Context.Configuration
             builder.Property(e => e.ship_state).IsRequired().HasMaxLength(100);
             builder.Property(e => e.ship_postal_code).IsRequired().HasMaxLength(20);
             builder.Property(e => e.ship_country).IsRequired().HasMaxLength(100);
+
+            builder.ToTable("Carga");
         }
     }
 }

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BazarTemTudo.InfraData")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe40c38f045151d5cc7fc658bb6e63149a1593ad")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f182286427a75a82f2730648ec56ec7765750d1")]
 [assembly: System.Reflection.AssemblyProductAttribute("BazarTemTudo.InfraData")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BazarTemTudo.InfraData")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

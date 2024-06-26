@@ -72,13 +72,12 @@ namespace BazarTemTudo.API.Controllers
             var jsonResult =data.ToJson();
             return Ok(jsonResult);
         }
-
-
-
-     
-
+        /// <summary>
+        /// Truncate Carga
+        /// </summary>
+        /// <returns>An IActionResult.</returns>
         [HttpDelete]
-        public IActionResult DeleteCarga()
+        public IActionResult TruncateCarga()
         {
             return Ok();
         }

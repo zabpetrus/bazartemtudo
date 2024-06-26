@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="TL2"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{1CC51C06-84E8-4EC7-975C-993F106FBD90}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{A591B38A-8FE3-4948-A8FF-638A36A4DD38}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -244,9 +244,9 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{6870B08A-D78A-4B31-B2A6-F7C8719DD539}"
+          SQLTask:Connection="{EC22FFFA-F9CA-4B86-A174-32EF6F612EB6}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="   CREATE TABLE Carga&#xA;&#x9;(&#xA;&#x9;&#x9;[codigoPedido] VARCHAR(50) NOT NULL,&#xA;&#x9;&#x9;[dataPedido] DATETIME2 NOT NULL,&#xA;&#x9;&#x9;[sku] VARCHAR(50) NOT NULL,&#xA;&#x9;&#x9;[upc] VARCHAR(50) NOT NULL,&#xA;&#x9;&#x9;[nomeProduto] VARCHAR(150) NOT NULL,&#xA;&#x9;&#x9;[descricao] VARCHAR(150) NOT NULL,&#xA;&#x9;&#x9;[qte] INT  NOT NULL,&#xA;&#x9;&#x9;[valor] DECIMAL(10,2) NOT NULL,&#xA;&#x9;&#x9;[fornecedor] VARCHAR(50) NOT NULL,&#xA;&#x9;&#x9;[fornecedor_cnpj]VARCHAR(30) NOT NULL,&#xA;&#x9;&#x9;[frete] DECIMAL(10,2)  NOT NULL,&#xA;&#x9;&#x9;[email] VARCHAR(50) NOT NULL,&#xA;&#x9;&#x9;[cpf] VARCHAR(30) NOT NULL,&#xA;&#x9;&#x9;[nomeComprador] VARCHAR(150) NOT NULL,&#xA;&#x9;&#x9;[enderecoEntrega] VARCHAR(150) NOT NULL,&#xA;&#x9;&#x9;[cep] VARCHAR(10) NOT NULL,&#xA;&#x9;&#x9;[uf] VARCHAR(2) NOT NULL,&#xA;&#x9;&#x9;[pais] VARCHAR(30) NOT NULL&#xA;&#x9;)&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="USE [BazarDB];&#xA;GO&#xA;&#xA;IF OBJECT_ID('dbo.Carga', 'U') IS NOT NULL&#xA;    DROP TABLE dbo.Carga;&#xA;GO&#xA;&#xA;CREATE TABLE Carga(&#xA;    order_id INT NOT NULL,&#xA;    order_item_id INT NOT NULL,&#xA;    purchase_date DATETIME2 NOT NULL,&#xA;    payments_date DATETIME2 NOT NULL,&#xA;    buyer_email VARCHAR(50) NOT NULL,&#xA;    buyer_name VARCHAR(80) NOT NULL,&#xA;    cpf VARCHAR(30) NOT NULL,&#xA;    buyer_phone_number VARCHAR(30) NOT NULL,&#xA;    sku VARCHAR(50) NOT NULL,&#xA;    upc VARCHAR(50) NOT NULL,&#xA;    product_name VARCHAR(150) NOT NULL,&#xA;    quantity_purchased INT NOT NULL,&#xA;    currency VARCHAR(10) NOT NULL,&#xA;    item_price DECIMAL(18,2) NOT NULL,&#xA;    ship_service_level VARCHAR(30) NOT NULL,&#xA;    ship_address_1 VARCHAR(100) NOT NULL,&#xA;    ship_address_2 VARCHAR(100) NULL,&#xA;    ship_address_3 VARCHAR(100) NULL,&#xA;    ship_city VARCHAR(50) NOT NULL,&#xA;    ship_state VARCHAR(50) NOT NULL,&#xA;    ship_postal_code VARCHAR(10) NOT NULL,&#xA;    ship_country VARCHAR(30) NOT NULL&#xA;);&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -283,7 +283,7 @@
                   dataType="System.String"
                   description="O nome do objeto de banco de dados no qual copiar dados."
                   expressionType="Notify"
-                  name="BulkInsertTableName">[dbo].[Carga]</property>
+                  name="BulkInsertTableName">[dbo].[Checkout]</property>
                 <property
                   dataType="System.Boolean"
                   description="Especifica que qualquer restrição no objeto de destino será verificada durante a operação de cópia de dados. Corresponde a opção de inserção em massa CHECK_CONSTRAINTS."
@@ -346,298 +346,30 @@
                   refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server]"
                   hasSideEffects="true"
                   name="Entrada de Destino do SQL Server">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[cpf]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="cpf"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[cpf]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[cpf]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[sku]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="sku"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[sku]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[sku]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[upc]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="upc"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[upc]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[upc]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[currency]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="currency"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[currency]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[currency]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[order-id]"
-                      cachedDataType="i4"
-                      cachedName="order-id"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[order_id]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[order-id]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[order-item-id]"
-                      cachedDataType="i4"
-                      cachedName="order-item-id"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[order_item_id]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[order-item-id]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[purchase-date]"
-                      cachedDataType="dbTimeStamp2"
-                      cachedName="purchase-date"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[purchase_date]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[purchase-date]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[payments-date]"
-                      cachedDataType="dbTimeStamp2"
-                      cachedName="payments-date"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[payments_date]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[payments-date]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[buyer-email]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="100"
-                      cachedName="buyer-email"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[buyer_email]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[buyer-email]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[buyer-name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="buyer-name"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[buyer_name]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[buyer-name]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[buyer-phone-number]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="buyer-phone-number"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[buyer_phone_number]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[buyer-phone-number]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[product-name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="100"
-                      cachedName="product-name"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[product_name]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[product-name]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[quantity-purchased]"
-                      cachedDataType="i4"
-                      cachedName="quantity-purchased"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[quantity_purchased]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[quantity-purchased]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[item-price]"
-                      cachedDataType="decimal"
-                      cachedName="item-price"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[item_price]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[item-price]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[ship-service-level]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="ship-service-level"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ship_service_level]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[ship-service-level]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[ship-address-1]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="ship-address-1"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ship_address_1]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[ship-address-1]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[ship-address-2]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="ship-address-2"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ship_address_2]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[ship-address-2]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[ship-address-3]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="ship-address-3"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ship_address_3]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[ship-address-3]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[ship-city]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="ship-city"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ship_city]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[ship-city]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[ship-state]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="ship-state"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ship_state]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[ship-state]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[ship-postal-code]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="ship-postal-code"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ship_postal_code]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[ship-postal-code]" />
-                    <inputColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].Columns[ship-country]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="ship-country"
-                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ship_country]"
-                      lineageId="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[ship-country]" />
-                  </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[order_id]"
+                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Checkout_ID]"
                       dataType="i4"
-                      name="order_id" />
+                      name="Checkout_ID" />
                     <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[order_item_id]"
+                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[Pedido_id]"
                       dataType="i4"
-                      name="order_item_id" />
+                      name="Pedido_id" />
                     <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[purchase_date]"
-                      dataType="dbTimeStamp2"
-                      name="purchase_date"
-                      scale="7" />
-                    <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[payments_date]"
-                      dataType="dbTimeStamp2"
-                      name="payments_date"
-                      scale="7" />
-                    <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[buyer_email]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="buyer_email" />
-                    <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[buyer_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="80"
-                      name="buyer_name" />
-                    <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[cpf]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      name="cpf" />
-                    <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[buyer_phone_number]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      name="buyer_phone_number" />
-                    <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[sku]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="sku" />
-                    <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[upc]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="upc" />
-                    <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[product_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="150"
-                      name="product_name" />
-                    <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[quantity_purchased]"
-                      dataType="i4"
-                      name="quantity_purchased" />
-                    <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[currency]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="currency" />
-                    <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[item_price]"
+                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[total_pedido]"
                       dataType="numeric"
-                      name="item_price"
-                      precision="18"
+                      name="total_pedido"
+                      precision="10"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ship_service_level]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      name="ship_service_level" />
+                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[status_despacho]"
+                      dataType="i4"
+                      name="status_despacho" />
                     <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ship_address_1]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="ship_address_1" />
-                    <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ship_address_2]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="ship_address_2" />
-                    <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ship_address_3]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="ship_address_3" />
-                    <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ship_city]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="ship_city" />
-                    <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ship_state]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="ship_state" />
-                    <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ship_postal_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="ship_postal_code" />
-                    <externalMetadataColumn
-                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[ship_country]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      name="ship_country" />
+                      refId="Package\Tarefa Fluxo de Dados\Destino do SQL Server.Inputs[Entrada de Destino do SQL Server].ExternalColumns[data_despacho]"
+                      dataType="dbTimeStamp"
+                      name="data_despacho" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1334,13 +1066,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="191,42"
-          Id="Package\Tarefa Fluxo de Dados"
-          TopLeft="193,140" />
-        <NodeLayout
           Size="182,42"
           Id="Package\Tarefa Executar SQL"
           TopLeft="198,47" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Tarefa Fluxo de Dados"
+          TopLeft="193,140" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição]"
           TopLeft="288.75,89">
@@ -1374,14 +1106,14 @@
         <NodeLayout
           Size="192,42"
           Id="Package\Tarefa Fluxo de Dados\Destino do SQL Server"
-          TopLeft="182,173" />
+          TopLeft="175,173" />
         <NodeLayout
           Size="213,46"
           Id="Package\Tarefa Fluxo de Dados\Origem de Arquivo Simples"
           TopLeft="164,25" />
         <EdgeLayout
           Id="Package\Tarefa Fluxo de Dados.Paths[Saída de Origem de Arquivo Simples]"
-          TopLeft="274.25,71">
+          TopLeft="270.75,71">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"

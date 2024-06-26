@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BazarTemTudo.Application.Interface
 {
-    public interface IRequsicaoCompraAppService : IAppServiceBase<RequisicaoCompraViewModel>
+    public interface IRequisicaoCompraAppService : IAppServiceBase<RequisicaoCompraViewModel>
     {
     }
 }

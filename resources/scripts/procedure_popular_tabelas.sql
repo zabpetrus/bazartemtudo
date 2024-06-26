@@ -10,164 +10,208 @@ CREATE PROCEDURE PopularTabelas
 AS
 BEGIN
 		-- Inserindo em Produtos baseado no select de carga e verificando se não está duplicado
-		INSERT INTO Produtos ( Produto_name, Produto_sku, Produto_upc, Produto_item_price) 
-		SELECT DISTINCT Carga.nomeProduto,Carga.descricao, Carga.sku, Carga.upc, Carga.valor,Carga.frete, Carga.fornecedor, Carga.fornecedor_cnpj FROM Carga 
-		LEFT JOIN 
-		Produtos ON Produtos.upc = Carga.upc
-		WHERE NOT EXISTS(
-		SELECT 1 FROM Produtos WHERE Produtos.upc = Carga.upc);
+-- Inserindo Fornecedores
 
-		PRINT 'INSERINDO EM PRODUTOS';
+INSERT INTO Fornecedores(
+forn_name, forn_cnpj,	forn_email, forn_cidade, forn_pais) 
+SELECT 'Atacadao Auto Market', '99.250.886/0001-99', 'atacadaoauto@comercial.com', 'Sao Paulo', 'BR'
+WHERE NOT EXISTS (SELECT 1 FROM Fornecedores WHERE forn_cnpj = '99.250.886/0001-99');
 
-	
-			--- Inserindo o cliente e verificando se o cpf não está cadastrado
-		IF NOT EXISTS ( SELECT * FROM Clientes INNER JOIN Carga ON Clientes.cpf = Carga.cpf )
-		BEGIN 
-			INSERT INTO Clientes (Nome, email, cpf, uf, pais ) 
-			SELECT DISTINCT Carga.nomeComprador, Carga.email, Carga.cpf, Carga.uf, Carga.pais FROM dbo.Carga 
-			LEFT JOIN Clientes ON Clientes.cpf = Carga.cpf  
-			WHERE Clientes.cpf IS NULL;	
-		END
+INSERT INTO Fornecedores (
+forn_name, forn_cnpj,	forn_email, forn_cidade, forn_pais) 
+SELECT 'AlibabaDropship', '43.372.061/0001-92', 'alibabadrophopcommerce@marketrio.com', 'Rio de Janeiro','USA'
+WHERE NOT EXISTS (SELECT 1 FROM Fornecedores WHERE forn_cnpj = '43.372.061/0001-92');
 
-		PRINT 'INSERINDO EM CLIENTES';
+INSERT INTO Fornecedores (
+forn_name, forn_cnpj,	forn_email, forn_cidade, forn_pais) 
+SELECT 'Muambeiros Atacadao', '75.590.367/0001-01', 'commerce@muambeirosatacadao.com.br', 'Brasilia', 'BR'
+WHERE NOT EXISTS (SELECT 1 FROM Fornecedores WHERE forn_cnpj = '75.590.367/0001-01');
 
-		-- Populando pedidos
-		INSERT INTO [dbo].[Pedidos]
-				   ([codigo_Pedido]
-				   ,[cliente_ID]
-				   ,[data_Pedido]
-				   ,[endereco_entrega]
-				   ,[cep]
-				   ,[status_pedido])
-     
-				SELECT DISTINCT 
-				Carga.codigoPedido, 
-				Clientes.cliente_id, 
-				Carga.dataPedido, 
-				Carga.enderecoEntrega, 
-				Carga.cep,
-				SP.Status_ID 
-				FROM Carga
-				INNER JOIN Clientes ON Clientes.cpf = Carga.cpf
-				INNER JOIN StatusPedido AS SP ON SP.Nome_Status = 'Pendente' ORDER BY Carga.dataPedido;  
+INSERT INTO Fornecedores (
+forn_name, forn_cnpj,	forn_email, forn_cidade, forn_pais) 
+SELECT 'Emporio Tabajara', '57.457.143/0001-44', 'emporiotabajara@marketcommerce.com', 'Salvador', 'BR'
+WHERE NOT EXISTS (SELECT 1 FROM Fornecedores WHERE forn_cnpj = '57.457.143/0001-44');
+
+PRINT 'Fornecedores populados';
 
 
-		PRINT 'INSERINDO EM PEDIDOS';
+-- Inserindo em Transportadoras
+INSERT INTO [dbo].[Transportadoras]
+           ([Nome_Transportadora]
+           ,[CNPJ_Transportadora]
+           ,[Tipo_Servico]
+           ,[Custo_Frete])
+     VALUES
+           ('America Transportes', '97.064.519/0001-75', 'Padrao', 25.99),
+           ('Rupiao Entregas Brasil LTDA', '01.503.315/0001-14', 'Padrao', 19.99),
+		   ('Calango Express', '46.458.091/0001-04', 'Expressa', 55.99),
+		   ('Guanabara Fretes e Entregas LTDA', '17.342.627/0001-23', 'Expressa', 45.99),
+		   ('Ronaldo Entregas Express', '49.623.352/0001-92', 'Expressa', 60.99);
 
-		-- Populado Itens Pedidos
-		INSERT INTO ItensPedidos( pedido_ID, produto_ID, quantidade,preco_unitario, disponivel) 
-		SELECT DISTINCT 
-			Pedidos.pedido_id,
-			Produtos.produto_id, 
-			Carga.qte, 
-			Carga.valor,
-			0
-			FROM Carga 
-			LEFT JOIN Produtos ON Carga.upc = Produtos.upc AND Carga.sku = Produtos.sku
-			LEFT JOIN Pedidos ON Pedidos.codigo_Pedido = Carga.codigoPedido;
-
-
-		PRINT 'INSERINDO EM ITENS PEDIDOS';
+PRINT 'Transportadoras populadas';
 
 
-		-- Populando checkout
-		INSERT INTO Checkout( Pedido_id, total_pedido, status_despacho, data_despacho) 
+-- Inserindo atraves da carga
 
-		SELECT DISTINCT Pr.pedido_id, 
-		SUM((Itr.quantidade * Itr.preco_unitario) + Pd.frete_produto) AS total_pedido, 
-		(SELECT StatusDespacho.IDStatus FROM StatusDespacho WHERE StatusDespacho.NomeStatus = 'Em processamento' ) AS status_despacho,
-		(SELECT GETDATE() ) AS data_despacho
-		FROM 
-		Pedidos Pr 
-		INNER JOIN ItensPedidos Itr ON Pr.pedido_id = Itr.pedido_ID 
-		INNER JOIN Produtos Pd ON Pd.produto_id = Itr.produto_ID
-		WHERE NOT EXISTS (
-			SELECT 1
-			FROM Checkout ck
-			WHERE ck.Pedido_id = Pr.pedido_id
-		)
-		GROUP BY  Pr.pedido_id, Pr.codigo_Pedido;
+INSERT INTO [dbo].[Clientes]
+           (cliente_name ,cliente_email ,cliente_cpf,cliente_phone_number)
 
+	SELECT DISTINCT 
+	Ca.buyer_name, Ca.buyer_email, 	Ca.cpf, Ca.buyer_phone_number 
+	FROM Carga Ca  
+	LEFT JOIN [Clientes] ON Clientes.cliente_cpf = Ca.cpf 
+	WHERE NOT EXISTS (  SELECT 1  FROM [Clientes] Cl  WHERE Cl.cliente_cpf = Ca.cpf );
 
-		PRINT 'INSERINDO EM CHECKOUT';
+	PRINT 'Clientes populados';
 
 
 
-		-- Inserindo Fornecedores
-		INSERT INTO Fornecedores (Nome_fornecedor, CNPJ ) 
-		SELECT DISTINCT Carga.fornecedor, Carga.fornecedor_cnpj FROM Carga 
-		 LEFT JOIN 
-		 Fornecedores ON Fornecedores.CNPJ = Carga.fornecedor_cnpj
-		 WHERE NOT EXISTS(
-		 SELECT 1 FROM Fornecedores Fr WHERE Fr.CNPJ = Carga.fornecedor_cnpj
-		 );
+INSERT INTO [dbo].[Produtos]
+           (produto_name ,produto_sku ,produto_upc,produto_item_price)
 
-		PRINT 'INSERINDO EM FORNECEDORES';
+			SELECT DISTINCT Ca.product_name, ca.sku, ca.upc,ca.item_price FROM Carga Ca
+			LEFT JOIN Produtos ON Produtos.produto_upc = Ca.upc WHERE NOT EXISTS 
+			(SELECT 1 FROM Produtos WHERE Produtos.produto_upc = Ca.upc );
+
+		PRINT 'Produtos populado';
 
 
-		-- GErando Nota Fiscal
-		INSERT INTO NotaFiscal
-		( Pedido_ID, Valor_Total, Data_Emissao)
-		SELECT DISTINCT Pedidos.pedido_id, Checkout.total_pedido, Checkout.data_despacho FROM Pedidos
-		INNER JOIN Checkout ON Checkout.Pedido_id = Pedidos.pedido_id 
-		WHERE NOT EXISTS(
-		SELECT 1 FROM NotaFiscal nf WHERE nf.Pedido_ID = Checkout.Pedido_id
-		);
 
-		PRINT 'INSERINDO EM NOTA FISCAL';
+INSERT INTO [dbo].[Pedidos]
+    ([pedido_cliente_id]
+    ,[pedido_def_id]
+    ,[pedido_purchase_date]
+    ,[pedido_payments_date]
+    ,[pedido_ship_city]
+    ,[pedido_ship_state]
+    ,[pedido_ship_postal_code]
+    ,[pedido_ship_address_1]
+    ,[pedido_ship_address_2]
+    ,[pedido_ship_address_3]
+    ,[pedido_ship_country]
+    ,[pedido_currency]
+    ,[pedido_ship_service_level])
+SELECT DISTINCT
+    Clientes.cliente_id AS pedido_cliente_id,
+    Carga.order_id AS pedido_def_id,
+    Carga.purchase_date AS pedido_purchase_date,
+    Carga.payments_date AS pedido_payments_date,
+    Carga.ship_city AS pedido_ship_city,
+    Carga.ship_state AS pedido_ship_state,
+    Carga.ship_postal_code AS pedido_ship_postal_code,
+    Carga.ship_address_1 AS pedido_ship_address_1,
+    Carga.ship_address_2 AS pedido_ship_address_2,
+    Carga.ship_address_3 AS pedido_ship_address_3,
+    Carga.ship_country AS pedido_ship_country,
+    Carga.currency AS pedido_currency,
+    Carga.ship_service_level AS pedido_ship_service_level
+FROM Carga
+LEFT JOIN Clientes ON Clientes.cliente_cpf = Carga.cpf
+LEFT JOIN Pedidos ON Pedidos.pedido_def_id = Carga.order_id
+WHERE Pedidos.pedido_def_id IS NULL;
 
-		-- Gerando o estoque
-		INSERT into Estoque (Prod_ID, Quantidade, Estoque_Minimo)
-		SELECT 
-		Pr.produto_id AS Produto_id,
-		COALESCE( SUM( Es.quantidade ), 0) AS Quantidade,
-		COALESCE ( SUM (Ipr.quantidade), 0) AS Estoque_Minimo
-		FROM Produtos Pr
-		LEFT JOIN ItensPedidos IPr ON Pr.produto_id = Ipr.produto_ID
-		LEFT JOIN Estoque Es ON Es.Prod_ID = Pr.produto_id
-		GROUP BY Pr.produto_id;
-
-
-		PRINT 'INSERINDO EM ESTOQUE';
-
-
-		-- Inserindo Requisição de Compra
-		INSERT INTO [dbo].[RequisicaoCompra]
-			([Fornecedor_id]
-			,[Produto_id]
-			,[qte]
-			,[compra_status]
-			,[total]
-			,[dataEmissao])		     
-		SELECT DISTINCT
-			Fornecedores.fornecedor_id AS Fornecedor_id,
-			Produtos.produto_id AS Produto_id,
-			(SELECT SUM(quantidade) * 10 FROM ItensPedidos WHERE ItensPedidos.produto_ID = Produtos.produto_id) AS total_quantidade,
-			(SELECT Status_ID FROM StatusPedido WHERE StatusPedido.Nome_Status = 'Pendente') AS compra_status,
-			(SELECT SUM(preco_unitario * quantidade) FROM ItensPedidos WHERE ItensPedidos.produto_ID = Produtos.produto_id) AS total,
-			GETDATE() AS dataEmissao
-		FROM Produtos
-		INNER JOIN Fornecedores ON Fornecedores.CNPJ = Produtos.fornecedor_CNPJ ORDER BY total;
-
-		PRINT 'INSERINDO EM REQUISICAO DE COMPRAS';
+PRINT 'Orders populado (Pedidos)';
 
 
-		-- Inserindo em Despacho de Mercadorias
 
-		INSERT INTO [dbo].[DespachoMercadorias]
-				   ([Pedido_ID],[Transportadora_ID],[Status_Entrega],[Data_Liberacao])
-    
+INSERT INTO [dbo].[ItensPedidos]
+    ([ip_pedido_id]
+    ,[ip_produto_id]
+    ,[ip_pedido_item_id]
+    ,[ip_produto_price]
+    ,[ip_quantity_purchased]
+    ,[ip_item_status])
+SELECT 
+    od.pedido_ID AS ip_pedido_id,
+    pr.produto_id AS ip_produto_id,
+    ca.order_item_id AS ip_pedido_item_id,
+    pr.produto_item_price AS ip_produto_price,
+    ca.quantity_purchased AS ip_quantity_purchased,
+    'Processing' AS ip_item_status -- Definindo o status padrão para 'Processing'
+FROM Carga ca
+LEFT JOIN Pedidos od ON od.pedido_def_id= ca.order_id
+LEFT JOIN Produtos pr ON pr.produto_upc = ca.upc
+LEFT JOIN ItensPedidos oi ON oi.ip_pedido_id = ca.order_item_id AND oi.ip_pedido_id = pr.produto_id
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM ItensPedidos ip
+    WHERE ip.ip_pedido_id = od.pedido_ID 
+    AND ip.ip_produto_id = pr.produto_id
+);
+
+	PRINT 'OrdersItens populados (Itens dos pedidos)';
+
+
+INSERT INTO [dbo].[Estoque]
+           ([Produto_id]
+           ,[is_actual_qte]
+           ,[is_minimal_qte])
 			SELECT DISTINCT 
-			Pe.pedido_id AS Pedido_ID,
-			( SELECT TOP(1) Tr.Transportadora_id FROM Transportadora Tr WHERE Tr.Tipo_Servico = 'Padrao' ORDER BY tr.Custo_Frete ASC ) As Transportadora_ID,
-			( SELECT St.IDStatus FROM StatusDespacho St WHERE St.NomeStatus = 'Em processamento' ) AS Status_Entrega,
-			( SELECT CONVERT(date, GETDATE())) AS Data_Liberacao
-			FROM Pedidos Pe;
+			oi.ip_produto_id, 
+			0 AS qte,
+			SUM( oi.ip_quantity_purchased ) AS minimal_qte
+			FROM ItensPedidos oi 
+			LEFT JOIN
+			Estoque it ON it.Produto_id = oi.ip_produto_id
+				WHERE NOT EXISTS (
+				SELECT 1 FROM Estoque WHERE Estoque.Produto_id = oi.ip_produto_id )
+				GROUP BY oi.ip_produto_id;
 
-			PRINT 'INSERINDO EM DESPACHO DE MERCADORIAS';
-		;
+	PRINT 'Internal Storage populado (Estoque)';
 
 
 
 
-END
+INSERT INTO [dbo].[RequisicoesCompra]
+    ([pr_produto_id]
+    ,[pr_fornecedor_id]
+    ,[pr_quantidade]
+    ,[pr_preco_unitario]
+    ,[pr_preco_total]
+    ,[pr_data_requisicao]
+    ,[pr_status_pedido])
+SELECT 
+    pr.produto_id AS pr_produto_id,
+    MAX(prx.forn_id) AS pr_fornecedor_id,
+    SUM(oi.ip_quantity_purchased) AS pr_quantidade,
+    oi.ip_produto_price AS pr_preco_unitario,
+    SUM(oi.ip_produto_price * oi.ip_quantity_purchased * 10) AS pr_preco_total,
+    GETDATE() AS pr_data_requisicao,
+    0 AS pr_status_pedido
+FROM Produtos pr
+INNER JOIN ItensPedidos oi ON oi.ip_produto_id = pr.produto_id
+INNER JOIN Pedidos od ON od.pedido_ID = oi.ip_pedido_id
+LEFT JOIN Fornecedores prx ON prx.forn_name = od.pedido_ship_city
+LEFT JOIN RequisicoesCompra rc ON rc.pr_produto_id = oi.ip_produto_id
+WHERE rc.pr_produto_id IS NULL
+AND oi.ip_produto_price * oi.ip_quantity_purchased * 10 = (
+    SELECT MAX(oi2.ip_produto_price * oi2.ip_quantity_purchased * 10)
+    FROM ItensPedidos oi2
+    WHERE oi2.ip_produto_id = pr.produto_id
+)
+GROUP BY pr.produto_id, oi.ip_produto_price
+ORDER BY pr_preco_total DESC;
+
+
+
+PRINT 'Purchase_Requests Populado (Requisicao de compra)';
+
+-- Populando notas fiscais
+
+INSERT INTO [dbo].[NotasFiscais]
+           ([Pedido_ID]
+           ,[Valor_Total]
+           ,[Data_Emissao])
+    
+SELECT 
+Pe.pedido_ID, 
+Ck.total_pedido,
+GETDATE() AS CurrentTime
+FROM Pedidos Pe 
+INNER JOIN Checkout Ck ON Ck.Pedido_id = Pe.pedido_ID ;
+
+
+		
+
+
+END;

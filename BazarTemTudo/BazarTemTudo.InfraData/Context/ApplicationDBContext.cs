@@ -22,12 +22,39 @@ namespace BazarTemTudo.InfraData.Context
 
 
         public DbSet<Carga> Carga { get; set; }
+        public DbSet<Clientes> Clientes { get; set; }
+        public DbSet<Checkout> Checkout { get; set; }
+        public DbSet<DespachoMercadorias> DespachoMercadorias { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<Estoque> Estoque { get; set; }
+        public DbSet<Fornecedores> Fornecedores { get; set; }
+        public DbSet<ItensPedidos> ItensPedidos { get; set; }
+        public DbSet<NotaFiscal> NotasFiscais { get; set; }
+        public DbSet<Perfil> Perfis { get; set; }
+        public DbSet<Produtos> Produtos { get; set; }
+        public DbSet<RequisicaoCompra> RequisicoesCompra { get; set; }
+        public DbSet<Transportadoras> Transportadoras { get; set; }
+        public DbSet<Usuarios> Usuarios { get; set; }
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Notification>().HasNoKey();
             modelBuilder.ApplyConfiguration(new CargaConfig());
-
+            modelBuilder.ApplyConfiguration(new CheckoutConfig());
+            modelBuilder.ApplyConfiguration(new ClientesConfig());
+            modelBuilder.ApplyConfiguration(new DespachoMercadoriasConfig());
+            modelBuilder.ApplyConfiguration(new EnderecosConfig());
+            modelBuilder.ApplyConfiguration(new FornecedoresConfig());
+            modelBuilder.ApplyConfiguration(new ItensPedidosConfig());
+            modelBuilder.ApplyConfiguration(new NotaFiscalConfig());
+            modelBuilder.ApplyConfiguration(new PedidosConfig());
+            modelBuilder.ApplyConfiguration(new PerfilConfig());
+            modelBuilder.ApplyConfiguration(new ProdutosConfig());
+            modelBuilder.ApplyConfiguration(new RequisicaoCompraConfig());
+            modelBuilder.ApplyConfiguration(new TransportadorasConfig());
+            modelBuilder.ApplyConfiguration(new UsuarioConfig());
 
             //modelBuilder.Entity<Carga>().HasNoKey();
             base.OnModelCreating(modelBuilder);

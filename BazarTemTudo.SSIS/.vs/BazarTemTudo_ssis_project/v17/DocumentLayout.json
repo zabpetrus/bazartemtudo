@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "J:\\bazar\\BazarTemTudo_SSIS\\",
+  "WorkspaceRootPath": "J:\\bazar\\BazarTemTudo.SSIS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9B13A745-0D35-4BF6-B408-EAB1928EB288}|BazarTemTudo\\BazarTemTudo_ssis.dtproj|J:\\bazar\\BazarTemTudo_SSIS\\BazarTemTudo\\TL2.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "AbsoluteMoniker": "D:0:0:{9B13A745-0D35-4BF6-B408-EAB1928EB288}|BazarTemTudo\\BazarTemTudo_ssis.dtproj|J:\\bazar\\BazarTemTudo.SSIS\\BazarTemTudo\\TL2.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
       "RelativeMoniker": "D:0:0:{9B13A745-0D35-4BF6-B408-EAB1928EB288}|BazarTemTudo\\BazarTemTudo_ssis.dtproj|solutionrelative:BazarTemTudo\\TL2.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9B13A745-0D35-4BF6-B408-EAB1928EB288}|BazarTemTudo\\BazarTemTudo_ssis.dtproj|J:\\bazar\\BazarTemTudo_SSIS\\BazarTemTudo\\ETL.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "AbsoluteMoniker": "D:0:0:{9B13A745-0D35-4BF6-B408-EAB1928EB288}|BazarTemTudo\\BazarTemTudo_ssis.dtproj|J:\\bazar\\BazarTemTudo.SSIS\\BazarTemTudo\\ETL.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
       "RelativeMoniker": "D:0:0:{9B13A745-0D35-4BF6-B408-EAB1928EB288}|BazarTemTudo\\BazarTemTudo_ssis.dtproj|solutionrelative:BazarTemTudo\\ETL.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
     }
   ],
@@ -18,11 +18,87 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 22,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:1:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:18:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:19:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:20:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:21:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:17:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:16:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:10:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:9:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:8:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:7:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
             },
             {
               "$type": "Bookmark",
@@ -30,15 +106,15 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "Name": "ST:1:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "TL2.dtsx [Design]",
-              "DocumentMoniker": "J:\\bazar\\BazarTemTudo_SSIS\\BazarTemTudo\\TL2.dtsx",
+              "DocumentMoniker": "J:\\bazar\\BazarTemTudo.SSIS\\BazarTemTudo\\TL2.dtsx",
               "RelativeDocumentMoniker": "BazarTemTudo\\TL2.dtsx",
-              "ToolTip": "J:\\bazar\\BazarTemTudo_SSIS\\BazarTemTudo\\TL2.dtsx [Design]",
+              "ToolTip": "J:\\bazar\\BazarTemTudo.SSIS\\BazarTemTudo\\TL2.dtsx [Design]",
               "RelativeToolTip": "BazarTemTudo\\TL2.dtsx [Design]",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVDhPY2QAgqUbD/8H0bjAu49fGG7fvZ8\u002BqTFrFlQIAv7/h\u002BgDGfDv71\u002BcePKi7f9NPZP/59VPSwNrQAJMUJogaK0pZDh\u002B6uxMdEOINqC6pR9MgwwBM6CABUqDQcWCa1AWA0NHghac//k9G0NcZAiYvWj5GjANAxgu\u002BC2rAcYwAGJz6NkxZEe7QUVQAYYBrI9vgDEMwPhffkEFsAFCsfDp\u002B9//D98jYgOqDQwIBiLI5vc/GBjefP/PwMLGARVFABQDQIEGwyCArPnNdwaGf1iSG85ARNb8\u002BhsDwweQAb\u002BBAmgAZyAia371lYHh7MnrDI9/yzA4hhQwlM29/J/BeCbYPSjpABT3MJvf//jP8BZoK4j95TfE7SD5hy\u002B\u002BMFy5846hCyyCZMDUpbugLFxABq75zPU3UDGoAaDchp7C0AHI6TDNyAaAszNRAOpnFHA2nREAjMTvHMVXB8cAAAAASUVORK5CYII=",
               "WhenOpened": "2024-06-07T22:31:47.372Z",
@@ -48,13 +124,12 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "ETL.dtsx [Design]",
-              "DocumentMoniker": "J:\\bazar\\BazarTemTudo_SSIS\\BazarTemTudo\\ETL.dtsx",
+              "DocumentMoniker": "J:\\bazar\\BazarTemTudo.SSIS\\BazarTemTudo\\ETL.dtsx",
               "RelativeDocumentMoniker": "BazarTemTudo\\ETL.dtsx",
               "ToolTip": "J:\\bazar\\BazarTemTudo_SSIS\\BazarTemTudo\\ETL.dtsx [Design]",
-              "RelativeToolTip": "BazarTemTudo\\ETL.dtsx [Design]",
+              "RelativeToolTip": "..\\BazarTemTudo_SSIS\\BazarTemTudo\\ETL.dtsx [Design]",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVDhPY2QAgqUbD/8H0bjAu49fGG7fvZ8\u002BqTFrFlQIAv7/h\u002BgDGfDv71\u002BcePKi7f9NPZP/59VPSwNrQAJMUJogaK0pZDh\u002B6uxMdEOINqC6pR9MgwwBM6CABUqDQcWCa1AWA0NHghac//k9G0NcZAiYvWj5GjANAxgu\u002BC2rAcYwAGJz6NkxZEe7QUVQAYYBrI9vgDEMwPhffkEFsAFCsfDp\u002B9//D98jYgOqDQwIBiLI5vc/GBjefP/PwMLGARVFABQDQIEGwyCArPnNdwaGf1iSG85ARNb8\u002BhsDwweQAb\u002BBAmgAZyAia371lYHh7MnrDI9/yzA4hhQwlM29/J/BeCbYPSjpABT3MJvf//jP8BZoK4j95TfE7SD5hy\u002B\u002BMFy5846hCyyCZMDUpbugLFxABq75zPU3UDGoAaDchp7C0AHI6TDNyAaAszNRAOpnFHA2nREAjMTvHMVXB8cAAAAASUVORK5CYII=",
-              "WhenOpened": "2024-06-07T22:24:24.99Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-06-07T22:24:24.99Z"
             }
           ]
         }

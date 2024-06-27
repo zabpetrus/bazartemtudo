@@ -11,12 +11,28 @@ using System.Threading.Tasks;
 
 namespace BazarTemTudo.Domain.Service
 {
-    public class CargaService : ServiceBase<Carga>, ICargaService
+    public class CargaService : ICargaService
     {
         private readonly ICargaRepository _cargaRepository;
-        public CargaService(ICargaRepository Repository) : base(Repository)
+
+        public CargaService(ICargaRepository cargaRepository)
         {
-            _cargaRepository = Repository;
+            _cargaRepository = cargaRepository;
+        }
+
+        public void CreateMultiples(IEnumerable<Carga> entities)
+        {
+            _cargaRepository.CreateMultiples(entities);
+        }
+
+        public IEnumerable<Carga> GetAll()
+        {
+            return _cargaRepository.GetAll();
+        }
+
+        public bool TruncateCarga()
+        {
+            return _cargaRepository.TruncateCarga();
         }
     }
 }

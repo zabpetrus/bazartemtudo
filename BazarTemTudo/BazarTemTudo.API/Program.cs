@@ -124,7 +124,7 @@ builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddSwaggerGen();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.OperationFilter<FileUploadFilter>();
+   c.OperationFilter<FileUploadFilter>();
 });
 
 var app = builder.Build();

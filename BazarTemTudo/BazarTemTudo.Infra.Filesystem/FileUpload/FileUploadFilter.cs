@@ -13,6 +13,8 @@ namespace BazarTemTudo.Infra.Filesystem.FileUpload
 {
     public class FileUploadFilter : IOperationFilter
     {
+
+     
         public void Apply(OpenApiOperation operation, OperationFilterContext context)
         {
             var formParameters = context.ApiDescription.ParameterDescriptions
@@ -28,14 +30,21 @@ namespace BazarTemTudo.Infra.Filesystem.FileUpload
                 // NOT required for form type
                 return;
             }
-            if (context.ApiDescription.HttpMethod == HttpMethod.Post.Method)
+
+
+            if (context.ApiDescription.HttpMethod == HttpMethod.Post.Method) 
             {
-                var uploadFileMediaType = new OpenApiMediaType()
+                var hasFileRoute = context.ApiDescription.ActionDescriptor.AttributeRouteInfo?.Template?.Contains("File") ?? false;
+
+                if (hasFileRoute)
                 {
-                    Schema = new OpenApiSchema()
+
+                    var uploadFileMediaType = new OpenApiMediaType()
                     {
-                        Type = "object",
-                        Properties =
+                        Schema = new OpenApiSchema()
+                        {
+                            Type = "object",
+                            Properties =
                     {
                         ["files"] = new OpenApiSchema()
                         {
@@ -47,18 +56,20 @@ namespace BazarTemTudo.Infra.Filesystem.FileUpload
                             }
                         }
                     },
-                        Required = new HashSet<string>() { "files" }
-                    }
-                };
+                            Required = new HashSet<string>() { "files" }
+                        }
+                    };
 
-                operation.RequestBody = new OpenApiRequestBody
-                {
-                    Content = { ["multipart/form-data"] = uploadFileMediaType }
-                };
+                        operation.RequestBody = new OpenApiRequestBody
+                        {
+                            Content = { ["multipart/form-data"] = uploadFileMediaType }
+                        };
+                }
+
+             
             }
         }
-
-    
+     
     }
 
     public static class Helper

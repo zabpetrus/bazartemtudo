@@ -14,13 +14,33 @@ using System.Threading.Tasks;
 
 namespace BazarTemTudo.Application.AppService
 {
-    public class CargaAppService : AppServiceBase<CargaViewModel, Carga>, ICargaAppService
+    public class CargaAppService : ICargaAppService
     {
         private readonly ICargaService _cargaService;
+        private readonly IMapper _mapper;
 
-        public CargaAppService(ICargaService serviceBase, IMapper mapper, ILogger<AppServiceBase<CargaViewModel, Carga>> logger) : base(serviceBase, mapper, logger)
+        public CargaAppService(ICargaService cargaService, IMapper mapper)
         {
-            _cargaService = serviceBase;
-        }        
+            _cargaService = cargaService;
+            _mapper = mapper;
+        }
+
+   
+        public void CreateMultiples(IEnumerable<CargaViewModel> entities)
+        {
+            var result = _mapper.Map<List<Carga>>(entities);
+            _cargaService.CreateMultiples(result);
+        }
+
+        public IEnumerable<CargaViewModel> GetAll()
+        {
+           var res = _cargaService.GetAll();
+            return _mapper.Map<List<CargaViewModel>>(res);  
+        }
+
+        public bool TruncateCarga()
+        {
+           return _cargaService.TruncateCarga();
+        }
     }
 }

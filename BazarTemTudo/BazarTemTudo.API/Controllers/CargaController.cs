@@ -48,7 +48,7 @@ namespace BazarTemTudo.API.Controllers
                     }
                     
                     List<CargaViewModel> result = LoadFileService.LoadTxtFileContent(file);
-                    _appService.AddRange(result);
+                    _appService.CreateMultiples(result);    
                     
                 }
                 else
@@ -72,14 +72,29 @@ namespace BazarTemTudo.API.Controllers
             var jsonResult =data.ToJson();
             return Ok(jsonResult);
         }
+
+
         /// <summary>
         /// Truncate Carga
         /// </summary>
         /// <returns>An IActionResult.</returns>
-        [HttpDelete]
+        [HttpPost]
         public IActionResult TruncateCarga()
         {
-            return Ok();
+            try
+            {
+               var res = _appService.TruncateCarga();  
+                if(!res)
+                {
+                    throw new Exception("Não consegui truncar a tabela..");
+                }
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });    
+            }
+
         }
     }
 }

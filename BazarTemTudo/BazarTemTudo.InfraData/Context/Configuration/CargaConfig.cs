@@ -1,9 +1,11 @@
 ﻿using BazarTemTudo.Domain.Entities;
+using Flunt.Notifications;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -42,6 +44,7 @@ namespace BazarTemTudo.InfraData.Context.Configuration
             builder.Property(e => e.ship_state).IsRequired().HasMaxLength(100);
             builder.Property(e => e.ship_postal_code).IsRequired().HasMaxLength(20);
             builder.Property(e => e.ship_country).IsRequired().HasMaxLength(100);
+
 
             builder.ToTable("Carga");
         }

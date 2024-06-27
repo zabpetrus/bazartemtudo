@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BazarTemTudo.Infra.Filesystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f182286427a75a82f2730648ec56ec7765750d1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+370b3e0ec92cf65ab3bc3ef164c042cf871a9d15")]
 [assembly: System.Reflection.AssemblyProductAttribute("BazarTemTudo.Infra.Filesystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BazarTemTudo.Infra.Filesystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

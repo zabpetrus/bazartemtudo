@@ -1,7 +1,7 @@
 ﻿using BazarTemTudo.Application.Interface._Base;
+using BazarTemTudo.InfraData.UnitOfWork;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using VEL.Infra.Data.UnitWork;
 
 namespace BazarTemTudo.API.Controllers._Base
 {

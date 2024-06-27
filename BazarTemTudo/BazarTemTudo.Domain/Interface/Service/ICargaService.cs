@@ -1,4 +1,5 @@
 ﻿using BazarTemTudo.Domain.Entities;
+using BazarTemTudo.Domain.Entities._Base;
 using BazarTemTudo.Domain.Interface.Service._Base;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,12 @@ using System.Threading.Tasks;
 
 namespace BazarTemTudo.Domain.Interface.Service
 {
-    public interface ICargaService : IServiceBase<Carga>
+    public interface ICargaService
     {
-       
+        void CreateMultiples(IEnumerable<Carga> entities);
+
+        IEnumerable<Carga> GetAll();
+
+        bool TruncateCarga();
     }
 }

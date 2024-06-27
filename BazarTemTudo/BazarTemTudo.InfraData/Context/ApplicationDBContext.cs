@@ -41,6 +41,7 @@ namespace BazarTemTudo.InfraData.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Notification>().HasNoKey();
+
             modelBuilder.ApplyConfiguration(new CargaConfig());
             modelBuilder.ApplyConfiguration(new CheckoutConfig());
             modelBuilder.ApplyConfiguration(new ClientesConfig());
@@ -55,6 +56,8 @@ namespace BazarTemTudo.InfraData.Context
             modelBuilder.ApplyConfiguration(new RequisicaoCompraConfig());
             modelBuilder.ApplyConfiguration(new TransportadorasConfig());
             modelBuilder.ApplyConfiguration(new UsuarioConfig());
+
+            modelBuilder.Ignore<Notification>();
 
             //modelBuilder.Entity<Carga>().HasNoKey();
             base.OnModelCreating(modelBuilder);

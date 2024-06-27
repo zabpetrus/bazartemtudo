@@ -3,7 +3,7 @@ using IsolationLevel = System.Transactions.IsolationLevel;
 using Flunt.Notifications;
 using BazarTemTudo.InfraData.Context;
 
-namespace VEL.Infra.Data.UnitWork
+namespace BazarTemTudo.InfraData.UnitOfWork
 {
     public abstract class UnitOfWork : Notifiable<Notification>, IUnitOfWork
     {

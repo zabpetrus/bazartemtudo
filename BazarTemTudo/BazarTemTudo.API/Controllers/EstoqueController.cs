@@ -3,9 +3,9 @@ using BazarTemTudo.Application.Interface;
 using BazarTemTudo.Application.Interface._Base;
 using BazarTemTudo.Application.ViewModels;
 using BazarTemTudo.Domain.Entities;
+using BazarTemTudo.InfraData.UnitOfWork;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using VEL.Infra.Data.UnitWork;
 
 namespace BazarTemTudo.API.Controllers
 {

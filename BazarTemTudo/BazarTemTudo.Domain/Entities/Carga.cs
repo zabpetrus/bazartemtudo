@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Flunt.Notifications;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +35,9 @@ namespace BazarTemTudo.Domain.Entities
         public string ship_state { get; set; }
         public string ship_postal_code { get; set; }
         public string ship_country { get; set; }
+
+
+     
 
     }
 }

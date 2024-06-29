@@ -17,26 +17,11 @@ namespace BazarTemTudo.Domain.Entities
 
         public string Email { get; set; } = String.Empty;
 
-
-        public DateTime DataNascimento;
+        public string Phone { get; set; }   = String.Empty ;
 
 
         // Propriedade de navegação para os pedidos associados a este cliente
-       // public ICollection<Pedidos> Pedidos { get; set; }
-
-
-
-
-        public Clientes() {  }
-
-        public Clientes(string nome, string cPF, string email, DateTime dataNascimento)
-        {
-            Nome = nome;
-            CPF = cPF;
-            Email = email;
-            DataNascimento = dataNascimento;
-        }
-
+        public ICollection<Pedidos> Pedidos { get; set; }
 
     }
 }

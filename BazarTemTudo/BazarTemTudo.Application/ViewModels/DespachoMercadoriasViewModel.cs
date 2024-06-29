@@ -1,4 +1,5 @@
 ﻿using BazarTemTudo.Application.ViewModels.Enums;
+using BazarTemTudo.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,24 +10,20 @@ namespace BazarTemTudo.Application.ViewModels
 {
     public class DespachoMercadoriasViewModel
     {
-        public int Transportadora_ID { get; set; }
+        public StatusDespacho Status_Entrega { get; set; } = StatusDespacho.Em_processamento;
 
-        public TransportadorasViewModel Transportadora { get; set; } = new TransportadorasViewModel();
+        public DateTime Data_Liberacao { get; set; } = DateTime.Now;
 
-        public StatusDespacho Status_Entrega { get; set; }
 
-        public DateTime Data_Liberacao { get; set; }
+        //Navegação
 
-        public DespachoMercadoriasViewModel(int transportadora_ID, TransportadorasViewModel transportadora, StatusDespacho status_Entrega, DateTime data_Liberacao)
-        {
-            Transportadora_ID = transportadora_ID;
-            Transportadora = transportadora;
-            Status_Entrega = status_Entrega;
-            Data_Liberacao = data_Liberacao;
-        }
+        public long PedidoId { get; set; }
 
-        public DespachoMercadoriasViewModel()
-        {
-        }
+        public Pedidos Pedidos { get; set; }
+
+
+        public Transportadoras Transportadora { get; set; }
+
+        public long Transportadora_ID { get; set; }
     }
 }

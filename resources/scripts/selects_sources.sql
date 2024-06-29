@@ -3,20 +3,30 @@ GO
 
 SELECT * FROM Carga;
 
-SELECT * FROM Clients;
+SELECT * FROM Clientes;
 
-SELECT * FROM Orders;
+SELECT * FROM Enderecos;
 
-SELECT * FROM OrderItems;
+SELECT * FROM Fornecedores;
 
-SELECT * FROM Products;
+SELECT * FROM Pedidos;
 
-SELECT * FROM Internal_Storage;
+SELECT * FROM Produtos;
 
-SELECT * FROM Suppliers;
-
-SELECT * FROM Purchase_Requests;
-
-GO
+SELECT * FROM Transportadoras;
 
 
+
+SELECT * FROM RequisicaoCompra;
+
+SELECT * FROM ItensPedidos;
+
+SELECT * FROM Checkout;
+
+SELECT * FROM DespachoMercadorias;
+
+SELECT * FROM Estoque;
+
+SELECT * FROM NotaFiscal;
+
+SELECT * FROM Perfis;

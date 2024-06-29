@@ -16,5 +16,7 @@ namespace BazarTemTudo.Domain.Interface.Service
         IEnumerable<Carga> GetAll();
 
         bool TruncateCarga();
+
+        bool PopulateTables();
     }
 }

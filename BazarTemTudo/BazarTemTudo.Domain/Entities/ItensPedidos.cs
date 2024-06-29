@@ -9,24 +9,23 @@ namespace BazarTemTudo.Domain.Entities
 {
     public class ItensPedidos : Entity
     {
-        public int Pedidos_ID { get; set; }            
+        public string Order_Item_id { get; set; }
+        
+        public decimal? Item_Price { get; set; } 
 
-        public int Produtos_ID { get; set; }    
+        public int Quantity_Purchased { get; set; }
 
-        public int Quantidade {  get; set; }
+        public long PedidoId { get; set; }
+     
 
-        public decimal Preco {  get; set; }
 
-        public bool disponivel_estoque {  get; set; }
+        //Navegação
+        public Pedidos Pedido { get; set; } = null!;
 
-        //Links
 
-       // public Pedidos Pedido { get; set; } = new Pedidos();
+        public long ProdutoId {  get; set; }
 
-        //public Produtos Produto { get; set; } = new Produtos();
+        public Produtos Produtos { get; set; } = null!;
 
-        public ItensPedidos()
-        {
-        }
     }
 }

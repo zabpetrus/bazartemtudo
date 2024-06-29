@@ -15,10 +15,24 @@ namespace BazarTemTudo.InfraData.Context.Configuration
         {
             builder.ToTable("ItensPedidos");
 
+            builder.Property(i => i.Item_Price)
+            .HasColumnType("decimal(18,2)");
+
             builder.HasKey(e => e.Id);
             builder.Property(e => e.Id)
                   .ValueGeneratedOnAdd()
                   .IsRequired();
+
+            builder.HasOne(e => e.Pedido)
+                .WithMany(e =>e.ItensPedidos)
+                .HasForeignKey(e => e.PedidoId)
+                .IsRequired();
+
+            builder.HasOne(e => e.Produtos)
+                .WithOne(e =>e.itensPedidos)
+                .HasForeignKey<ItensPedidos>(e =>e.ProdutoId)
+                .OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 }

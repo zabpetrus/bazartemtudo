@@ -15,6 +15,9 @@ namespace BazarTemTudo.InfraData.Context.Configuration
         {
             builder.ToTable("NotaFiscal");
 
+            builder.Property(n => n.Valor_Total)
+        .HasColumnType("decimal(18,2)");
+
             builder.HasKey(e => e.Id);
             builder.Property(e => e.Id)
                   .ValueGeneratedOnAdd()

@@ -10,18 +10,24 @@ namespace BazarTemTudo.Domain.Entities
 {
     public class DespachoMercadorias : Entity
     {
-        public  int Transportadora_ID { get; set; }
-           
-
+                
+       
         public StatusDespacho Status_Entrega {  get; set; }  = StatusDespacho.Em_processamento; 
 
-        public DateTime Data_Liberacao { get; set; }
+        public DateTime Data_Liberacao { get; set; } = DateTime.Now;
 
-       // public Transportadoras Transportadora { get; set; } = new Transportadoras();
+
+        //Navegação
+
+        public long PedidoId { get; set; }
+
+        public Pedidos Pedidos { get; set; }
+
+
+        public Transportadoras Transportadora { get; set; }
+
+        public  long Transportadora_ID { get; set; } 
 
       
-        public DespachoMercadorias()
-        {
-        }
     }
 }

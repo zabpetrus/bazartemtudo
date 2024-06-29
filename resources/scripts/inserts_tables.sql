@@ -3,185 +3,325 @@ GO
 
 -- Inserindo Fornecedores
 
-INSERT INTO Fornecedores(
-forn_name, forn_cnpj,	forn_email, forn_cidade, forn_pais) 
-SELECT 'Atacadao Auto Market', '99.250.886/0001-99', 'atacadaoauto@comercial.com', 'Sao Paulo', 'BR'
-WHERE NOT EXISTS (SELECT 1 FROM Fornecedores WHERE forn_cnpj = '99.250.886/0001-99');
 
-INSERT INTO Fornecedores (
-forn_name, forn_cnpj,	forn_email, forn_cidade, forn_pais) 
-SELECT 'AlibabaDropship', '43.372.061/0001-92', 'alibabadrophopcommerce@marketrio.com', 'Rio de Janeiro','USA'
-WHERE NOT EXISTS (SELECT 1 FROM Fornecedores WHERE forn_cnpj = '43.372.061/0001-92');
 
-INSERT INTO Fornecedores (
-forn_name, forn_cnpj,	forn_email, forn_cidade, forn_pais) 
-SELECT 'Muambeiros Atacadao', '75.590.367/0001-01', 'commerce@muambeirosatacadao.com.br', 'Brasilia', 'BR'
-WHERE NOT EXISTS (SELECT 1 FROM Fornecedores WHERE forn_cnpj = '75.590.367/0001-01');
+-- Inserção 1
+INSERT INTO [dbo].[Fornecedores]
+           ([Nome_Fornecedor]
+           ,[CNPJ]
+           ,[Endereco_ID]
+           ,[Telefone]
+           ,[Email]
+           ,[Website]
+           ,[Data_Registro]
+           ,[Data_Atualizacao])
+     
+	 SELECT 'Fornecedor A', '12.345.678/0001-01', 1, '(11) 1234-5678', 'fornecedor_a@example.com', 'www.fornecedora.com', GETDATE(), GETDATE()
+	 WHERE NOT EXISTS ( SELECT 1 FROM [dbo].[Fornecedores] f  WHERE f.CNPJ = '12.345.678/0001-01' );
 
-INSERT INTO Fornecedores (
-forn_name, forn_cnpj,	forn_email, forn_cidade, forn_pais) 
-SELECT 'Emporio Tabajara', '57.457.143/0001-44', 'emporiotabajara@marketcommerce.com', 'Salvador', 'BR'
-WHERE NOT EXISTS (SELECT 1 FROM Fornecedores WHERE forn_cnpj = '57.457.143/0001-44');
+-- Inserção 2
+INSERT INTO [dbo].[Fornecedores]
+           ([Nome_Fornecedor]
+           ,[CNPJ]
+           ,[Endereco_ID]
+           ,[Telefone]
+           ,[Email]
+           ,[Website]
+           ,[Data_Registro]
+           ,[Data_Atualizacao])
+     SELECT  'Fornecedor B', '98.765.432/0001-02', 2, '(21) 9876-5432', 'fornecedor_b@example.com', 'www.fornecedorb.com', GETDATE(), GETDATE()
+		   WHERE NOT EXISTS ( SELECT 1  FROM [dbo].[Fornecedores] f  WHERE f.CNPJ = '98.765.432/0001-02' );
+
+-- Inserção 3
+INSERT INTO [dbo].[Fornecedores]
+           ([Nome_Fornecedor]
+           ,[CNPJ]
+           ,[Endereco_ID]
+           ,[Telefone]
+           ,[Email]
+           ,[Website]
+           ,[Data_Registro]
+           ,[Data_Atualizacao])
+     SELECT  'Fornecedor C', '11.222.333/0001-03', 3, '(31) 1122-3344', 'fornecedor_c@example.com', 'www.fornecedorc.com', GETDATE(), GETDATE()
+	 WHERE NOT EXISTS ( SELECT 1  FROM [dbo].[Fornecedores] f  WHERE f.CNPJ = '11.222.333/0001-03' ); 
+
+-- Inserção 4
+INSERT INTO [dbo].[Fornecedores]
+           ([Nome_Fornecedor]
+           ,[CNPJ]
+           ,[Endereco_ID]
+           ,[Telefone]
+           ,[Email]
+           ,[Website]
+           ,[Data_Registro]
+           ,[Data_Atualizacao])
+     SELECT 'Fornecedor D', '44.555.666/0001-04', 4, '(41) 4455-6666', 'fornecedor_d@example.com', 'www.fornecedord.com', GETDATE(), GETDATE()
+	  WHERE NOT EXISTS ( SELECT 1  FROM [dbo].[Fornecedores] f  WHERE f.CNPJ = '44.555.666/0001-04' ); 
+
+-- Inserção 5
+INSERT INTO [dbo].[Fornecedores]
+           ([Nome_Fornecedor]
+           ,[CNPJ]
+           ,[Endereco_ID]
+           ,[Telefone]
+           ,[Email]
+           ,[Website]
+           ,[Data_Registro]
+           ,[Data_Atualizacao])
+     SELECT 'Fornecedor E', '77.888.999/0001-05', 5, '(51) 7788-9999', 'fornecedor_e@example.com', 'www.fornecedore.com', GETDATE(), GETDATE()
+	 WHERE NOT EXISTS ( SELECT 1  FROM [dbo].[Fornecedores] f  WHERE f.CNPJ = '77.888.999/0001-05' ); 
+
 
 PRINT 'Fornecedores populados';
 
 
--- Inserindo em Transportadoras
-INSERT INTO [dbo].[Transportadoras]
-           ([Nome_Transportadora]
-           ,[CNPJ_Transportadora]
-           ,[Tipo_Servico]
-           ,[Custo_Frete])
-     VALUES
-           ('America Transportes', '97.064.519/0001-75', 'Padrao', 25.99),
-           ('Rupiao Entregas Brasil LTDA', '01.503.315/0001-14', 'Padrao', 19.99),
-		   ('Calango Express', '46.458.091/0001-04', 'Expressa', 55.99),
-		   ('Guanabara Fretes e Entregas LTDA', '17.342.627/0001-23', 'Expressa', 45.99),
-		   ('Ronaldo Entregas Express', '49.623.352/0001-92', 'Expressa', 60.99);
+USE [BazarDB]
+GO
 
-PRINT 'Transportadoras populadas';
+-- Inserção 1
+INSERT INTO [dbo].[Transportadoras]
+           ([NomeTransportadora]
+           ,[CNPJ]
+           ,[TipoServico]
+           ,[CustoFrete]
+           ,[Data_Registro]
+           ,[Data_Atualizacao])
+     VALUES
+           ('Transportadora A', '11.222.333/0001-01', 1, 50.00, GETDATE(), GETDATE());
+
+-- Inserção 2
+INSERT INTO [dbo].[Transportadoras]
+           ([NomeTransportadora]
+           ,[CNPJ]
+           ,[TipoServico]
+           ,[CustoFrete]
+           ,[Data_Registro]
+           ,[Data_Atualizacao])
+  
+     VALUES
+           ('Transportadora B', '22.333.444/0001-02', 2, 75.00, GETDATE(), GETDATE());
+
+-- Inserção 3
+INSERT INTO [dbo].[Transportadoras]
+           ([NomeTransportadora]
+           ,[CNPJ]
+           ,[TipoServico]
+           ,[CustoFrete]
+           ,[Data_Registro]
+           ,[Data_Atualizacao]
+)     VALUES
+           ('Transportadora C', '33.444.555/0001-03', 1, 60.00, GETDATE(), GETDATE());
+
+-- Inserção 4
+INSERT INTO [dbo].[Transportadoras]
+           ([NomeTransportadora]
+           ,[CNPJ]
+           ,[TipoServico]
+           ,[CustoFrete]
+           ,[Data_Registro]
+           ,[Data_Atualizacao]
+)     VALUES
+           ('Transportadora D', '44.555.666/0001-04', 3, 90.00, GETDATE(), GETDATE());
+
+-- Inserção 5
+INSERT INTO [dbo].[Transportadoras]
+           ([NomeTransportadora]
+           ,[CNPJ]
+           ,[TipoServico]
+           ,[CustoFrete]
+           ,[Data_Registro]
+           ,[Data_Atualizacao]
+)     VALUES
+           ('Transportadora E', '55.666.777/0001-05', 2, 80.00, GETDATE(), GETDATE());
+
+GO
+
 
 
 -- Inserindo atraves da carga
 
 INSERT INTO [dbo].[Clientes]
-           (cliente_name ,cliente_email ,cliente_cpf,cliente_phone_number)
+(Nome, Email, CPF, Phone, Data_Registro, Data_Atualizacao)
+SELECT DISTINCT 
+Ca.buyer_name, Ca.buyer_email, Ca.cpf, Ca.buyer_phone_number, GETDATE(), GETDATE()
+FROM Carga Ca
+LEFT JOIN [Clientes] Cl ON Cl.CPF = Ca.cpf
+WHERE Cl.CPF IS NULL;
 
-	SELECT DISTINCT 
-	Ca.buyer_name, Ca.buyer_email, 	Ca.cpf, Ca.buyer_phone_number 
-	FROM Carga Ca  
-	LEFT JOIN [Clientes] ON Clientes.cliente_cpf = Ca.cpf 
-	WHERE NOT EXISTS (  SELECT 1  FROM [Clientes] Cl  WHERE Cl.cliente_cpf = Ca.cpf );
-
-	PRINT 'Clientes populados';
+PRINT 'Clientes populados';
 
 
 
 INSERT INTO [dbo].[Produtos]
-           (produto_name ,produto_sku ,produto_upc,produto_item_price)
+(product_name, SKU, UPC, Valor, Data_Registro, Data_Atualizacao)
+SELECT DISTINCT Ca.product_name, ca.sku, ca.upc,ca.item_price,GETDATE(), GETDATE() FROM Carga Ca
+LEFT JOIN Produtos ON Produtos.UPC = Ca.upc WHERE NOT EXISTS 
+(SELECT 1 FROM Produtos WHERE Produtos.UPC = Ca.upc );
 
-			SELECT DISTINCT Ca.product_name, ca.sku, ca.upc,ca.item_price FROM Carga Ca
-			LEFT JOIN Produtos ON Produtos.produto_upc = Ca.upc WHERE NOT EXISTS 
-			(SELECT 1 FROM Produtos WHERE Produtos.produto_upc = Ca.upc );
+PRINT 'Produtos populados';
 
-		PRINT 'Produtos populado';
 
+
+INSERT INTO Enderecos (
+    order_id, 
+    ship_address1, 
+    ship_address2, 
+    ship_address3, 
+    ship_city, 
+    ship_postal_code, 
+    ship_country, 
+    ship_state, 
+    Data_Registro, 
+    Data_Atualizacao
+)
+SELECT DISTINCT 
+    ca.order_id, 
+    ca.ship_address_1, 
+    ca.ship_address_2, 
+    ca.ship_address_3, 
+    ca.ship_city, 
+    ca.ship_postal_code, 
+    ca.ship_country, 
+    ca.ship_state, 
+    GETDATE() AS Data_Registro,  -- Usando a função GETDATE() para inserir a data atual
+    GETDATE() AS Data_Atualizacao -- Usando a função GETDATE() para inserir a data atual
+FROM Carga ca
+LEFT JOIN Enderecos e ON e.order_id = ca.order_id
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM Enderecos 
+    WHERE order_id = ca.order_id
+);
+
+
+PRINT 'Enderecos populados';
 
 
 INSERT INTO [dbo].[Pedidos]
-    ([pedido_cliente_id]
-    ,[pedido_def_id]
-    ,[pedido_purchase_date]
-    ,[pedido_payments_date]
-    ,[pedido_ship_city]
-    ,[pedido_ship_state]
-    ,[pedido_ship_postal_code]
-    ,[pedido_ship_address_1]
-    ,[pedido_ship_address_2]
-    ,[pedido_ship_address_3]
-    ,[pedido_ship_country]
-    ,[pedido_currency]
-    ,[pedido_ship_service_level])
-SELECT DISTINCT
-    Clientes.cliente_id AS pedido_cliente_id,
-    Carga.order_id AS pedido_def_id,
-    Carga.purchase_date AS pedido_purchase_date,
-    Carga.payments_date AS pedido_payments_date,
-    Carga.ship_city AS pedido_ship_city,
-    Carga.ship_state AS pedido_ship_state,
-    Carga.ship_postal_code AS pedido_ship_postal_code,
-    Carga.ship_address_1 AS pedido_ship_address_1,
-    Carga.ship_address_2 AS pedido_ship_address_2,
-    Carga.ship_address_3 AS pedido_ship_address_3,
-    Carga.ship_country AS pedido_ship_country,
-    Carga.currency AS pedido_currency,
-    Carga.ship_service_level AS pedido_ship_service_level
-FROM Carga
-LEFT JOIN Clientes ON Clientes.cliente_cpf = Carga.cpf
-LEFT JOIN Pedidos ON Pedidos.pedido_def_id = Carga.order_id
-WHERE Pedidos.pedido_def_id IS NULL;
+    ([Order_id]
+    ,[Purchase_Date]
+    ,[Payments_Date]
+    ,[Currency]
+    ,[Ship_service_level]
+    ,[Endereco_Id]
+    ,[ClientesId]
+    ,[Data_Registro]
+    ,[Data_Atualizacao])
 
-PRINT 'Orders populado (Pedidos)';
+SELECT DISTINCT
+    ca.order_id,
+    ca.purchase_date,
+    ca.payments_date,
+    ca.currency,
+    ca.ship_service_level,
+    en.Id, -- Assumindo que Endereco_Id é a chave primária da tabela Enderecos
+    cli.id,
+    GETDATE() AS Data_Registro,
+    GETDATE() AS Data_Atualizacao
+FROM Carga ca
+LEFT JOIN Clientes cli ON cli.CPF = ca.cpf
+LEFT JOIN Pedidos pe ON pe.Order_id = ca.order_id
+LEFT JOIN Enderecos en ON en.order_id = ca.order_id
+WHERE NOT EXISTS (
+    SELECT 1 FROM Pedidos WHERE Pedidos.Order_id = ca.order_id
+);
+
+PRINT 'Tabela Pedidos populada';
+
 
 
 
 INSERT INTO [dbo].[ItensPedidos]
-    ([ip_pedido_id]
-    ,[ip_produto_id]
-    ,[ip_pedido_item_id]
-    ,[ip_produto_price]
-    ,[ip_quantity_purchased]
-    ,[ip_item_status])
-SELECT 
-    od.pedido_ID AS ip_pedido_id,
-    pr.produto_id AS ip_produto_id,
-    ca.order_item_id AS ip_pedido_item_id,
-    pr.produto_item_price AS ip_produto_price,
-    ca.quantity_purchased AS ip_quantity_purchased,
-    'Processing' AS ip_item_status -- Definindo o status padrão para 'Processing'
-FROM Carga ca
-LEFT JOIN Pedidos od ON od.pedido_def_id= ca.order_id
-LEFT JOIN Produtos pr ON pr.produto_upc = ca.upc
-LEFT JOIN ItensPedidos oi ON oi.ip_pedido_id = ca.order_item_id AND oi.ip_pedido_id = pr.produto_id
-WHERE NOT EXISTS (
-    SELECT 1
-    FROM ItensPedidos ip
-    WHERE ip.ip_pedido_id = od.pedido_ID 
-    AND ip.ip_produto_id = pr.produto_id
-);
+           (
+		    [PedidoId],
+			[ProdutoId],
+			[Order_Item_id]
+           ,[Item_Price]
+           ,[Quantity_Purchased]        
+           ,[Data_Registro]
+           ,[Data_Atualizacao]         
+		   )
+SELECT DISTINCT
+    pe.Id,
+	pr.Id,
+	ca.order_item_id,
+	ca.item_price,
+	ca.quantity_purchased,
+	GETDATE(),
+	GETDATE()
+	FROM Pedidos pe
+	INNER JOIN Carga Ca ON Ca.order_id = pe.Order_id
+	INNER JOIN Produtos pr ON pr.UPC = Ca.upc
+	INNER JOIN ItensPedidos ip ON ip.PedidoId = pe.Id AND ip.ProdutoId = pr.Id;
 
-	PRINT 'OrdersItens populados (Itens dos pedidos)';
+PRINT 'OrdersItens populados (Itens dos pedidos)';
+
+
+
 
 
 INSERT INTO [dbo].[Estoque]
-           ([Produto_id]
-           ,[is_actual_qte]
-           ,[is_minimal_qte])
-			SELECT DISTINCT 
-			oi.ip_produto_id, 
-			0 AS qte,
-			SUM( oi.ip_quantity_purchased ) AS minimal_qte
-			FROM ItensPedidos oi 
-			LEFT JOIN
-			Estoque it ON it.Produto_id = oi.ip_produto_id
-				WHERE NOT EXISTS (
-				SELECT 1 FROM Estoque WHERE Estoque.Produto_id = oi.ip_produto_id )
-				GROUP BY oi.ip_produto_id;
-
-	PRINT 'Internal Storage populado (Estoque)';
-
-
-
-
-INSERT INTO [dbo].[RequisicoesCompra]
-    ([pr_produto_id]
-    ,[pr_fornecedor_id]
-    ,[pr_quantidade]
-    ,[pr_preco_unitario]
-    ,[pr_preco_total]
-    ,[pr_data_requisicao]
-    ,[pr_status_pedido])
+    ([Produtos_ID], [Quantidade], [Estoque_Minimo], [Data_Registro], [Data_Atualizacao])
 SELECT 
-    pr.produto_id AS pr_produto_id,
-    MAX(prx.forn_id) AS pr_fornecedor_id,
-    SUM(oi.ip_quantity_purchased) AS pr_quantidade,
-    oi.ip_produto_price AS pr_preco_unitario,
-    SUM(oi.ip_produto_price * oi.ip_quantity_purchased * 10) AS pr_preco_total,
-    GETDATE() AS pr_data_requisicao,
-    0 AS pr_status_pedido
-FROM Produtos pr
-INNER JOIN ItensPedidos oi ON oi.ip_produto_id = pr.produto_id
-INNER JOIN Pedidos od ON od.pedido_ID = oi.ip_pedido_id
-LEFT JOIN Fornecedores prx ON prx.forn_name = od.pedido_ship_city
-LEFT JOIN RequisicoesCompra rc ON rc.pr_produto_id = oi.ip_produto_id
-WHERE rc.pr_produto_id IS NULL
-AND oi.ip_produto_price * oi.ip_quantity_purchased * 10 = (
-    SELECT MAX(oi2.ip_produto_price * oi2.ip_quantity_purchased * 10)
-    FROM ItensPedidos oi2
-    WHERE oi2.ip_produto_id = pr.produto_id
+    oi.ProdutoId, 
+    0 AS qte,
+    SUM(oi.Quantity_Purchased) AS minimal_qte,
+    GETDATE() AS Data_Registro,
+    GETDATE() AS Data_Atualizacao
+FROM ItensPedidos oi
+LEFT JOIN Estoque it ON it.Produtos_ID = oi.ProdutoId
+WHERE NOT EXISTS (
+    SELECT 1 FROM Estoque WHERE Estoque.Produtos_ID = oi.ProdutoId
 )
-GROUP BY pr.produto_id, oi.ip_produto_price
-ORDER BY pr_preco_total DESC;
+GROUP BY oi.ProdutoId;
+
+PRINT 'Internal Storage populado (Estoque)';
+
+
+
+
+
+
+
+
+INSERT INTO [dbo].[RequisicaoCompra]
+    ([Fornecedor_ID]
+    ,[Produto_ID]
+    ,[Quantidade]
+    ,[Status_Pedido]
+    ,[Total_Compra]
+    ,[Data_Emissao]
+    ,[FornecedorId]
+    ,[ProdutoId]
+    ,[Data_Registro]
+    ,[Data_Atualizacao])
+SELECT 
+    MAX(prx.Id) AS Fornecedor_ID,
+    pr.Id AS Produto_ID,
+    SUM(oi.Quantity_Purchased) AS Quantidade,
+    0 AS Status_Pedido, -- Ajuste conforme necessário
+    SUM(oi.Item_Price * oi.Quantity_Purchased * 10) AS Total_Compra,
+    GETDATE() AS Data_Emissao,
+    MAX(prx.Id) AS FornecedorId, -- Certifique-se que este é o campo correto
+    pr.Id AS ProdutoId,
+    GETDATE() AS Data_Registro,
+    GETDATE() AS Data_Atualizacao
+FROM Produtos pr
+INNER JOIN ItensPedidos oi ON oi.ProdutoId = pr.Id
+INNER JOIN Pedidos od ON od.Id = oi.PedidoId
+LEFT JOIN Enderecos en ON en.order_id = od.Order_id
+LEFT JOIN Fornecedores prx ON prx.Endereco_ID = en.Id
+LEFT JOIN RequisicaoCompra rc ON rc.Produto_ID = oi.ProdutoId
+WHERE rc.Produto_ID IS NULL
+AND oi.Item_Price * oi.Quantity_Purchased * 10 = (
+    SELECT MAX(oi2.Item_Price * oi2.Quantity_Purchased * 10)
+    FROM ItensPedidos oi2
+    WHERE oi2.ProdutoId = pr.Id
+)
+GROUP BY pr.Id, oi.Item_Price
+ORDER BY Total_Compra DESC;
+
+PRINT 'Tabela RequisicaoCompra populada';
 
 
 
@@ -189,17 +329,21 @@ PRINT 'Purchase_Requests Populado (Requisicao de compra)';
 
 -- Populando notas fiscais
 
-INSERT INTO [dbo].[NotasFiscais]
-           ([Pedido_ID]
+
+INSERT INTO [dbo].[NotaFiscal]
+           ([Pedidos_ID]
            ,[Valor_Total]
-           ,[Data_Emissao])
-    
+           ,[Data_Emissao]
+           ,[Data_Registro]
+           ,[Data_Atualizacao])
 SELECT 
-Pe.pedido_ID, 
+Pe.Id, 
 Ck.total_pedido,
-GETDATE() AS CurrentTime
+Pe.Purchase_Date,
+GETDATE(),
+GETDATE()
 FROM Pedidos Pe 
-INNER JOIN Checkout Ck ON Ck.Pedido_id = Pe.pedido_ID ;
+INNER JOIN Checkout Ck ON Ck.Pedido_id = Pe.Id;
 
 
 

@@ -3,6 +3,7 @@ using AutoMapper;
 using BazarTemTudo.API;
 using BazarTemTudo.Application.AppService;
 using BazarTemTudo.Application.Interface;
+using BazarTemTudo.CrossCutting.DI;
 using BazarTemTudo.Domain.Entities;
 using BazarTemTudo.Domain.Interface;
 using BazarTemTudo.Domain.Interface.Repository;
@@ -12,6 +13,7 @@ using BazarTemTudo.Infra.Filesystem.FileUpload;
 using BazarTemTudo.InfraData.Context;
 using BazarTemTudo.InfraData.Mapping;
 using BazarTemTudo.InfraData.Repository;
+using BazarTemTudo.InfraData.UnitOfWork;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -59,10 +61,9 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
         builder.Configuration.GetConnectionString("SecondConnection"))
 );
 
+DependencyService.RegisterDependencies(builder.Configuration, builder.Services);
 
-builder.Services.AddScoped<ICargaRepository, CargaRepository>();
-builder.Services.AddScoped<ICargaAppService, CargaAppService>();
-builder.Services.AddScoped<ICargaService, CargaService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();  
 
 
 builder.Services.AddCors(options =>

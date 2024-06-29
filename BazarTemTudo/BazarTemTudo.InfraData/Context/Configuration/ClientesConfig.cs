@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BazarTemTudo.Domain.Entities;
 using BazarTemTudo.Domain.Entities._Base;
+using System.Reflection.Emit;
 
 namespace BazarTemTudo.InfraData.Context.Configuration
 {
@@ -27,8 +28,14 @@ namespace BazarTemTudo.InfraData.Context.Configuration
             builder.Property(e => e.Data_Atualizacao).IsRequired();
             builder.Property(e => e.Data_Registro).IsRequired();
             builder.Property(e => e.Email).HasMaxLength(50).IsRequired();
+            builder.Property(e =>e.Phone).HasMaxLength(50).IsRequired();    
             builder.Property(e => e.Nome).HasMaxLength(50).IsRequired();
 
+            builder
+                .HasMany(c => c.Pedidos)
+                .WithOne(p => p.Clientes)
+                .HasForeignKey(p => p.ClientesId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

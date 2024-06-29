@@ -11,52 +11,42 @@ namespace BazarTemTudo.Domain.Entities
     public class Endereco : Entity
     {
 
-        private string _rua = string.Empty;
+        public int order_id { get; set; }
 
-        private int _numero = 0;
+        public string ship_address1 { get; set; }
 
-        private string _complemento1 = string.Empty;
+        public string ship_address2 { get; set; }
 
-        private string _complemento2 = string.Empty;
+        public string ship_address3 { get; set; }
 
-        private string _cep = string.Empty;
+        public string ship_city { get; set; }
 
-        private string _cidade = string.Empty;
+        public string ship_state { get; set; }
 
-        private string _estado = string.Empty;
+        public string ship_postal_code { get; set; }
 
-        private string _pais = string.Empty;
+        public string ship_country { get; set; }
+
+
+        // Navegação
+        public Pedidos Pedido { get; set; }
 
         public Endereco()
         {
         }
 
-        public Endereco(string rua, int numero, string complemento1, string complemento2, string cep, string cidade, string estado, string pais)
+        public Endereco(string ship_address1, string ship_address2, string ship_address3, string ship_city, string ship_state, string ship_postal_code, string ship_country)
         {
-            _rua = rua;
-            _numero = numero;
-            _complemento1 = complemento1;
-            _complemento2 = complemento2;
-            _cep = cep;
-            _cidade = cidade;
-            _estado = estado;
-            _pais = pais;
+            this.ship_address1 = ship_address1;
+            this.ship_address2 = ship_address2;
+            this.ship_address3 = ship_address3;
+            this.ship_city = ship_city;
+            this.ship_state = ship_state;
+            this.ship_postal_code = ship_postal_code;
+            this.ship_country = ship_country;
+             AddNotifications(new EnderecoContract(this));
 
-            AddNotifications(new EnderecoContract(this));
         }
-
-        public string Rua { get => _rua; set => _rua = value; }
-        public int Numero { get => _numero; set => _numero = value; }
-        public string Complemento1 { get => _complemento1; set => _complemento1 = value; }
-        public string Complemento2 { get => _complemento2; set => _complemento2 = value; }
-        public string Cep { get => _cep; set => _cep = value; }
-        public string Cidade { get => _cidade; set => _cidade = value; }
-        public string Estado { get => _estado; set => _estado = value; }
-        public string Pais { get => _pais; set => _pais = value; }
-
-
-
-
-
     }
 }
+        

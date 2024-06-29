@@ -10,28 +10,32 @@ namespace BazarTemTudo.Domain.Entities
 {
     public class Pedidos : Entity
     {
-        public string Codigo_Pedido {  get; set; } = string.Empty;
-
-        public int ClienteId { get; set; } = 1;
-
-        public DateTime Data_Pedido { get; set; }
-
-        public int Endereco_entrega_Id { get; set; } = 1;
-
-        public StatusPedido Status_Pedido { get; set; } = StatusPedido.Pendente;
-
-
-        //Navegação
-       // public Clientes Cliente { get; set; }
-
-        //public Endereco Endereco_entrega { get; set; }  
-
-
-
         
+          public string Order_id { get; set; }
 
-        public Pedidos()
-        {
-        }
+          public DateTime Purchase_Date {  get; set; }
+
+          public DateTime Payments_Date { get; set; }
+
+          public string Currency {  get; set; } 
+
+          public string Ship_service_level {  get; set; }
+
+         StatusPedido statusPedido { get; set; } = StatusPedido.Pendente; 
+
+
+          //Navegação
+
+            public long ClientesId { get; set; }
+
+            public Clientes Clientes { get; set; }
+
+            public ICollection<ItensPedidos> ItensPedidos { get; set; }
+
+            public long Endereco_Id { get; set; }    
+
+            public Endereco Endereco { get; set; }
+
+
     }
 }

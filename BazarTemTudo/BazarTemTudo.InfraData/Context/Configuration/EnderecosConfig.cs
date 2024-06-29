@@ -20,24 +20,32 @@ namespace BazarTemTudo.InfraData.Context.Configuration
                   .ValueGeneratedOnAdd()
                   .IsRequired();
 
-            builder.Property(e => e.Rua)
+            builder.Property(e => e.ship_address1)
              .HasMaxLength(100)
              .IsRequired();
 
-            builder.Property(e => e.Pais)
-            .HasMaxLength(50)
-            .IsRequired();
-
-            builder.Property(e => e.Rua)
+            builder.Property(e => e.ship_address2)
             .HasMaxLength(100)
-            .IsRequired();
+            .IsRequired(false);
 
-            builder.Property(e => e.Estado)
+            builder.Property(e => e.ship_address3)
+            .HasMaxLength(100)
+            .IsRequired(false);
+
+            builder.Property(e => e.ship_city)
             .HasMaxLength(50)
             .IsRequired();
 
-            builder.Property(e => e.Cep)
+            builder.Property(e => e.ship_country)
+            .HasMaxLength(50)
+            .IsRequired();
+
+            builder.Property(e => e.ship_postal_code)
             .HasMaxLength(20)
+            .IsRequired();
+
+            builder.Property(e => e.ship_state)
+            .HasMaxLength(50)
             .IsRequired();
 
         }

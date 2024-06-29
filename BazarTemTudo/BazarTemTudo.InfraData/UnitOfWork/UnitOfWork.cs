@@ -5,7 +5,7 @@ using BazarTemTudo.InfraData.Context;
 
 namespace BazarTemTudo.InfraData.UnitOfWork
 {
-    public abstract class UnitOfWork : Notifiable<Notification>, IUnitOfWork
+    public class UnitOfWork : Notifiable<Notification>, IUnitOfWork
     {
         private readonly ApplicationDBContext _context;
         private TransactionScope? _transaction;

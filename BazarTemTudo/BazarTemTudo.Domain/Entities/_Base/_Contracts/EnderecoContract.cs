@@ -13,7 +13,7 @@ namespace BazarTemTudo.Domain.Entities._Base._Contracts
         public EnderecoContract(Endereco endereco)
         {
             Requires()
-                .IsNotNullOrEmpty(endereco.Rua, "Rua", "Rua não pode estar em branco");
+                .IsNotNullOrEmpty(endereco.ship_address1, "Rua", "Rua não pode estar em branco");
         }
     }
 }

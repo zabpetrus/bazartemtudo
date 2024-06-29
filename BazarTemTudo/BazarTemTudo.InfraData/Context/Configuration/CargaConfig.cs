@@ -28,13 +28,13 @@ namespace BazarTemTudo.InfraData.Context.Configuration
             builder.Property(e => e.payments_date).IsRequired();
             builder.Property(e => e.buyer_email).IsRequired().HasMaxLength(100);
             builder.Property(e => e.buyer_name).IsRequired().HasMaxLength(100);
-            builder.Property(e => e.cpf).IsRequired().HasMaxLength(11);
-            builder.Property(e => e.buyer_phone_number).IsRequired().HasMaxLength(15);
+            builder.Property(e => e.cpf).IsRequired().HasMaxLength(50);
+            builder.Property(e => e.buyer_phone_number).IsRequired().HasMaxLength(30);
             builder.Property(e => e.sku).IsRequired().HasMaxLength(50);
             builder.Property(e => e.upc).IsRequired().HasMaxLength(50);
             builder.Property(e => e.product_name).IsRequired().HasMaxLength(200);
             builder.Property(e => e.quantity_purchased).IsRequired();
-            builder.Property(e => e.currency).IsRequired().HasMaxLength(3);
+            builder.Property(e => e.currency).IsRequired().HasMaxLength(10);
             builder.Property(e => e.item_price).IsRequired().HasColumnType("decimal(18,2)");
             builder.Property(e => e.ship_service_level).IsRequired().HasMaxLength(50);
             builder.Property(e => e.ship_address_1).IsRequired().HasMaxLength(200);

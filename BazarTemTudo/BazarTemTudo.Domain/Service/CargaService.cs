@@ -30,6 +30,11 @@ namespace BazarTemTudo.Domain.Service
             return _cargaRepository.GetAll();
         }
 
+        public bool PopulateTables()
+        {
+            return _cargaRepository.PopulateTables();
+        }
+
         public bool TruncateCarga()
         {
             return _cargaRepository.TruncateCarga();

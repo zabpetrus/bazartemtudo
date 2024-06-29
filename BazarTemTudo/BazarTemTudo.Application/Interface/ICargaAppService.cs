@@ -16,5 +16,7 @@ namespace BazarTemTudo.Application.Interface
         IEnumerable<CargaViewModel> GetAll();
 
         bool TruncateCarga();
+
+        bool PopulateTables();
     }
 }

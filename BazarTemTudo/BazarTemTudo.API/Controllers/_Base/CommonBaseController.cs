@@ -39,9 +39,9 @@ namespace BazarTemTudo.API.Controllers._Base
         [HttpGet]
         public virtual IActionResult Get()
         {
-            _appService.GetAll();
+            var result = _appService.GetAll();
             _logger.LogInformation($"Handling GET request for {typeof(T).Name}");
-            return Ok();
+            return Ok(result);
         }
 
 

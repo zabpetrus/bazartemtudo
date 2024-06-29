@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace BazarTemTudo.Domain.Entities._Base
             Data_Atualizacao = DateTime.Now;
         }
 
-       
+        [NotMapped]
         public Guid Not_Id { get; private set; }
 
         [Key]

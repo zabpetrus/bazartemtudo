@@ -16,18 +16,9 @@ namespace BazarTemTudo.Domain.Entities
 
         public TipoServico TipoServico { get; set; } = TipoServico.Normal;   
 
-        public decimal CustoFrete { get; set; }
-
-        public Transportadoras(string nomeTransportadora, string cNPJ, TipoServico tipoServico, decimal custoFrete)
-        {
-            NomeTransportadora = nomeTransportadora;
-            CNPJ = cNPJ;
-            TipoServico = tipoServico;
-            CustoFrete = custoFrete;
-        }
-
-        public Transportadoras()
-        {
-        }
+        public decimal CustoFrete { get; set; } 
+        
+        //Navegação
+        StatusDespacho StatusDespacho { get; set; } = StatusDespacho.Em_processamento;
     }
 }

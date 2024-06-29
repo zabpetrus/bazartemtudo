@@ -14,6 +14,15 @@ namespace BazarTemTudo.InfraData.Context.Configuration
         public void Configure(EntityTypeBuilder<Produtos> builder)
         {
             builder.ToTable("Produtos");
+
+
+            builder.Property(p => p.Valor)
+        .HasColumnType("decimal(18,2)");
+
+            builder.HasKey(e => e.Id);
+            builder.Property(e => e.Id)
+                  .ValueGeneratedOnAdd()
+                  .IsRequired();
         }
     }
 }

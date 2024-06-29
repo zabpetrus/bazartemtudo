@@ -1,4 +1,5 @@
 ﻿using BazarTemTudo.Application.ViewModels.Enums;
+using BazarTemTudo.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,27 +10,31 @@ namespace BazarTemTudo.Application.ViewModels
 {
     public class PedidosViewModel
     {
-        public string Codigo_Pedido { get; set; } = string.Empty;
+        public string Order_id { get; set; }
 
-        public ClientesViewModel Clientes_Id { get; set; } = new ClientesViewModel();
+        public DateTime Purchase_Date { get; set; }
 
-        public DateTime Data_Pedido { get; set; }
+        public DateTime Payments_Date { get; set; }
 
-        public EnderecoViewModel Endereco_Entrega { get; set; } = new EnderecoViewModel();
+        public string Currency { get; set; }
 
-        public StatusPedido Status_Pedido { get; set; } = StatusPedido.Pendente;
+        public string Ship_service_level { get; set; }
 
-        public PedidosViewModel(string codigo_Pedido, ClientesViewModel clientes_Id, DateTime data_Pedido, EnderecoViewModel endereco_Entrega, StatusPedido status_Pedido)
-        {
-            Codigo_Pedido = codigo_Pedido;
-            Clientes_Id = clientes_Id;
-            Data_Pedido = data_Pedido;
-            Endereco_Entrega = endereco_Entrega;
-            Status_Pedido = status_Pedido;
-        }
+        StatusPedido statusPedido { get; set; } = StatusPedido.Pendente;
 
-        public PedidosViewModel()
-        {
-        }
+
+        //Navegação
+
+        public long ClientesId { get; set; }
+
+        public Clientes Clientes { get; set; }
+
+        public ICollection<ItensPedidos> ItensPedidos { get; set; }
+
+        public long Endereco_Id { get; set; }
+
+        public Endereco Endereco { get; set; }
+
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿using BazarTemTudo.Domain.Entities;
 using BazarTemTudo.Domain.Interface.Repository;
 using BazarTemTudo.InfraData.Context;
+using BazarTemTudo.InfraData.Procedures;
 using BazarTemTudo.InfraData.Repository._Base;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -48,6 +49,13 @@ namespace BazarTemTudo.InfraData.Repository
                 throw new Exception("Not Found");
             }
             return res;
+        }
+
+        public bool PopulateTables()
+        {
+            CargaProcedures.SetDbContext(_context);
+            var ok = CargaProcedures.ExecutarProcedimento();
+            return ok;
         }
 
         public bool TruncateCarga()

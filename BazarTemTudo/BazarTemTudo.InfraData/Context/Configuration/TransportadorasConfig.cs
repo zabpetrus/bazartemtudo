@@ -16,6 +16,10 @@ namespace BazarTemTudo.InfraData.Context.Configuration
             builder.ToTable("Transportadoras");
 
             builder.HasKey(e => e.Id);
+
+            builder.Property(t => t.CustoFrete)
+        .HasColumnType("decimal(18,2)");
+
             builder.Property(e => e.Id)
                   .ValueGeneratedOnAdd()
                   .IsRequired();

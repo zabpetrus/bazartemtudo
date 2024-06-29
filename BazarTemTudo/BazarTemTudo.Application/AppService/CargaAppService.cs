@@ -38,9 +38,16 @@ namespace BazarTemTudo.Application.AppService
             return _mapper.Map<List<CargaViewModel>>(res);  
         }
 
+        public bool PopulateTables()
+        {
+            return _cargaService.PopulateTables();  
+        }
+
         public bool TruncateCarga()
         {
            return _cargaService.TruncateCarga();
         }
+
+
     }
 }

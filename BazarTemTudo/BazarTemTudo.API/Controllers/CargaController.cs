@@ -2,6 +2,7 @@
 using BazarTemTudo.Application.ViewModels;
 using BazarTemTudo.Domain.Entities;
 using BazarTemTudo.Infra.Filesystem.FileUpload;
+using BazarTemTudo.InfraData.Procedures;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -78,7 +79,7 @@ namespace BazarTemTudo.API.Controllers
         /// Truncate Carga
         /// </summary>
         /// <returns>An IActionResult.</returns>
-        [HttpPost]
+        [HttpPost("truncar_carga")]
         public IActionResult TruncateCarga()
         {
             try
@@ -96,5 +97,18 @@ namespace BazarTemTudo.API.Controllers
             }
 
         }
+
+
+        /// <summary>
+        /// Delete Carga
+        /// </summary>
+        /// <returns>An IActionResult.</returns>
+        [HttpPost("popular_tabelas")]
+        public IActionResult PopularTabelas()
+        {
+            _appService.PopulateTables();
+            return Ok();
+        }
+    
     }
 }

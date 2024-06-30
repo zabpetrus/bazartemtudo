@@ -19,20 +19,7 @@ namespace BazarTemTudo.API.Controllers
             _estoqueAppService = appService;
         }
 
-        [HttpPost]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Post([FromBody] EstoqueViewModel entity) => NotFound();
-
-
-        [HttpPut]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Update(long Id, EstoqueViewModel entity) => NotFound();
-
-
-
-        [HttpDelete]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Delete([FromBody] long Id) => NotFound();
+      
     }
 }
 

@@ -17,7 +17,7 @@ namespace BazarTemTudo.Application.AppService
     public class CheckoutAppService : AppServiceBase<CheckoutViewModel, Checkout>, ICheckoutAppService
     {
         private readonly ICheckoutService _checkoutService;
-        public CheckoutAppService(ICheckoutService serviceBase, IMapper mapper, ILogger<AppServiceBase<CheckoutViewModel, Checkout>> logger) : base(serviceBase, mapper, logger)
+        public CheckoutAppService(ICheckoutService serviceBase, IMapper mapper, ILogger<CheckoutAppService> logger) : base(serviceBase, mapper, logger)
         {
             _checkoutService = serviceBase;
         }

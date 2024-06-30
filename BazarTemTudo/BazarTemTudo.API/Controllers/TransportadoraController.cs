@@ -18,19 +18,6 @@ namespace BazarTemTudo.API.Controllers
             _transportadorasAppService = appService;
         }
 
-        [HttpPost]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Post([FromBody] TransportadorasViewModel entity) => NotFound();
-
-
-        [HttpPut]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Update(long Id, TransportadorasViewModel entity) => NotFound();
-
-
-
-        [HttpDelete]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Delete([FromBody] long Id) => NotFound();
+       
     }
 }

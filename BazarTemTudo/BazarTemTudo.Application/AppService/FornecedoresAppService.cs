@@ -17,7 +17,7 @@ namespace BazarTemTudo.Application.AppService
     public class FornecedoresAppService : AppServiceBase<FornecedoresViewModel, Fornecedores>, IFornecedoresAppService
     {
         private readonly IFornecedoresService _service;
-        public FornecedoresAppService(IFornecedoresService serviceBase, IMapper mapper, ILogger<AppServiceBase<FornecedoresViewModel, Fornecedores>> logger) : base(serviceBase, mapper, logger)
+        public FornecedoresAppService(IFornecedoresService serviceBase, IMapper mapper, ILogger<FornecedoresAppService> logger) : base(serviceBase, mapper, logger)
         {
             _service = serviceBase;
         }

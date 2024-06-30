@@ -18,20 +18,7 @@ namespace BazarTemTudo.API.Controllers
             _usuariosAppService = appService;   
         }
 
-        [HttpPost]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Post([FromBody] UsuariosViewModel entity) => NotFound();
-
-
-        [HttpPut]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Update(long Id, UsuariosViewModel entity) => NotFound();
-
-
-
-        [HttpDelete]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Delete([FromBody] long Id) => NotFound();
+      
 
 
 

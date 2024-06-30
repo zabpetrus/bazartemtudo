@@ -16,8 +16,7 @@ namespace BazarTemTudo.InfraData.Context.Configuration
             builder.ToTable("Produtos");
 
 
-            builder.Property(p => p.Valor)
-        .HasColumnType("decimal(18,2)");
+            builder.Property(p => p.Valor).HasColumnType("decimal(18,2)");
 
             builder.HasKey(e => e.Id);
             builder.Property(e => e.Id)

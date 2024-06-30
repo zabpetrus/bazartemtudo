@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BazarTemTudo.InfraData.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20240629022101_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20240629215328_InitialMigration2")]
+    partial class InitialMigration2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -161,8 +161,9 @@ namespace BazarTemTudo.InfraData.Migrations
                     b.Property<int>("Pedido_Id")
                         .HasColumnType("int");
 
-                    b.Property<int>("Status_Despacho")
-                        .HasColumnType("int");
+                    b.Property<string>("Status_Despacho")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Total_Pedido")
                         .HasColumnType("decimal(18,2)");
@@ -233,19 +234,24 @@ namespace BazarTemTudo.InfraData.Migrations
                     b.Property<long>("PedidoId")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("Status_Entrega")
-                        .HasColumnType("int");
+                    b.Property<long>("PedidosId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Status_Entrega")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("TransportadoraId")
+                        .HasColumnType("bigint");
 
                     b.Property<long>("Transportadora_ID")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PedidoId")
-                        .IsUnique();
+                    b.HasIndex("PedidosId");
 
-                    b.HasIndex("Transportadora_ID")
-                        .IsUnique();
+                    b.HasIndex("TransportadoraId");
 
                     b.ToTable("DespachoMercadorias", (string)null);
                 });
@@ -409,8 +415,7 @@ namespace BazarTemTudo.InfraData.Migrations
 
                     b.HasIndex("PedidoId");
 
-                    b.HasIndex("ProdutoId")
-                        .IsUnique();
+                    b.HasIndex("ProdutoId");
 
                     b.ToTable("ItensPedidos", (string)null);
                 });
@@ -585,8 +590,9 @@ namespace BazarTemTudo.InfraData.Migrations
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");
 
-                    b.Property<int>("Status_Pedido")
-                        .HasColumnType("int");
+                    b.Property<string>("Status_Pedido")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal?>("Total_Compra")
                         .HasColumnType("decimal(18,2)");
@@ -857,15 +863,15 @@ namespace BazarTemTudo.InfraData.Migrations
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.DespachoMercadorias", b =>
                 {
                     b.HasOne("BazarTemTudo.Domain.Entities.Pedidos", "Pedidos")
-                        .WithOne()
-                        .HasForeignKey("BazarTemTudo.Domain.Entities.DespachoMercadorias", "PedidoId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .WithMany()
+                        .HasForeignKey("PedidosId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BazarTemTudo.Domain.Entities.Transportadoras", "Transportadora")
-                        .WithOne()
-                        .HasForeignKey("BazarTemTudo.Domain.Entities.DespachoMercadorias", "Transportadora_ID")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .WithMany()
+                        .HasForeignKey("TransportadoraId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Pedidos");
@@ -882,9 +888,9 @@ namespace BazarTemTudo.InfraData.Migrations
                         .IsRequired();
 
                     b.HasOne("BazarTemTudo.Domain.Entities.Produtos", "Produtos")
-                        .WithOne("itensPedidos")
-                        .HasForeignKey("BazarTemTudo.Domain.Entities.ItensPedidos", "ProdutoId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .WithMany()
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Pedido");
@@ -995,12 +1001,6 @@ namespace BazarTemTudo.InfraData.Migrations
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.Pedidos", b =>
                 {
                     b.Navigation("ItensPedidos");
-                });
-
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.Produtos", b =>
-                {
-                    b.Navigation("itensPedidos")
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

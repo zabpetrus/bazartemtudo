@@ -18,19 +18,5 @@ namespace BazarTemTudo.API.Controllers
             _despachoAppService = appService;   
         }
 
-        [HttpPost]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Post([FromBody] DespachoMercadoriasViewModel entity) => NotFound();
-
-
-        [HttpPut]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Update(long Id, DespachoMercadoriasViewModel entity) => NotFound();
-
-
-
-        [HttpDelete]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Delete([FromBody] long Id) => NotFound();
     }
 }

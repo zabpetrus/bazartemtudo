@@ -19,19 +19,6 @@ namespace BazarTemTudo.API.Controllers
         }
 
 
-        [HttpPost]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Post([FromBody] ItensPedidosViewModel entity) => NotFound();
-
-
-        [HttpPut]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Update(long Id, ItensPedidosViewModel entity) => NotFound();
-
-
-
-        [HttpDelete]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Delete([FromBody] long Id) => NotFound();
+     
     }
 }

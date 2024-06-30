@@ -158,8 +158,9 @@ namespace BazarTemTudo.InfraData.Migrations
                     b.Property<int>("Pedido_Id")
                         .HasColumnType("int");
 
-                    b.Property<int>("Status_Despacho")
-                        .HasColumnType("int");
+                    b.Property<string>("Status_Despacho")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Total_Pedido")
                         .HasColumnType("decimal(18,2)");
@@ -227,26 +228,21 @@ namespace BazarTemTudo.InfraData.Migrations
                     b.Property<DateTime>("Data_Registro")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("PedidoId")
+                    b.Property<long>("Pedido_Id")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("PedidosId")
-                        .HasColumnType("bigint");
-
-                    b.Property<int>("Status_Entrega")
-                        .HasColumnType("int");
-
-                    b.Property<long>("TransportadoraId")
-                        .HasColumnType("bigint");
+                    b.Property<string>("Status_Entrega")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("Transportadora_ID")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PedidosId");
+                    b.HasIndex("Pedido_Id");
 
-                    b.HasIndex("TransportadoraId");
+                    b.HasIndex("Transportadora_ID");
 
                     b.ToTable("DespachoMercadorias", (string)null);
                 });
@@ -410,8 +406,7 @@ namespace BazarTemTudo.InfraData.Migrations
 
                     b.HasIndex("PedidoId");
 
-                    b.HasIndex("ProdutoId")
-                        .IsUnique();
+                    b.HasIndex("ProdutoId");
 
                     b.ToTable("ItensPedidos", (string)null);
                 });
@@ -571,32 +566,27 @@ namespace BazarTemTudo.InfraData.Migrations
                     b.Property<DateTime>("Data_Registro")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("FornecedorId")
+                    b.Property<long>("Fornecedor_ID")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("Fornecedor_ID")
-                        .HasColumnType("int");
-
-                    b.Property<long>("ProdutoId")
+                    b.Property<long>("Produto_ID")
                         .HasColumnType("bigint");
-
-                    b.Property<int>("Produto_ID")
-                        .HasColumnType("int");
 
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");
 
-                    b.Property<int>("Status_Pedido")
-                        .HasColumnType("int");
+                    b.Property<string>("Status_Pedido")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal?>("Total_Compra")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FornecedorId");
+                    b.HasIndex("Fornecedor_ID");
 
-                    b.HasIndex("ProdutoId");
+                    b.HasIndex("Produto_ID");
 
                     b.ToTable("RequisicaoCompra", (string)null);
                 });
@@ -859,13 +849,13 @@ namespace BazarTemTudo.InfraData.Migrations
                 {
                     b.HasOne("BazarTemTudo.Domain.Entities.Pedidos", "Pedidos")
                         .WithMany()
-                        .HasForeignKey("PedidosId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasForeignKey("Pedido_Id")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("BazarTemTudo.Domain.Entities.Transportadoras", "Transportadora")
                         .WithMany()
-                        .HasForeignKey("TransportadoraId")
+                        .HasForeignKey("Transportadora_ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -883,9 +873,9 @@ namespace BazarTemTudo.InfraData.Migrations
                         .IsRequired();
 
                     b.HasOne("BazarTemTudo.Domain.Entities.Produtos", "Produtos")
-                        .WithOne("itensPedidos")
-                        .HasForeignKey("BazarTemTudo.Domain.Entities.ItensPedidos", "ProdutoId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .WithMany()
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Pedido");
@@ -916,14 +906,14 @@ namespace BazarTemTudo.InfraData.Migrations
                 {
                     b.HasOne("BazarTemTudo.Domain.Entities.Fornecedores", "Fornecedor")
                         .WithMany()
-                        .HasForeignKey("FornecedorId")
+                        .HasForeignKey("Fornecedor_ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BazarTemTudo.Domain.Entities.Produtos", "Produto")
                         .WithMany()
-                        .HasForeignKey("ProdutoId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasForeignKey("Produto_ID")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Fornecedor");
@@ -996,12 +986,6 @@ namespace BazarTemTudo.InfraData.Migrations
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.Pedidos", b =>
                 {
                     b.Navigation("ItensPedidos");
-                });
-
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.Produtos", b =>
-                {
-                    b.Navigation("itensPedidos")
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

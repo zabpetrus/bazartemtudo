@@ -13,26 +13,33 @@ namespace BazarTemTudo.API.Controllers
     public class FornecedoresController : CommonBaseController<FornecedoresViewModel>
     {
         private readonly IFornecedoresAppService _fornecedoresAppService;
-        public FornecedoresController(IHttpContextAccessor contextAccessor, IFornecedoresAppService appService, IUnitOfWork unitOfWork, ILogger<FornecedoresViewModel> logger) : base(contextAccessor, appService, unitOfWork, logger)
+        private readonly IEnderecoAppService _enderecoAppService;
+        private readonly IUnitOfWork _unitOfWork;
+        public FornecedoresController(
+            IHttpContextAccessor contextAccessor, 
+            IFornecedoresAppService appService,
+            IEnderecoAppService enderecoAppService,
+            IUnitOfWork unitOfWork,
+            ILogger<FornecedoresViewModel> logger
+            ) : base(contextAccessor, appService, unitOfWork, logger)
         {
             _fornecedoresAppService = appService;
+            _enderecoAppService = enderecoAppService;   
+            _unitOfWork = unitOfWork;
         }
 
 
-        [HttpPost]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Post([FromBody] FornecedoresViewModel entity) => NotFound();
-
+       
 
         [HttpPut]
         [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Update(long Id, FornecedoresViewModel entity) => NotFound();
+        public IActionResult Update(long Id, FornecedoresViewModel entity) => NotFound();
 
 
 
         [HttpDelete]
         [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Delete([FromBody] long Id) => NotFound();
+        public IActionResult Delete([FromBody] long Id) => NotFound();
     }
 }
 

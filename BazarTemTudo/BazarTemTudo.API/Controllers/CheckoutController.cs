@@ -19,20 +19,6 @@ namespace BazarTemTudo.API.Controllers
             _checkoutAppService = appService;
         }
 
-        [HttpPost]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Post([FromBody] CheckoutViewModel entity)  => NotFound();
-        
-
-        /// <returns>An IActionResult.</returns>
-        [HttpPut]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Update(long Id, CheckoutViewModel entity) => NotFound();
-
-
-
-        [HttpDelete]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        public override IActionResult Delete([FromBody] long Id) => NotFound();
+       
     }
 }

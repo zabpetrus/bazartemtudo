@@ -15,15 +15,8 @@ namespace BazarTemTudo.Domain.Entities
 
         public string UPC { get; set; } = string.Empty;
 
-        public decimal Valor { get; set; } = decimal.MinValue;
-       
-         
-        public ItensPedidos itensPedidos { get; set; }
+        public decimal Valor { get; set; } = decimal.MinValue;         
 
 
-
-        public Produtos()
-        {
-        }
     }
 }

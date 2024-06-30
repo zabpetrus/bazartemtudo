@@ -22,7 +22,17 @@ namespace BazarTemTudo.InfraData.Context.Configuration
                   .ValueGeneratedOnAdd()
                   .IsRequired();
 
-                    
+            builder.HasOne(e => e.Transportadora)
+             .WithMany()
+             .HasForeignKey(e => e.Transportadora_ID);
+
+            builder
+              .HasOne(e => e.Pedidos)
+              .WithMany()
+              .HasForeignKey(e => e.Pedido_Id)
+              .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Property(e => e.Status_Entrega).HasConversion<string>();      
 
 
         }

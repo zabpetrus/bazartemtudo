@@ -149,36 +149,6 @@ END;
 
 
 
--- Criando Tabelas Enum
-
-DROP TABLE IF EXISTS StatusDespacho;
-CREATE TABLE StatusDespacho (
-		[IDStatus] INT PRIMARY KEY,
-		[NomeStatus] VARCHAR(50) NOT NULL
-	);
-	INSERT INTO StatusDespacho ([IDStatus], [NomeStatus])
-	VALUES 
-		(1, 'Em processamento'),
-		(2, 'Pronto para Envio'),
-		(3, 'Entregue'),
-		(4, 'Cancelado');
-		
-	-- Tabela de estado de monitoramento do pedido - controle de loja
-
-DROP TABLE IF EXISTS StatusPedido;
-	CREATE TABLE StatusPedido (
-		Status_ID INT PRIMARY KEY NOT NULL,
-		Nome_Status VARCHAR(50) NOT NULL
-	);
-
-	INSERT INTO StatusPedido (Status_ID, Nome_Status) VALUES
-	(1,'Pendente'),
-	(2, 'Em processamento'),
-	(3, 'Enviado'),
-	(4, 'Entregue'),
-	(5,'Cancelado');
-
--- Fim TAbelas Enum
 
 
 DROP TABLE IF EXISTS [Clientes];
@@ -329,7 +299,7 @@ DROP TABLE IF EXISTS [DespachoMercadorias];
 		[Despacho_id] INT PRIMARY KEY IDENTITY NOT NULL,
 		[Pedido_ID] INT NOT NULL,
 		[Transportadora_ID] INT  NOT NULL,
-		[Status_Entrega] INT NOT NULL,
+		[Status_Entrega] INT NOT NULL DEFAULT 1,
 		[Data_Liberacao] DATETIME NOT NULL
 	);
 
@@ -338,7 +308,6 @@ ALTER TABLE RequisicoesCompra ADD CONSTRAINT FK_RC_FORN FOREIGN KEY (pr_forneced
 
 ALTER TABLE RequisicoesCompra ADD CONSTRAINT FK_RC_PROD FOREIGN KEY (pr_produto_id) REFERENCES Produtos(Produto_id) ON DELETE CASCADE ON UPDATE CASCADE;
 
-ALTER TABLE RequisicoesCompra ADD CONSTRAINT FK_RC_STAT FOREIGN KEY (pr_status_pedido) REFERENCES StatusPedido (Status_ID) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE Pedidos ADD CONSTRAINT FK_PED_CLI FOREIGN KEY (pedido_cliente_id) REFERENCES Clientes (cliente_id) ON DELETE CASCADE ON UPDATE CASCADE;
 
@@ -350,7 +319,6 @@ ALTER TABLE NotasFiscais ADD CONSTRAINT FK_NF_PE FOREIGN KEY (Pedido_ID) REFEREN
 
 ALTER TABLE Checkout ADD CONSTRAINT FK_P_C FOREIGN KEY (Pedido_id) REFERENCES Pedidos (Pedido_ID) ON DELETE CASCADE ON UPDATE CASCADE;
 
-ALTER TABLE Checkout ADD CONSTRAINT FK_SD_D FOREIGN KEY (status_despacho) REFERENCES StatusDespacho(IDStatus) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE DespachoMercadorias ADD CONSTRAINT FK_DM_PED FOREIGN KEY (Pedido_ID) REFERENCES Pedidos (Pedido_ID) ON DELETE CASCADE ON UPDATE CASCADE;
 

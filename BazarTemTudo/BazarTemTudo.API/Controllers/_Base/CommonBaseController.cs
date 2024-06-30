@@ -44,52 +44,7 @@ namespace BazarTemTudo.API.Controllers._Base
             return Ok(result);
         }
 
-
-        /// <summary>
-        /// Post
-        /// </summary>
-        /// <param name="entity">An Entity</param>
-        /// <returns>An IActionResult.</returns>
-       
-        [HttpPost]
-        public virtual IActionResult Post([FromBody] T entity)
-        {
-            _appService.Add( entity );  
-            _logger.LogInformation($"Handling POST request for {typeof(T).Name}");
-            // Lógica genérica para POST
-            return Ok($"This is a generic POST method for {typeof(T).Name}");
-        }
-
-
-        /// <summary>
-        /// Update
-        /// </summary>
-        /// <param name="Id">An Id</param>
-        /// <param name="entity">An Entity</param>
-        /// <returns>An IActionResult.</returns>
-        [HttpPut]
-        public virtual IActionResult Update(long Id,  T entity)
-        {
-            _appService.Update(Id, entity);
-            _logger.LogInformation($"Handling POST request for {typeof(T).Name}");
-            // Lógica genérica para POST
-            return Ok($"This is a generic POST method for {typeof(T).Name}");
-        }
-
-
-        /// <summary>
-        /// Delete
-        /// </summary>
-        /// <param name="Id">An Id</param>
-        /// <returns>An IActionResult.</returns>
-        [HttpDelete]
-        public virtual IActionResult Delete([FromBody] long Id)
-        {
-            _appService.RemoveById (Id);
-            _logger.LogInformation($"Handling POST request for {typeof(T).Name}");
-            // Lógica genérica para POST
-            return Ok($"This is a generic POST method for {typeof(T).Name}");
-        }
+                
 
     }
 }

@@ -198,24 +198,6 @@ namespace BazarTemTudo.InfraData.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Produtos",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    product_name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SKU = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UPC = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Valor = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Data_Registro = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Data_Atualizacao = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Produtos", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Transportadoras",
                 columns: table => new
                 {
@@ -373,40 +355,6 @@ namespace BazarTemTudo.InfraData.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "RequisicaoCompra",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Fornecedor_ID = table.Column<int>(type: "int", nullable: false),
-                    Produto_ID = table.Column<int>(type: "int", nullable: false),
-                    Quantidade = table.Column<int>(type: "int", nullable: false),
-                    Status_Pedido = table.Column<int>(type: "int", nullable: false),
-                    Total_Compra = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
-                    Data_Emissao = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    FornecedorId = table.Column<long>(type: "bigint", nullable: false),
-                    ProdutoId = table.Column<long>(type: "bigint", nullable: false),
-                    Data_Registro = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Data_Atualizacao = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_RequisicaoCompra", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_RequisicaoCompra_Fornecedores_FornecedorId",
-                        column: x => x.FornecedorId,
-                        principalTable: "Fornecedores",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_RequisicaoCompra_Produtos_ProdutoId",
-                        column: x => x.ProdutoId,
-                        principalTable: "Produtos",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Checkout",
                 columns: table => new
                 {
@@ -415,7 +363,7 @@ namespace BazarTemTudo.InfraData.Migrations
                     Pedido_Id = table.Column<int>(type: "int", nullable: false),
                     Pedido_ClienteId = table.Column<long>(type: "bigint", nullable: false),
                     Total_Pedido = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Status_Despacho = table.Column<int>(type: "int", nullable: false),
+                    Status_Despacho = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DataDespacho = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Data_Registro = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Data_Atualizacao = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -437,9 +385,11 @@ namespace BazarTemTudo.InfraData.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Status_Entrega = table.Column<int>(type: "int", nullable: false),
+                    Status_Entrega = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Data_Liberacao = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PedidoId = table.Column<long>(type: "bigint", nullable: false),
+                    PedidosId = table.Column<long>(type: "bigint", nullable: false),
+                    TransportadoraId = table.Column<long>(type: "bigint", nullable: false),
                     Transportadora_ID = table.Column<long>(type: "bigint", nullable: false),
                     Data_Registro = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Data_Atualizacao = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -448,17 +398,17 @@ namespace BazarTemTudo.InfraData.Migrations
                 {
                     table.PrimaryKey("PK_DespachoMercadorias", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_DespachoMercadorias_Pedidos_PedidoId",
-                        column: x => x.PedidoId,
+                        name: "FK_DespachoMercadorias_Pedidos_PedidosId",
+                        column: x => x.PedidosId,
                         principalTable: "Pedidos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_DespachoMercadorias_Transportadoras_Transportadora_ID",
-                        column: x => x.Transportadora_ID,
+                        name: "FK_DespachoMercadorias_Transportadoras_TransportadoraId",
+                        column: x => x.TransportadoraId,
                         principalTable: "Transportadoras",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -484,8 +434,61 @@ namespace BazarTemTudo.InfraData.Migrations
                         principalTable: "Pedidos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Produtos",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    product_name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SKU = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UPC = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Valor = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    itensPedidosId = table.Column<long>(type: "bigint", nullable: false),
+                    Data_Registro = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Data_Atualizacao = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Produtos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ItensPedidos_Produtos_ProdutoId",
+                        name: "FK_Produtos_ItensPedidos_itensPedidosId",
+                        column: x => x.itensPedidosId,
+                        principalTable: "ItensPedidos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RequisicaoCompra",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Fornecedor_ID = table.Column<int>(type: "int", nullable: false),
+                    Produto_ID = table.Column<int>(type: "int", nullable: false),
+                    Quantidade = table.Column<int>(type: "int", nullable: false),
+                    Status_Pedido = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Total_Compra = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    Data_Emissao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    FornecedorId = table.Column<long>(type: "bigint", nullable: false),
+                    ProdutoId = table.Column<long>(type: "bigint", nullable: false),
+                    Data_Registro = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Data_Atualizacao = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RequisicaoCompra", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_RequisicaoCompra_Fornecedores_FornecedorId",
+                        column: x => x.FornecedorId,
+                        principalTable: "Fornecedores",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_RequisicaoCompra_Produtos_ProdutoId",
                         column: x => x.ProdutoId,
                         principalTable: "Produtos",
                         principalColumn: "Id",
@@ -537,16 +540,14 @@ namespace BazarTemTudo.InfraData.Migrations
                 column: "Pedido_ClienteId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DespachoMercadorias_PedidoId",
+                name: "IX_DespachoMercadorias_PedidosId",
                 table: "DespachoMercadorias",
-                column: "PedidoId",
-                unique: true);
+                column: "PedidosId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DespachoMercadorias_Transportadora_ID",
+                name: "IX_DespachoMercadorias_TransportadoraId",
                 table: "DespachoMercadorias",
-                column: "Transportadora_ID",
-                unique: true);
+                column: "TransportadoraId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ItensPedidos_PedidoId",
@@ -556,8 +557,7 @@ namespace BazarTemTudo.InfraData.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_ItensPedidos_ProdutoId",
                 table: "ItensPedidos",
-                column: "ProdutoId",
-                unique: true);
+                column: "ProdutoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pedidos_ClientesId",
@@ -571,6 +571,11 @@ namespace BazarTemTudo.InfraData.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_Produtos_itensPedidosId",
+                table: "Produtos",
+                column: "itensPedidosId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_RequisicaoCompra_FornecedorId",
                 table: "RequisicaoCompra",
                 column: "FornecedorId");
@@ -579,11 +584,27 @@ namespace BazarTemTudo.InfraData.Migrations
                 name: "IX_RequisicaoCompra_ProdutoId",
                 table: "RequisicaoCompra",
                 column: "ProdutoId");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_ItensPedidos_Produtos_ProdutoId",
+                table: "ItensPedidos",
+                column: "ProdutoId",
+                principalTable: "Produtos",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropForeignKey(
+                name: "FK_ItensPedidos_Pedidos_PedidoId",
+                table: "ItensPedidos");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_ItensPedidos_Produtos_ProdutoId",
+                table: "ItensPedidos");
+
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
@@ -612,9 +633,6 @@ namespace BazarTemTudo.InfraData.Migrations
                 name: "Estoque");
 
             migrationBuilder.DropTable(
-                name: "ItensPedidos");
-
-            migrationBuilder.DropTable(
                 name: "NotaFiscal");
 
             migrationBuilder.DropTable(
@@ -633,19 +651,22 @@ namespace BazarTemTudo.InfraData.Migrations
                 name: "Transportadoras");
 
             migrationBuilder.DropTable(
-                name: "Pedidos");
-
-            migrationBuilder.DropTable(
                 name: "Fornecedores");
 
             migrationBuilder.DropTable(
-                name: "Produtos");
+                name: "Pedidos");
 
             migrationBuilder.DropTable(
                 name: "Clientes");
 
             migrationBuilder.DropTable(
                 name: "Enderecos");
+
+            migrationBuilder.DropTable(
+                name: "Produtos");
+
+            migrationBuilder.DropTable(
+                name: "ItensPedidos");
         }
     }
 }

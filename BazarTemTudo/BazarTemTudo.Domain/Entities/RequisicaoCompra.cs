@@ -11,9 +11,9 @@ namespace BazarTemTudo.Domain.Entities
     public class RequisicaoCompra : Entity
     {
 
-        public int Fornecedor_ID { get; set; }
+        public long Fornecedor_ID { get; set; } = 1;
        
-        public int Produto_ID { get; set; }
+        public long Produto_ID { get; set; }
 
         public int Quantidade { get; set; }
 

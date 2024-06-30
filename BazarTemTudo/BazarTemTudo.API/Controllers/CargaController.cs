@@ -47,6 +47,8 @@ namespace BazarTemTudo.API.Controllers
                     {
                         return BadRequest(new { message = "Tipo de arquivo não suportado. Apenas arquivos TXT são permitidos." });
                     }
+
+
                     
                     List<CargaViewModel> result = LoadFileService.LoadTxtFileContent(file);
                     _appService.CreateMultiples(result);    
@@ -109,6 +111,10 @@ namespace BazarTemTudo.API.Controllers
             _appService.PopulateTables();
             return Ok();
         }
+
+
+
+
     
     }
 }

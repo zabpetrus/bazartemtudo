@@ -22,6 +22,8 @@ namespace BazarTemTudo.InfraData.Context.Configuration
             builder.Property(e => e.Id)
                   .ValueGeneratedOnAdd()
                   .IsRequired();
+
+            builder.Property(e => e.Status_Despacho).HasConversion<string>();
         }
     }
 }

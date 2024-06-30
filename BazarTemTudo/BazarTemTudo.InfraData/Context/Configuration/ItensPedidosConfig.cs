@@ -24,14 +24,14 @@ namespace BazarTemTudo.InfraData.Context.Configuration
                   .IsRequired();
 
             builder.HasOne(e => e.Pedido)
-                .WithMany(e =>e.ItensPedidos)
+                .WithMany()
                 .HasForeignKey(e => e.PedidoId)
                 .IsRequired();
 
             builder.HasOne(e => e.Produtos)
-                .WithOne(e =>e.itensPedidos)
-                .HasForeignKey<ItensPedidos>(e =>e.ProdutoId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .WithMany()
+                .HasForeignKey(e =>e.ProdutoId)
+                .OnDelete(DeleteBehavior.Restrict);
 
         }
     }

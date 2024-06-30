@@ -30,6 +30,12 @@ namespace BazarTemTudo.Domain.Interface.Repository._Base
 
         List<TEntity> SearchAll(string expression);
 
+        long GetID(TEntity entity);
+
+        IEnumerable<TEntity> FindAll(TEntity args);
+
+        TEntity Find(TEntity entity);
+
         void Dispose();
     }
 }

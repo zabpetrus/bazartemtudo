@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "J:\\bazar\\BazarTemTudo\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F2379B61-1821-4048-92A3-309B8446FC08}|BazarTemTudo.InfraData\\BazarTemTudo.InfraData.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.infradata\\repository\\_base\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2379B61-1821-4048-92A3-309B8446FC08}|BazarTemTudo.InfraData\\BazarTemTudo.InfraData.csproj|solutionrelative:bazartemtudo.infradata\\repository\\_base\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52D7C1EB-E373-4086-9D3E-C56E4C82060F}|BazarTemTudo.Domain\\BazarTemTudo.Domain.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.domain\\interface\\repository\\_base\\irepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52D7C1EB-E373-4086-9D3E-C56E4C82060F}|BazarTemTudo.Domain\\BazarTemTudo.Domain.csproj|solutionrelative:bazartemtudo.domain\\interface\\repository\\_base\\irepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{809A2C46-D1C5-498F-9561-1F0867AE25D8}|BazarTemTudo.API\\BazarTemTudo.API.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.api\\controllers\\fornecedorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{809A2C46-D1C5-498F-9561-1F0867AE25D8}|BazarTemTudo.API\\BazarTemTudo.API.csproj|solutionrelative:bazartemtudo.api\\controllers\\fornecedorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 274,
-          "SelectedChildIndex": 22,
+          "SelectedChildIndex": 23,
           "Children": [
             {
               "$type": "Bookmark",
@@ -118,20 +126,46 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IRepositoryBase.cs",
+              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Domain\\Interface\\Repository\\_Base\\IRepositoryBase.cs",
+              "RelativeDocumentMoniker": "BazarTemTudo.Domain\\Interface\\Repository\\_Base\\IRepositoryBase.cs",
+              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Domain\\Interface\\Repository\\_Base\\IRepositoryBase.cs",
+              "RelativeToolTip": "BazarTemTudo.Domain\\Interface\\Repository\\_Base\\IRepositoryBase.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAmwCQAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T20:11:59.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "RepositoryBase.cs",
+              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\Repository\\_Base\\RepositoryBase.cs",
+              "RelativeDocumentMoniker": "BazarTemTudo.InfraData\\Repository\\_Base\\RepositoryBase.cs",
+              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\Repository\\_Base\\RepositoryBase.cs",
+              "RelativeToolTip": "BazarTemTudo.InfraData\\Repository\\_Base\\RepositoryBase.cs",
+              "ViewState": "AQIAADABAAAAAAAAAAAmwDcBAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T20:11:48.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "FornecedoresController.cs",
               "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\Controllers\\FornecedoresController.cs",
               "RelativeDocumentMoniker": "BazarTemTudo.API\\Controllers\\FornecedoresController.cs",
               "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\Controllers\\FornecedoresController.cs",
               "RelativeToolTip": "BazarTemTudo.API\\Controllers\\FornecedoresController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwB8AAAAHAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAmwDMAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T00:39:30.744Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "CargaController.cs",
               "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\Controllers\\CargaController.cs",
               "RelativeDocumentMoniker": "BazarTemTudo.API\\Controllers\\CargaController.cs",
@@ -139,12 +173,11 @@
               "RelativeToolTip": "BazarTemTudo.API\\Controllers\\CargaController.cs",
               "ViewState": "AQIAAEUAAAAAAAAAAAAowAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T00:39:17.327Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T00:39:17.327Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "StatusPedido.cs",
               "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Domain\\Entities\\Enums\\StatusPedido.cs",
               "RelativeDocumentMoniker": "BazarTemTudo.Domain\\Entities\\Enums\\StatusPedido.cs",
@@ -152,12 +185,11 @@
               "RelativeToolTip": "BazarTemTudo.Domain\\Entities\\Enums\\StatusPedido.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T00:25:38.792Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T00:25:38.792Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "CargaProcedures.cs",
               "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\Procedures\\CargaProcedures.cs",
               "RelativeDocumentMoniker": "BazarTemTudo.InfraData\\Procedures\\CargaProcedures.cs",
@@ -165,8 +197,7 @@
               "RelativeToolTip": "BazarTemTudo.InfraData\\Procedures\\CargaProcedures.cs",
               "ViewState": "AQIAALgBAAAAAAAAAAAAAAACAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T00:04:26.858Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T00:04:26.858Z"
             }
           ]
         }

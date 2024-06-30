@@ -1,4 +1,5 @@
-﻿using BazarTemTudo.Domain.Interface.Repository._Base;
+﻿using BazarTemTudo.Domain.Entities._Base;
+using BazarTemTudo.Domain.Interface.Repository._Base;
 using BazarTemTudo.InfraData.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -291,15 +292,49 @@ namespace BazarTemTudo.InfraData.Repository._Base
 
         public T GetById(object id)
         {
-            throw new NotImplementedException();
+            try
+            {
+               return _context.Find<T>(id);   
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
         }
 
         public bool Delete(long id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var existingEntity = _context.Set<T>().Find(id);
+                _context.Remove(existingEntity);
+                return true;    
+
+
+            }
+            catch (Exception ex)
+            {
+                 throw new Exception (ex.Message, ex);  
+            }
         }
 
         int IRepositoryBase<T>.Search(string expression)
+        {
+            throw new NotImplementedException();
+        }
+
+        public long GetID(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<T> FindAll(T args)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Find(T entity)
         {
             throw new NotImplementedException();
         }

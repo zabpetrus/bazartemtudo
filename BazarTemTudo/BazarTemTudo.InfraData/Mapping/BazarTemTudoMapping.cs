@@ -45,6 +45,8 @@ namespace BazarTemTudo.InfraData.Mapping
             CreateMap<UsuarioInterno, UsuariosViewModel>();
             CreateMap<Fornecedores, FornecedoresViewModel>();
             CreateMap<FornecedoresViewModel, Fornecedores>();
+            CreateMap<ItensPedidos, ItensPedidosViewModel>();
+            CreateMap<ItensPedidosViewModel, ItensPedidos>();
 
         }
     }

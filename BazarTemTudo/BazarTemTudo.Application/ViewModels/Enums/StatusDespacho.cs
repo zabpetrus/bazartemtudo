@@ -8,9 +8,10 @@ namespace BazarTemTudo.Application.ViewModels.Enums
 {
     public enum StatusDespacho
     {
-        Em_processamento,
-        Pronto_para_envio,
-        Entregue,
-        Cancelado
+        Pendente = 1,
+        Em_processamento = 2,
+        Pronto_para_envio = 3,
+        Entregue = 4,
+        Cancelado = 5
     }
 }

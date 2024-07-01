@@ -17,16 +17,6 @@ namespace BazarTemTudo.Application.ViewModels
 
         public decimal CustoFrete { get; set; }
 
-        public TransportadorasViewModel(string nomeTransportadora, string cNPJ, TipoServico tipoServico, decimal custoFrete)
-        {
-            NomeTransportadora = nomeTransportadora;
-            CNPJ = cNPJ;
-            TipoServico = tipoServico;
-            CustoFrete = custoFrete;
-        }
-
-        public TransportadorasViewModel()
-        {
-        }
+      
     }
 }

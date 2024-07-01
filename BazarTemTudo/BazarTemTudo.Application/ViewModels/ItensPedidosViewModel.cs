@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BazarTemTudo.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,33 +9,19 @@ namespace BazarTemTudo.Application.ViewModels
 {
     public class ItensPedidosViewModel
     {
-        public int Pedidos_ID { get; set; }
+        public string Order_Item_id { get; set; }
 
-        public PedidosViewModel Pedido { get; set; } = new PedidosViewModel();
+        public decimal? Item_Price { get; set; }
 
-        public int Produtos_ID { get; set; }
+        public int Quantity_Purchased { get; set; }
 
-        public ProdutosViewModel Produto { get; set; } = new ProdutosViewModel();
+        //Navegação
+        public long PedidoId { get; set; }
 
-        public int Quantidade { get; set; }
+        public Pedidos Pedido { get; set; } = null!;
 
-        public decimal Preco { get; set; }
+        public long ProdutoId { get; set; }
 
-        public bool disponivel_estoque { get; set; }
-
-        public ItensPedidosViewModel(int pedidos_ID, PedidosViewModel pedido, int produtos_ID, ProdutosViewModel produto, int quantidade, decimal preco, bool disponivel_estoque)
-        {
-            Pedidos_ID = pedidos_ID;
-            Pedido = pedido;
-            Produtos_ID = produtos_ID;
-            Produto = produto;
-            Quantidade = quantidade;
-            Preco = preco;
-            this.disponivel_estoque = disponivel_estoque;
-        }
-
-        public ItensPedidosViewModel()
-        {
-        }
+        public Produtos Produtos { get; set; } = null!;
     }
 }

@@ -8,7 +8,7 @@ namespace BazarTemTudo.Application.ViewModels.Enums
 {
     public enum TipoUsuario
     {
-        Interno,
-        Externo
+        Interno = 1,
+        Externo = 2
     }
 }

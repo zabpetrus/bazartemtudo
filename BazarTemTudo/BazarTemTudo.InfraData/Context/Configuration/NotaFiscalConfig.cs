@@ -22,6 +22,12 @@ namespace BazarTemTudo.InfraData.Context.Configuration
             builder.Property(e => e.Id)
                   .ValueGeneratedOnAdd()
                   .IsRequired();
+
+            builder
+               .HasOne(e => e.Pedido)
+               .WithOne()
+               .HasForeignKey<NotaFiscal>(e => e.PedidoID)
+               .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

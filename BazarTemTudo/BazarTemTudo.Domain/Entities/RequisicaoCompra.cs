@@ -25,14 +25,11 @@ namespace BazarTemTudo.Domain.Entities
 
         //Mapeamento
 
-        public Fornecedores Fornecedor { get; set; } = new Fornecedores();
+        public Fornecedores Fornecedor { get; set; } 
 
-        public Produtos Produto { get; set; } = new Produtos();
+        public Produtos Produto { get; set; } 
 
 
-
-        public RequisicaoCompra()
-        {
-        }
+        
     }
 }

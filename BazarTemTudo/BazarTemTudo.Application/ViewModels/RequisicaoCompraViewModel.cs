@@ -27,20 +27,6 @@ namespace BazarTemTudo.Application.ViewModels
 
         public DateTime Data_Emissao { get; set; }
 
-        public RequisicaoCompraViewModel(int fornecedor_ID, FornecedoresViewModel fornecedor, int produto_ID, ProdutosViewModel produto, int quantidade, StatusPedido status_Pedido, decimal? total_Compra, DateTime data_Emissao)
-        {
-            Fornecedor_ID = fornecedor_ID;
-            Fornecedor = fornecedor;
-            Produto_ID = produto_ID;
-            Produto = produto;
-            Quantidade = quantidade;
-            Status_Pedido = status_Pedido;
-            Total_Compra = total_Compra;
-            Data_Emissao = data_Emissao;
-        }
-
-        public RequisicaoCompraViewModel()
-        {
-        }
+      
     }
 }

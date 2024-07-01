@@ -9,15 +9,17 @@ namespace BazarTemTudo.Domain.Entities
 {
     public class NotaFiscal : Entity
     {
-        public  int Pedidos_ID { get; set; }
+        
        
         public decimal Valor_Total { get; set; }
 
         public DateTime Data_Emissao { get; set; }
 
         //Links
-        //public Pedidos pedido_Cliente { get; set; } = new Pedidos();
 
-        public NotaFiscal() { }
+        public long PedidoID { get; set; }
+
+        public Pedidos Pedido { get; set; } 
+
     }
 }

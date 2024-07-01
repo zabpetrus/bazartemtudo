@@ -8,8 +8,8 @@ namespace BazarTemTudo.Application.ViewModels.Enums
 {
     public enum TipoServico
     {
-        Expresso,
-        Normal,
-        Economico
+        Expresso = 1,
+        Normal = 2,
+        Economico = 3
     }
 }

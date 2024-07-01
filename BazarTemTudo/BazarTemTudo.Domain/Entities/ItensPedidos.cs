@@ -15,13 +15,13 @@ namespace BazarTemTudo.Domain.Entities
 
         public int Quantity_Purchased { get; set; }
 
-        public long PedidoId { get; set; }
-     
+       
 
 
         //Navegação
-        public Pedidos Pedido { get; set; } = null!;
+         public long PedidoId { get; set; }     
 
+        public Pedidos Pedido { get; set; } = null!;
 
         public long ProdutoId {  get; set; }
 

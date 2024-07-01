@@ -1,4 +1,5 @@
 ﻿using BazarTemTudo.Domain.Entities;
+using BazarTemTudo.Domain.Entities.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -23,6 +24,10 @@ namespace BazarTemTudo.InfraData.Context.Configuration
                   .ValueGeneratedOnAdd()
                   .IsRequired();
 
+            builder.Property(e => e.Quantidade).IsRequired();
+
+            builder.Property(e => e.Total_Compra).IsRequired();
+
             builder.HasOne(e => e.Fornecedor)
                 .WithMany()
                 .HasForeignKey(e => e.Fornecedor_ID);
@@ -33,7 +38,10 @@ namespace BazarTemTudo.InfraData.Context.Configuration
               .HasForeignKey(e => e.Produto_ID)
               .OnDelete(DeleteBehavior.Restrict);
 
-            builder.Property(e => e.Status_Pedido).HasConversion<string>();
+            builder.Property(e => e.Status_Pedido).HasConversion(
+               v => Enum.GetName(typeof(StatusPedido), v),
+               v => (StatusPedido)Enum.Parse(typeof(StatusPedido), v)
+           );
         }
     }
 }

@@ -15,7 +15,7 @@ namespace BazarTemTudo.Domain.Entities
 
          public  long Transportadora_ID { get; set; } 
 
-        public StatusDespacho Status_Entrega {  get; set; }  = StatusDespacho.Em_processamento; 
+        public StatusDespacho Status_Entrega {  get; set; } 
 
         public DateTime Data_Liberacao { get; set; } = DateTime.Now;
 

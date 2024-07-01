@@ -9,9 +9,9 @@ namespace BazarTemTudo.Application.ViewModels
 {
     public class CheckoutViewModel
     {
-        public int Pedido_Id { get; set; }
+        public long Pedido_Id { get; set; }
 
-        public PedidosViewModel Pedido_Cliente { get; set; } = new PedidosViewModel();
+        public PedidosViewModel Pedido_Cliente { get; set; }
 
         public decimal Total_Pedido { get; set; }
 
@@ -19,17 +19,6 @@ namespace BazarTemTudo.Application.ViewModels
 
         public DateTime DataDespacho { get; set; } = new DateTime();
 
-        public CheckoutViewModel(int pedido_Id, PedidosViewModel pedido_Cliente, decimal total_Pedido, StatusDespacho status_Despacho, DateTime dataDespacho)
-        {
-            Pedido_Id = pedido_Id;
-            Pedido_Cliente = pedido_Cliente;
-            Total_Pedido = total_Pedido;
-            Status_Despacho = status_Despacho;
-            DataDespacho = dataDespacho;
-        }
-
-        public CheckoutViewModel()
-        {
-        }
+       
     }
 }

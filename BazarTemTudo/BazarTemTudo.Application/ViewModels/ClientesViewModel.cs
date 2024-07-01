@@ -9,7 +9,7 @@ namespace BazarTemTudo.Application.ViewModels
 {
     public class ClientesViewModel
     {
-        public int Id { get; set; } 
+        public long Id { get; set; } 
 
         public string Nome { get; set; } = string.Empty;
 
@@ -22,14 +22,6 @@ namespace BazarTemTudo.Application.ViewModels
 
         public ClientesViewModel() { }
 
-        public ClientesViewModel(string nome, string cPF, string email, DateTime dataNascimento)
-        {
-            Nome = nome;
-            CPF = cPF;
-            Email = email;
-            DataNascimento = dataNascimento;
-        }
-
-
+      
     }
 }

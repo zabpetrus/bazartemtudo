@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BazarTemTudo.Domain.Entities;
+using BazarTemTudo.Domain.Entities.Enums;
 
 namespace BazarTemTudo.InfraData.Context.Configuration
 {
@@ -32,7 +33,10 @@ namespace BazarTemTudo.InfraData.Context.Configuration
               .HasForeignKey(e => e.Pedido_Id)
               .OnDelete(DeleteBehavior.Restrict);
 
-            builder.Property(e => e.Status_Entrega).HasConversion<string>();      
+            builder.Property(e => e.Status_Entrega).HasConversion(
+               v => Enum.GetName(typeof(StatusDespacho), v),
+               v => (StatusDespacho)Enum.Parse(typeof(StatusDespacho), v)
+           );
 
 
         }

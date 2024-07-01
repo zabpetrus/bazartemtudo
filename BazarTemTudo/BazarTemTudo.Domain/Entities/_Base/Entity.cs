@@ -24,9 +24,9 @@ namespace BazarTemTudo.Domain.Entities._Base
         [Key]
         public long? Id {  get; set; }
 
-        public DateTime Data_Registro { get; private set; }
+        public DateTime Data_Registro { get; private set; } = DateTime.Now;
 
-        public DateTime Data_Atualizacao { get; private set; }
+        public DateTime Data_Atualizacao { get; private set; } = DateTime.Now;
 
 
     }

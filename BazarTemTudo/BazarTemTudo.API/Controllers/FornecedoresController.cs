@@ -28,6 +28,15 @@ namespace BazarTemTudo.API.Controllers
             _unitOfWork = unitOfWork;
         }
 
+        [HttpGet]
+        public override IActionResult Get()
+        {
+            var result = _fornecedoresAppService.GetAll();
+            return Ok(result);
+        }
+
+
+
         [HttpPost]
         public IActionResult Create(FornecedoresViewModel fornecedores)
         {

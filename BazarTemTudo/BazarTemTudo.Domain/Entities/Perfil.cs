@@ -13,11 +13,8 @@ namespace BazarTemTudo.Domain.Entities
        
         public string Nome { get; set; }
 
-        public string Descricao { get; set; }  
-        
-        public Perfil()
-        {
-        }
+        public string Descricao { get; set; }          
+    
 
     }
 }

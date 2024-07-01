@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BazarTemTudo.Application.ViewModels.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,28 +9,12 @@ namespace BazarTemTudo.Application.ViewModels
 {
     public class UsuariosViewModel
     {
-        public string Nome { get; set; } = string.Empty;
+        public string Nome { get; set; }
 
-        public string Email { get; set; } = string.Empty;
+        public string Cpf { get; set; }
 
-        public string CPF { get; set; } = string.Empty;
+        public  TipoUsuario TipoUsuario { get; set; }
 
-        public int Endereco_ID { get; set; }
 
-        public EnderecoViewModel Endereco_Usuario { get; set; } = new EnderecoViewModel();
-        public string Senha { get; set; }
-
-        public UsuariosViewModel(string nome, string email, string cPF, int endereco_ID, EnderecoViewModel endereco_Usuario)
-        {
-            Nome = nome;
-            Email = email;
-            CPF = cPF;
-            Endereco_ID = endereco_ID;
-            Endereco_Usuario = endereco_Usuario;
-        }
-
-        public UsuariosViewModel()
-        {
-        }
     }
 }

@@ -352,8 +352,8 @@ namespace BazarTemTudo.InfraData.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Endereco_ID")
-                        .HasColumnType("int");
+                    b.Property<long>("Endereco_ID")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Nome_Fornecedor")
                         .IsRequired()
@@ -368,6 +368,9 @@ namespace BazarTemTudo.InfraData.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Endereco_ID")
+                        .IsUnique();
 
                     b.ToTable("Fornecedores", (string)null);
                 });
@@ -862,6 +865,17 @@ namespace BazarTemTudo.InfraData.Migrations
                     b.Navigation("Pedidos");
 
                     b.Navigation("Transportadora");
+                });
+
+            modelBuilder.Entity("BazarTemTudo.Domain.Entities.Fornecedores", b =>
+                {
+                    b.HasOne("BazarTemTudo.Domain.Entities.Endereco", "Endereco_Fornecedor")
+                        .WithOne()
+                        .HasForeignKey("BazarTemTudo.Domain.Entities.Fornecedores", "Endereco_ID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Endereco_Fornecedor");
                 });
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.ItensPedidos", b =>

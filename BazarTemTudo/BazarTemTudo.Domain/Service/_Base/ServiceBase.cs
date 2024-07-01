@@ -30,7 +30,6 @@ namespace BazarTemTudo.Domain.Service._Base
         {
             return _repository.GetAll();
         }
-
       
         public TEntity GetById(long id)
         {
@@ -61,6 +60,56 @@ namespace BazarTemTudo.Domain.Service._Base
         public void AddRange(IEnumerable<TEntity> entities)
         {
             _repository.CreateMultiples(entities);  
+        }
+
+        public void Create(TEntity entity)
+        {
+            _repository.Create(entity); 
+        }
+
+        public void UpdateMultiples(IEnumerable<TEntity> entities)
+        {
+            _repository.UpdateMultiples(entities);  
+        }
+
+        public bool Delete(long id)
+        {
+            return (_repository.Delete(id));
+        }
+
+        public void DeleteMultiples(IEnumerable<TEntity> entities)
+        {
+            _repository.DeleteMultiples(entities);  
+        }
+
+        public int Search(string expression)
+        {
+            return (int) _repository.Search(expression);    
+        }
+
+        public List<TEntity> SearchAll(string expression)
+        {
+            return _repository.SearchAll(expression);
+        }
+
+        public long GetID(TEntity entity)
+        {
+            return _repository.GetID(entity);
+        }
+
+        public long CreateGetID(TEntity entity)
+        {
+            return _repository.CreateGetID(entity); 
+        }
+
+        public IEnumerable<TEntity> FindAll(TEntity args)
+        {
+            return _repository.FindAll(args);
+        }
+
+        public TEntity Find(TEntity entity)
+        {
+            return _repository.Find(entity);    
         }
     }
 }

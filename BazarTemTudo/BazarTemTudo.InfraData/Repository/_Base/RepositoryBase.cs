@@ -321,22 +321,122 @@ namespace BazarTemTudo.InfraData.Repository._Base
 
         int IRepositoryBase<T>.Search(string expression)
         {
-            throw new NotImplementedException();
+            var entities = _context.Set<T>().FromSqlRaw(expression).ToList();
+            return entities.Count;
+
         }
 
         public long GetID(T entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var foundEntity = _context.Find<T>(entity);
+
+                if (foundEntity != null)
+                {
+                    var idProperty = typeof(T).GetProperty("Id");
+
+                    if (idProperty != null)
+                    {
+                        return (long)idProperty.GetValue(foundEntity);
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("A entidade não possui uma propriedade 'Id' válida.");
+                    }
+                }
+                else
+                {
+                    throw new InvalidOperationException("Entidade não encontrada para obter o ID.");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro durante a procura do ID.", ex);
+            }
         }
+
 
         public IEnumerable<T> FindAll(T args)
         {
-            throw new NotImplementedException();
+            return _context.Set<T>().ToList();  
         }
 
         public T Find(T entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var entityType = _context.Model.FindEntityType(typeof(T));
+
+                if (entityType == null)
+                {
+                    throw new Exception("Tipo de entidade não encontrado no contexto.");
+                }
+
+                var primaryKey = entityType.FindPrimaryKey();
+
+                if (primaryKey == null)
+                {
+                    throw new Exception("Chave primária não definida para o tipo de entidade.");
+                }
+
+                var keyValues = primaryKey.Properties.Select(x => typeof(T).GetProperty(x.Name).GetValue(entity)).ToArray();
+
+                var foundEntity = _context.Set<T>().Find(keyValues);
+
+                if (foundEntity == null)
+                {
+                    throw new Exception("Entidade não encontrada na base de dados.");
+                }
+
+                return foundEntity;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro durante a busca da entidade: " + ex.Message, ex);
+            }
+        }
+
+        public long CreateGetID(T entity)
+        {
+            try
+            {
+                _context.Set<T>().Add(entity);
+                _context.SaveChanges();
+
+                // Obter informações sobre a chave primária da entidade
+                var entityType = _context.Model.FindEntityType(typeof(T));
+                var primaryKey = entityType.FindPrimaryKey();
+
+                if (primaryKey == null)
+                {
+                    throw new InvalidOperationException("A entidade não possui uma chave primária definida.");
+                }
+
+                // Verificar se a chave primária possui exatamente uma propriedade
+                if (primaryKey.Properties.Count != 1)
+                {
+                    throw new InvalidOperationException("A chave primária da entidade não é simples (não possui exatamente uma propriedade).");
+                }
+
+                // Obter o nome da propriedade que representa a chave primária
+                var primaryKeyPropertyName = primaryKey.Properties[0].Name;
+
+                // Acessar o valor da propriedade que representa a chave primária
+                var propertyInfo = entity.GetType().GetProperty(primaryKeyPropertyName);
+                if (propertyInfo == null)
+                {
+                    throw new InvalidOperationException($"A propriedade '{primaryKeyPropertyName}' não foi encontrada na entidade '{typeof(T).Name}'.");
+                }
+
+                var primaryKeyValue = (long)propertyInfo.GetValue(entity);
+
+                return primaryKeyValue;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao inserir a entidade e retornar o ID", ex);
+            }
         }
     }
 }

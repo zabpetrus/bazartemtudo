@@ -29,37 +29,56 @@ namespace BazarTemTudo.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create( FornecedoresViewModel fornecedores) 
+        public IActionResult Create(FornecedoresViewModel fornecedores)
         {
             try
             {
+                // Iniciar transação no Unit of Work
                 _unitOfWork.BeginTransaction();
 
+                // Verificar se o objeto fornecedores é nulo
                 if (fornecedores == null)
                 {
                     throw new ArgumentNullException("Um objeto de entrada é necessário");
                 }
 
-                EnderecoViewModel enderecoViewModel = new EnderecoViewModel();
-                enderecoViewModel.ship_address1 = fornecedores.Endereco_Fornecedor.ship_address1;
-                enderecoViewModel.ship_address2 = fornecedores.Endereco_Fornecedor.ship_address2;
-                enderecoViewModel.ship_address3 = fornecedores.Endereco_Fornecedor.ship_address3;
-                enderecoViewModel.ship_state = fornecedores.Endereco_Fornecedor.ship_state;
-                enderecoViewModel.ship_city = fornecedores.Endereco_Fornecedor.ship_city;
-                enderecoViewModel.ship_postal_code = fornecedores.Endereco_Fornecedor.ship_postal_code;
-                enderecoViewModel.ship_country = fornecedores.Endereco_Fornecedor.ship_country;
+                // Criar um ViewModel de Endereço a partir do fornecedor
+                EnderecoViewModel enderecoViewModel = new EnderecoViewModel
+                {
+                    ship_address1 = fornecedores.Endereco_Fornecedor.ship_address1,
+                    ship_address2 = fornecedores.Endereco_Fornecedor.ship_address2,
+                    ship_address3 = fornecedores.Endereco_Fornecedor.ship_address3,
+                    ship_state = fornecedores.Endereco_Fornecedor.ship_state,
+                    ship_city = fornecedores.Endereco_Fornecedor.ship_city,
+                    ship_postal_code = fornecedores.Endereco_Fornecedor.ship_postal_code,
+                    ship_country = fornecedores.Endereco_Fornecedor.ship_country
+                };
 
-                _enderecoAppService.Add(enderecoViewModel);
+                // Criar o endereço e obter o ID retornado
+                var enderecoId = _enderecoAppService.CreateGetID(enderecoViewModel);
+                fornecedores.Endereco_ID = enderecoId;
 
-
+                // Adicionar o fornecedor usando o serviço de aplicação de fornecedores
                 _fornecedoresAppService.Add(fornecedores);
+
+                // Salvar todas as mudanças feitas até agora no Unit of Work
+                _unitOfWork.SaveChanges();
+
+                // Commitar a transação se tudo ocorreu sem exceções
+                _unitOfWork.Commit();
+
+                return Ok("Operação realizada com sucesso");
             }
             catch (Exception ex)
             {
+                // Rollback da transação em caso de exceção
+                _unitOfWork.Rollback();
 
+                // Retornar uma resposta de erro com a mensagem da exceção
+                return BadRequest($"Erro ao criar fornecedor: {ex.Message}");
             }
-          
         }
+
 
 
 

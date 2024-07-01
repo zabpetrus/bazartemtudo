@@ -25,9 +25,24 @@ namespace BazarTemTudo.Application.Interface._Base
 
         void Update(long id, TEntity obj);
 
-        void RemoveById(long id);
+
+        IEnumerable<TEntity> FindAll(TEntity args);
 
         void AddRange(IEnumerable<TEntity> entities);
+
+        void UpdateMultiples(IEnumerable<TEntity> entities);
+
+        bool Delete(long id);
+
+        void DeleteMultiples(IEnumerable<TEntity> entities);
+
+        int Search(string expression);
+
+        List<TEntity> SearchAll(string expression);
+
+        long GetID(TEntity entity);
+
+        long CreateGetID(TEntity entity);
 
 
     }

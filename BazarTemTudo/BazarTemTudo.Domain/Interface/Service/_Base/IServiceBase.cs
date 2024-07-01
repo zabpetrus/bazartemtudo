@@ -9,7 +9,7 @@ namespace BazarTemTudo.Domain.Interface.Service._Base
 {
     public interface IServiceBase<TEntity> where TEntity : class
     {
-        //Metodos sincronos
+
         void Add(TEntity obj);
 
         TEntity GetById(long id);
@@ -20,9 +20,27 @@ namespace BazarTemTudo.Domain.Interface.Service._Base
 
         bool RemoveById(long id);
 
-        IEnumerable<TEntity> FindAll( string args );
-
         void AddRange(IEnumerable<TEntity> entities);
+
+        void Create(TEntity entity);
+
+        void UpdateMultiples(IEnumerable<TEntity> entities);
+
+        bool Delete(long id);
+
+        void DeleteMultiples(IEnumerable<TEntity> entities);
+
+        int Search(string expression);
+
+        List<TEntity> SearchAll(string expression);
+
+        long GetID(TEntity entity);
+
+        long CreateGetID(TEntity entity);
+
+        IEnumerable<TEntity> FindAll(TEntity args);
+
+        TEntity Find(TEntity entity);
 
 
     }

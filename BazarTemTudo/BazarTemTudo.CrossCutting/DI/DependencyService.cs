@@ -39,8 +39,9 @@ namespace BazarTemTudo.CrossCutting.DI
             services.AddScoped<IProdutosAppService, ProdutosAppService>();  
             services.AddScoped<IRequisicaoCompraAppService, RequisicaoCompraAppService>();
             services.AddScoped<ITransportadorasAppService, TransportadorasAppService>();
-            services.AddScoped<IUsuariosAppService, UsuariosAppService>();  
-         
+            services.AddScoped<IUsuariosAppService, UsuariosAppService>();
+            services.AddScoped<IEnderecoAppService, EnderecoAppService>();
+
 
         }
         private static void RegisterServices(IServiceCollection services)
@@ -58,6 +59,7 @@ namespace BazarTemTudo.CrossCutting.DI
             services.AddScoped<IRequisicaoCompraService, RequisicaoCompraService>();
             services.AddScoped<ITransportadorasService, TransportadorasService>();
             services.AddScoped<IUsuarioService, UsuariosService>();
+            services.AddScoped<IEnderecoService, EnderecoService>();
 
         }
         private static void RegisterRepositories(IServiceCollection services)
@@ -75,6 +77,8 @@ namespace BazarTemTudo.CrossCutting.DI
             services.AddScoped<IRequisicaoCompraRepository, RequisicaoCompraRepository>();
             services.AddScoped<ITransportadorasRepository, TransportadorasRepository>();
             services.AddScoped<IUsuarioRepository, UsuariosRepository>();
+            services.AddScoped<IEnderecoRepository, EnderecoRepository>();
+
 
         }
 

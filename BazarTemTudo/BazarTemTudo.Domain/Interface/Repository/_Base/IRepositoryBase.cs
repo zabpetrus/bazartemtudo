@@ -32,6 +32,8 @@ namespace BazarTemTudo.Domain.Interface.Repository._Base
 
         long GetID(TEntity entity);
 
+        long CreateGetID(TEntity entity);
+
         IEnumerable<TEntity> FindAll(TEntity args);
 
         TEntity Find(TEntity entity);

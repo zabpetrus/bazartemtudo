@@ -145,26 +145,6 @@ namespace BazarTemTudo.InfraData.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Fornecedores",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome_Fornecedor = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CNPJ = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Endereco_ID = table.Column<int>(type: "int", nullable: false),
-                    Telefone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Website = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Data_Registro = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Data_Atualizacao = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Fornecedores", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "NotaFiscal",
                 columns: table => new
                 {
@@ -195,6 +175,24 @@ namespace BazarTemTudo.InfraData.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Perfis", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Produtos",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    product_name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SKU = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UPC = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Valor = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Data_Registro = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Data_Atualizacao = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Produtos", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -322,6 +320,32 @@ namespace BazarTemTudo.InfraData.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Fornecedores",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nome_Fornecedor = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CNPJ = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Endereco_ID = table.Column<long>(type: "bigint", nullable: false),
+                    Telefone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Website = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Data_Registro = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Data_Atualizacao = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Fornecedores", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Fornecedores_Enderecos_Endereco_ID",
+                        column: x => x.Endereco_ID,
+                        principalTable: "Enderecos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Pedidos",
                 columns: table => new
                 {
@@ -350,6 +374,38 @@ namespace BazarTemTudo.InfraData.Migrations
                         name: "FK_Pedidos_Enderecos_Endereco_Id",
                         column: x => x.Endereco_Id,
                         principalTable: "Enderecos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RequisicaoCompra",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Fornecedor_ID = table.Column<long>(type: "bigint", nullable: false),
+                    Produto_ID = table.Column<long>(type: "bigint", nullable: false),
+                    Quantidade = table.Column<int>(type: "int", nullable: false),
+                    Status_Pedido = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Total_Compra = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    Data_Emissao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Data_Registro = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Data_Atualizacao = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RequisicaoCompra", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_RequisicaoCompra_Fornecedores_Fornecedor_ID",
+                        column: x => x.Fornecedor_ID,
+                        principalTable: "Fornecedores",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_RequisicaoCompra_Produtos_Produto_ID",
+                        column: x => x.Produto_ID,
+                        principalTable: "Produtos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -385,12 +441,10 @@ namespace BazarTemTudo.InfraData.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Pedido_Id = table.Column<long>(type: "bigint", nullable: false),
+                    Transportadora_ID = table.Column<long>(type: "bigint", nullable: false),
                     Status_Entrega = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Data_Liberacao = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PedidoId = table.Column<long>(type: "bigint", nullable: false),
-                    PedidosId = table.Column<long>(type: "bigint", nullable: false),
-                    TransportadoraId = table.Column<long>(type: "bigint", nullable: false),
-                    Transportadora_ID = table.Column<long>(type: "bigint", nullable: false),
                     Data_Registro = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Data_Atualizacao = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -398,14 +452,14 @@ namespace BazarTemTudo.InfraData.Migrations
                 {
                     table.PrimaryKey("PK_DespachoMercadorias", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_DespachoMercadorias_Pedidos_PedidosId",
-                        column: x => x.PedidosId,
+                        name: "FK_DespachoMercadorias_Pedidos_Pedido_Id",
+                        column: x => x.Pedido_Id,
                         principalTable: "Pedidos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_DespachoMercadorias_Transportadoras_TransportadoraId",
-                        column: x => x.TransportadoraId,
+                        name: "FK_DespachoMercadorias_Transportadoras_Transportadora_ID",
+                        column: x => x.Transportadora_ID,
                         principalTable: "Transportadoras",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -434,65 +488,12 @@ namespace BazarTemTudo.InfraData.Migrations
                         principalTable: "Pedidos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Produtos",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    product_name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SKU = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UPC = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Valor = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    itensPedidosId = table.Column<long>(type: "bigint", nullable: false),
-                    Data_Registro = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Data_Atualizacao = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Produtos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Produtos_ItensPedidos_itensPedidosId",
-                        column: x => x.itensPedidosId,
-                        principalTable: "ItensPedidos",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "RequisicaoCompra",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Fornecedor_ID = table.Column<int>(type: "int", nullable: false),
-                    Produto_ID = table.Column<int>(type: "int", nullable: false),
-                    Quantidade = table.Column<int>(type: "int", nullable: false),
-                    Status_Pedido = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Total_Compra = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
-                    Data_Emissao = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    FornecedorId = table.Column<long>(type: "bigint", nullable: false),
-                    ProdutoId = table.Column<long>(type: "bigint", nullable: false),
-                    Data_Registro = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Data_Atualizacao = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_RequisicaoCompra", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_RequisicaoCompra_Fornecedores_FornecedorId",
-                        column: x => x.FornecedorId,
-                        principalTable: "Fornecedores",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_RequisicaoCompra_Produtos_ProdutoId",
+                        name: "FK_ItensPedidos_Produtos_ProdutoId",
                         column: x => x.ProdutoId,
                         principalTable: "Produtos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -540,14 +541,20 @@ namespace BazarTemTudo.InfraData.Migrations
                 column: "Pedido_ClienteId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DespachoMercadorias_PedidosId",
+                name: "IX_DespachoMercadorias_Pedido_Id",
                 table: "DespachoMercadorias",
-                column: "PedidosId");
+                column: "Pedido_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DespachoMercadorias_TransportadoraId",
+                name: "IX_DespachoMercadorias_Transportadora_ID",
                 table: "DespachoMercadorias",
-                column: "TransportadoraId");
+                column: "Transportadora_ID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Fornecedores_Endereco_ID",
+                table: "Fornecedores",
+                column: "Endereco_ID",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_ItensPedidos_PedidoId",
@@ -571,40 +578,19 @@ namespace BazarTemTudo.InfraData.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Produtos_itensPedidosId",
-                table: "Produtos",
-                column: "itensPedidosId");
+                name: "IX_RequisicaoCompra_Fornecedor_ID",
+                table: "RequisicaoCompra",
+                column: "Fornecedor_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RequisicaoCompra_FornecedorId",
+                name: "IX_RequisicaoCompra_Produto_ID",
                 table: "RequisicaoCompra",
-                column: "FornecedorId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_RequisicaoCompra_ProdutoId",
-                table: "RequisicaoCompra",
-                column: "ProdutoId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_ItensPedidos_Produtos_ProdutoId",
-                table: "ItensPedidos",
-                column: "ProdutoId",
-                principalTable: "Produtos",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+                column: "Produto_ID");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_ItensPedidos_Pedidos_PedidoId",
-                table: "ItensPedidos");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_ItensPedidos_Produtos_ProdutoId",
-                table: "ItensPedidos");
-
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
@@ -633,6 +619,9 @@ namespace BazarTemTudo.InfraData.Migrations
                 name: "Estoque");
 
             migrationBuilder.DropTable(
+                name: "ItensPedidos");
+
+            migrationBuilder.DropTable(
                 name: "NotaFiscal");
 
             migrationBuilder.DropTable(
@@ -651,22 +640,19 @@ namespace BazarTemTudo.InfraData.Migrations
                 name: "Transportadoras");
 
             migrationBuilder.DropTable(
+                name: "Pedidos");
+
+            migrationBuilder.DropTable(
                 name: "Fornecedores");
 
             migrationBuilder.DropTable(
-                name: "Pedidos");
+                name: "Produtos");
 
             migrationBuilder.DropTable(
                 name: "Clientes");
 
             migrationBuilder.DropTable(
                 name: "Enderecos");
-
-            migrationBuilder.DropTable(
-                name: "Produtos");
-
-            migrationBuilder.DropTable(
-                name: "ItensPedidos");
         }
     }
 }

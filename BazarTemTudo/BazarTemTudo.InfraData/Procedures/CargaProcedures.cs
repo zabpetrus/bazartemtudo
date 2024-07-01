@@ -324,7 +324,7 @@ INSERT INTO [dbo].[Fornecedores]
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro durante a operação em Clientes: " + ex.Message);
+                throw new Exception("Erro durante a operação em Pedidos: " + ex.Message);
             }
 
         }
@@ -483,34 +483,77 @@ INSERT INTO [dbo].[Fornecedores]
         }
 
 
-        
+
 
         public static bool ExecutarProcedimento()
         {
-            var checkout = PopularCheckout();
-            var despacho = PopulateDespachoMercadorias();
-            var end = PopulateEnderecos();
-            var estoque = PopulateEstoque();
-            var forn = PopulateFornecedores();
-            var itens = PopulateItensPedidos();
-            var nf = PopulateNotaFiscal();
-            var ped = PopulatePedidos();
-            var perf = PopulatePerfil();
-            var rc = PopulateRequisicaoCompra();
-            var trans = PopulateTransportadoras();
-            var prod = PopularProdutos();
-            var cli = PopularClientes();
-
-
-            if (checkout && despacho && end && estoque && forn && itens && nf && ped && perf && rc && trans && prod && cli)
+            try
             {
-                return true;
+                bool clientesPopulados = PopularClientes();
+                bool produtosPopulados = PopularProdutos();
+
+                if (clientesPopulados && produtosPopulados)
+                {
+                    bool pedidosPopulados = PopulatePedidos();
+
+                    if (pedidosPopulados)
+                    {
+                        bool itensPedidosPopulados = PopulateItensPedidos();
+
+                        if (itensPedidosPopulados)
+                        {
+                            bool despachoMercadoriasPopulado = PopulateDespachoMercadorias();
+                            bool enderecosPopulados = PopulateEnderecos();
+                            bool estoquePopulado = PopulateEstoque();
+                            bool fornecedoresPopulados = PopulateFornecedores();
+                            bool nfPopulado = PopulateNotaFiscal();
+                            bool perfisPopulados = PopulatePerfil();
+                            bool requisicoesCompraPopuladas = PopulateRequisicaoCompra();
+                            bool transportadorasPopuladas = PopulateTransportadoras();
+
+                            if(despachoMercadoriasPopulado 
+                                && enderecosPopulados
+                                && estoquePopulado
+                                && nfPopulado
+                                && perfisPopulados
+                                && requisicoesCompraPopuladas
+                                && transportadorasPopuladas 
+                                )
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }                             
+
+                        }
+                        else
+                        {
+                            // Retorne false se houve falha na operação de popular itens de pedidos
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        // Retorne false se houve falha na operação de popular pedidos
+                        return false;
+                    }
+                }
+                else
+                {
+                    // Retorne false se houve falha na operação de popular clientes ou produtos
+                    return false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                throw new Exception("Erro durante a operação: " );
+                // Trate exceções aqui se necessário
+                Console.WriteLine($"Erro ao executar procedimento: {ex.Message}");
+                return false;
             }
         }
+
     }
 
 }

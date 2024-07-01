@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BazarTemTudo.Domain.Entities;
 using BazarTemTudo.Domain.Entities.Enums;
+using BazarTemTudo.Domain.Entities._Base;
 
 namespace BazarTemTudo.InfraData.Context.Configuration
 {
@@ -20,7 +21,13 @@ namespace BazarTemTudo.InfraData.Context.Configuration
             builder.HasKey(e => e.Id);
             builder.Property(e => e.Id)
                   .ValueGeneratedOnAdd()
-                  .IsRequired();
+            .IsRequired();
+
+            builder.HasOne(c => c.Endereco_Fornecedor)
+             .WithOne()
+             .HasForeignKey<Fornecedores>(a => a.Endereco_ID)
+             .OnDelete(DeleteBehavior.Restrict);
+
 
         }
     }

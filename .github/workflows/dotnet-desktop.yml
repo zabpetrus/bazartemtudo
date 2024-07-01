@@ -30,7 +30,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.204
+        dotnet-version: 8.0.6
 
     # Adicionar MSBuild ao PATH
     - name: Setup MSBuild.exe

@@ -21,20 +21,20 @@ namespace BazarTemTudo.Domain.Entities
 
           public string Ship_service_level {  get; set; }
 
-         StatusPedido statusPedido { get; set; } = StatusPedido.Pendente; 
+          public StatusPedido statusPedido { get; set; } = StatusPedido.Pendente; 
 
 
           //Navegação
 
-        public long ClientesId { get; set; }
+            public long ClientesId { get; set; }
 
-        public Clientes Clientes { get; set; }
+            public Clientes Clientes { get; set; }
 
-        public ICollection<ItensPedidos> ItensPedidos { get; set; }
+            public ICollection<ItensPedidos> ItensPedidos { get; set; }
 
-        public long Endereco_Id { get; set; }    
+            public long Endereco_Id { get; set; }    
 
-        public Endereco Endereco { get; set; }
+            public Endereco Endereco { get; set; }
 
 
     }

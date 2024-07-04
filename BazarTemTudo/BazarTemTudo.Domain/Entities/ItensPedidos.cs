@@ -11,11 +11,11 @@ namespace BazarTemTudo.Domain.Entities
     {
         public string Order_Item_id { get; set; }
         
-        public decimal? Item_Price { get; set; } 
+        public decimal Item_Price { get; set; } 
 
         public int Quantity_Purchased { get; set; }
 
-       
+        public bool Disponivel { get; set; } = false;
 
 
         //Navegação

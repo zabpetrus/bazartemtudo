@@ -19,6 +19,8 @@ dotnet ef migrations add InitialMigration --context BazarTemTudo.InfraData.Conte
 dotnet ef database update --context BazarTemTudo.InfraData.Context.ApplicationDBContext --project BazarTemTudo.InfraData --startup-project BazarTemTudo.API
 
 
+dotnet ef database drop --context BazarTemTudo.InfraData.Context.ApplicationDBContext --project BazarTemTudo.InfraData --startup-project BazarTemTudo.API --force
+
 
 ```csharp
     //Isolando o código

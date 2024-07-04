@@ -406,6 +406,12 @@ namespace BazarTemTudo.InfraData.Repository._Base
 
                 // Obter informações sobre a chave primária da entidade
                 var entityType = _context.Model.FindEntityType(typeof(T));
+
+                if(entityType == null)
+                {
+                    throw new ArgumentNullException(nameof(entityType));
+                }
+
                 var primaryKey = entityType.FindPrimaryKey();
 
                 if (primaryKey == null)

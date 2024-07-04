@@ -9,13 +9,14 @@ namespace BazarTemTudo.Domain.Entities
 {
     public class Produtos : Entity
     {
-        public string product_name { get; set; }  = string.Empty;
+        public string NomeProduto { get; set; } 
 
-        public string SKU { get; set; } = string.Empty;
+        public string SKU { get; set; }
 
-        public string UPC { get; set; } = string.Empty;
+        public string UPC { get; set; }
 
-        public decimal Valor { get; set; } = decimal.MinValue;         
+        public decimal Valor { get; set; }
+  
 
 
     }

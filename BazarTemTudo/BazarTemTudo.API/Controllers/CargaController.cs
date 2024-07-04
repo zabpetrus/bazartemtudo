@@ -1,5 +1,6 @@
 ﻿using BazarTemTudo.Application.Interface;
 using BazarTemTudo.Application.ViewModels;
+using BazarTemTudo.CrossCutting.Service;
 using BazarTemTudo.Domain.Entities;
 using BazarTemTudo.Infra.Filesystem.FileUpload;
 using BazarTemTudo.InfraData.Procedures;
@@ -17,13 +18,13 @@ namespace BazarTemTudo.API.Controllers
     [ApiController]
     public class CargaController : ControllerBase
     {
-        private readonly ICargaAppService _appService;
 
-        public CargaController(ICargaAppService appService)
+        private readonly CargaService _cargaService;
+
+        public CargaController(CargaService cargaService)
         {
-            _appService = appService;
+            _cargaService = cargaService;
         }
-
 
         /// <summary>
         /// Carregar Arquivo Carga
@@ -33,26 +34,36 @@ namespace BazarTemTudo.API.Controllers
         [HttpPost("file")]
         public IActionResult CarregarArquivoCarga(IFormFile file)
         {
+
+            var result = new List<CargaViewModel>();
+
             try
             {
+                
                 if (file != null)
                 {
-                    if(file.ContentType.Contains("application/json"))
+                    if (file == null || file.Length == 0)
                     {
-                        throw new Exception("Ainda não posso trabalhar com json...Sinto muito");
+                        throw new Exception("O arquivo está vazio ou não foi fornecido.");
                     }
 
-
-                    if (!file.ContentType.Contains("text") && !file.FileName.EndsWith(".txt", StringComparison.OrdinalIgnoreCase))
+                    if (file.ContentType.Contains("application/json"))
                     {
-                        return BadRequest(new { message = "Tipo de arquivo não suportado. Apenas arquivos TXT são permitidos." });
+                         result = LoadFileService.ParseJson(file);
+
+
+                    }
+                    else if (file.ContentType.Contains("text/csv") || file.ContentType.Contains("text/plain"))
+                    {
+                        result = LoadFileService.LoadTxtFileContent(file);  
+                    }
+                    else
+                    {
+                        throw new Exception("Erro: Arquivo não reconhecido");
                     }
 
-
-                    
-                    List<CargaViewModel> result = LoadFileService.LoadTxtFileContent(file);
-                    _appService.CreateMultiples(result);    
-                    
+                    var response = _cargaService.PopulateTables(result);
+                    if (response) { return Ok("Tabelas populadas com sucesso"); } else { return BadRequest("Ops!"); }
                 }
                 else
                 {
@@ -63,55 +74,11 @@ namespace BazarTemTudo.API.Controllers
             {
                return BadRequest(new { message = "Erro durante o processamento do arquivo", detalhe = "Detalhes do erro: ..." + ex });                            
             }
-            return Ok(new { message = "Arquivo processado com sucesso" });
         }
         /// <summary>
         /// Listar Carga Banco
         /// </summary>
-        [HttpGet]
-        public IActionResult ListarArquivos()
-        {
-            var data = _appService.GetAll();
-            var jsonResult =data.ToJson();
-            return Ok(jsonResult);
-        }
-
-
-        /// <summary>
-        /// Truncate Carga
-        /// </summary>
-        /// <returns>An IActionResult.</returns>
-        [HttpPost("truncar_carga")]
-        public IActionResult TruncateCarga()
-        {
-            try
-            {
-               var res = _appService.TruncateCarga();  
-                if(!res)
-                {
-                    throw new Exception("Não consegui truncar a tabela..");
-                }
-                return Ok(res);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });    
-            }
-
-        }
-
-
-        /// <summary>
-        /// Delete Carga
-        /// </summary>
-        /// <returns>An IActionResult.</returns>
-        [HttpPost("popular_tabelas")]
-        public IActionResult PopularTabelas()
-        {
-            _appService.PopulateTables();
-            return Ok();
-        }
-
+       
 
 
 

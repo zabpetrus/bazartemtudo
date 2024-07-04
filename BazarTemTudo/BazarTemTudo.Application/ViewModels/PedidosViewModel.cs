@@ -1,5 +1,5 @@
-﻿using BazarTemTudo.Application.ViewModels.Enums;
-using BazarTemTudo.Domain.Entities;
+﻿using BazarTemTudo.Domain.Entities;
+using BazarTemTudo.Domain.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +10,7 @@ namespace BazarTemTudo.Application.ViewModels
 {
     public class PedidosViewModel
     {
+
         public string Order_id { get; set; }
 
         public DateTime Purchase_Date { get; set; }
@@ -20,8 +21,7 @@ namespace BazarTemTudo.Application.ViewModels
 
         public string Ship_service_level { get; set; }
 
-        StatusPedido statusPedido { get; set; } = StatusPedido.Pendente;
-
+        public StatusPedido statusPedido { get; set; } = StatusPedido.Pendente;
 
         //Navegação
 

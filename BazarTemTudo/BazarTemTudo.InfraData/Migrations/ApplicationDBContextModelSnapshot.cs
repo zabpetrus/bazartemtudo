@@ -22,126 +22,13 @@ namespace BazarTemTudo.InfraData.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.Carga", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("buyer_email")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("buyer_name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("buyer_phone_number")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.Property<string>("cpf")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("currency")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<decimal>("item_price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("order_id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("order_item_id")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime>("payments_date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("product_name")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<DateTime>("purchase_date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("quantity_purchased")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ship_address_1")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("ship_address_2")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("ship_address_3")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("ship_city")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("ship_country")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("ship_postal_code")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("ship_service_level")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("ship_state")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("sku")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("upc")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Carga", (string)null);
-                });
-
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.Checkout", b =>
                 {
-                    b.Property<long?>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("DataDespacho")
                         .HasColumnType("datetime2");
@@ -172,11 +59,11 @@ namespace BazarTemTudo.InfraData.Migrations
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.Clientes", b =>
                 {
-                    b.Property<long?>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("CPF")
                         .IsRequired()
@@ -211,11 +98,11 @@ namespace BazarTemTudo.InfraData.Migrations
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.DespachoMercadorias", b =>
                 {
-                    b.Property<long?>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("Data_Atualizacao")
                         .HasColumnType("datetime2");
@@ -247,11 +134,11 @@ namespace BazarTemTudo.InfraData.Migrations
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.Endereco", b =>
                 {
-                    b.Property<long?>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("Data_Atualizacao")
                         .HasColumnType("datetime2");
@@ -259,38 +146,39 @@ namespace BazarTemTudo.InfraData.Migrations
                     b.Property<DateTime>("Data_Registro")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("order_id")
-                        .HasColumnType("int");
+                    b.Property<string>("Order_id")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ship_address1")
+                    b.Property<string>("Ship_address1")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("ship_address2")
+                    b.Property<string>("Ship_address2")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("ship_address3")
+                    b.Property<string>("Ship_address3")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("ship_city")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("ship_country")
+                    b.Property<string>("Ship_city")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("ship_postal_code")
+                    b.Property<string>("Ship_country")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Ship_postal_code")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("ship_state")
+                    b.Property<string>("Ship_state")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
@@ -302,11 +190,11 @@ namespace BazarTemTudo.InfraData.Migrations
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.Estoque", b =>
                 {
-                    b.Property<long?>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("Data_Atualizacao")
                         .HasColumnType("datetime2");
@@ -317,24 +205,26 @@ namespace BazarTemTudo.InfraData.Migrations
                     b.Property<int>("Estoque_Minimo")
                         .HasColumnType("int");
 
-                    b.Property<int>("Produtos_ID")
-                        .HasColumnType("int");
+                    b.Property<long>("ProdutosID")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ProdutosID");
+
                     b.ToTable("Estoque");
                 });
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.Fornecedores", b =>
                 {
-                    b.Property<long?>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("CNPJ")
                         .IsRequired()
@@ -375,11 +265,11 @@ namespace BazarTemTudo.InfraData.Migrations
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.ItensPedidos", b =>
                 {
-                    b.Property<long?>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("Data_Atualizacao")
                         .HasColumnType("datetime2");
@@ -387,7 +277,10 @@ namespace BazarTemTudo.InfraData.Migrations
                     b.Property<DateTime>("Data_Registro")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal?>("Item_Price")
+                    b.Property<bool>("Disponivel")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("Item_Price")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Order_Item_id")
@@ -414,11 +307,11 @@ namespace BazarTemTudo.InfraData.Migrations
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.NotaFiscal", b =>
                 {
-                    b.Property<long?>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("Data_Atualizacao")
                         .HasColumnType("datetime2");
@@ -445,11 +338,11 @@ namespace BazarTemTudo.InfraData.Migrations
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.Pedidos", b =>
                 {
-                    b.Property<long?>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<long>("ClientesId")
                         .HasColumnType("bigint");
@@ -482,6 +375,9 @@ namespace BazarTemTudo.InfraData.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<int>("statusPedido")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ClientesId");
@@ -494,11 +390,11 @@ namespace BazarTemTudo.InfraData.Migrations
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.Perfil", b =>
                 {
-                    b.Property<long?>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("Data_Atualizacao")
                         .HasColumnType("datetime2");
@@ -521,11 +417,11 @@ namespace BazarTemTudo.InfraData.Migrations
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.Produtos", b =>
                 {
-                    b.Property<long?>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("Data_Atualizacao")
                         .HasColumnType("datetime2");
@@ -533,20 +429,23 @@ namespace BazarTemTudo.InfraData.Migrations
                     b.Property<DateTime>("Data_Registro")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("NomeProduto")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<string>("SKU")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("UPC")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<decimal>("Valor")
                         .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("product_name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -555,11 +454,11 @@ namespace BazarTemTudo.InfraData.Migrations
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.RequisicaoCompra", b =>
                 {
-                    b.Property<long?>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("Data_Atualizacao")
                         .HasColumnType("datetime2");
@@ -598,11 +497,11 @@ namespace BazarTemTudo.InfraData.Migrations
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.Transportadoras", b =>
                 {
-                    b.Property<long?>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("CNPJ")
                         .IsRequired()
@@ -867,6 +766,17 @@ namespace BazarTemTudo.InfraData.Migrations
                     b.Navigation("Pedidos");
 
                     b.Navigation("Transportadora");
+                });
+
+            modelBuilder.Entity("BazarTemTudo.Domain.Entities.Estoque", b =>
+                {
+                    b.HasOne("BazarTemTudo.Domain.Entities.Produtos", "Estoque_Produto")
+                        .WithMany()
+                        .HasForeignKey("ProdutosID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Estoque_Produto");
                 });
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.Fornecedores", b =>

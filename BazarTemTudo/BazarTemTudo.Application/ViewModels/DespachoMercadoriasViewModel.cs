@@ -1,5 +1,5 @@
-﻿using BazarTemTudo.Application.ViewModels.Enums;
-using BazarTemTudo.Domain.Entities;
+﻿using BazarTemTudo.Domain.Entities;
+using BazarTemTudo.Domain.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;

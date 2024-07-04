@@ -15,11 +15,16 @@ namespace BazarTemTudo.InfraData.Context.Configuration
         {
             builder.ToTable("Estoque");
 
-
             builder.HasKey(e => e.Id);
             builder.Property(e => e.Id)
                   .ValueGeneratedOnAdd()
                   .IsRequired();
+
+            builder.HasOne(e => e.Estoque_Produto)
+                .WithOne()
+                .HasPrincipalKey<Estoque>(e => e.Id)
+                .HasForeignKey<Estoque>(e => e.ProdutosID)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

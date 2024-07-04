@@ -9,17 +9,14 @@ namespace BazarTemTudo.Domain.Entities
 {
     public class Estoque : Entity
     {
-        public int Produtos_ID { get; set; } 
+        
+        public long ProdutosID { get; set; } 
 
         public int Quantidade { get; set; } = 0;
 
         public int Estoque_Minimo { get; set; } = 0;
 
-        // public Produtos Produto { get; set; } = new Produtos();
-
-
-        public Estoque() { }
-
+        public Produtos Estoque_Produto { get; set; } 
      
     }
 }

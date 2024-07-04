@@ -5,40 +5,45 @@ using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Globalization;
+using System.Text.Json;
 
 namespace BazarTemTudo.Infra.Filesystem.FileUpload
 {
     public class LoadFileService
     {
 
-        public static async Task<bool> LoadFileFromFileSystem(IFormFile file)
+        public static List<CargaViewModel> ParseJson(IFormFile file)
         {
-
             try
             {
-                // Ler o arquivo txt
-                using (var streamReader = new StreamReader(file.OpenReadStream()))
+                using (var stream = file.OpenReadStream())
                 {
-                    var content = await streamReader.ReadToEndAsync();
+                    var options = new JsonSerializerOptions
+                    {
+                        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                        PropertyNameCaseInsensitive = true
+                    };
 
-                    // Processar o conteúdo JSON
-                    // Aqui você pode desserializar o JSON e fazer o que for necessário com ele
-                    var pedidos = JsonConvert.DeserializeObject<List<CargaViewModel>>(content); 
+                    var cargas = System.Text.Json.JsonSerializer.Deserialize<List<CargaViewModel>>(
+                        new StreamReader(stream).ReadToEnd(), options);
 
-                    // Faça algo com os pedidos (por exemplo, salvar no banco de dados)
+                    if (cargas == null || cargas.Count == 0)
+                    {
+                        throw new Exception("O JSON não contém dados válidos para processar.");
+                    }
 
-                    Console.WriteLine("Arquivo processado com sucesso: ");
-                    Console.Write(pedidos);
-
-                    return true;
+                    return cargas;
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro durante a carga do arquivo: " + ex);
+                throw new Exception("Erro durante o processamento do JSON.", ex);
             }
-           
         }
+
+
+
+
 
         public static List<CargaViewModel> LoadTxtFileContent(IFormFile file)
         {
@@ -72,7 +77,7 @@ namespace BazarTemTudo.Infra.Filesystem.FileUpload
 
                            
 
-                            carga.order_id = Int16.Parse(campos[0]);
+                            carga.order_id = campos[0];
                             carga.order_item_id = campos[1];
                             carga.purchase_date = DateTime.ParseExact(campos[2], "yyyy-MM-dd", CultureInfo.InvariantCulture);
                             carga.payments_date = DateTime.ParseExact(campos[3], "yyyy-MM-dd", CultureInfo.InvariantCulture);

@@ -1,6 +1,7 @@
 ﻿using Autofac.Core;
 using BazarTemTudo.Application.AppService;
 using BazarTemTudo.Application.Interface;
+using BazarTemTudo.CrossCutting.Service;
 using BazarTemTudo.Domain.Interface.Repository;
 using BazarTemTudo.Domain.Interface.Service;
 using BazarTemTudo.Domain.Service;
@@ -23,11 +24,11 @@ namespace BazarTemTudo.CrossCutting.DI
             RegisterRepositories(services);
             RegisterServices(services);
             RegisterApplicationServices(services);
+            GeneralRegister(services);  
         }
 
         private static void RegisterApplicationServices(IServiceCollection services)
         {
-            services.AddScoped<ICargaAppService, CargaAppService>();
             services.AddScoped<IClientesAppService, ClientesAppService>();
             services.AddScoped<ICheckoutAppService, CheckoutAppService>();
             services.AddScoped<IDespachoMercadoriasAppService, DespachoMercadoriasAppService>();
@@ -46,7 +47,6 @@ namespace BazarTemTudo.CrossCutting.DI
         }
         private static void RegisterServices(IServiceCollection services)
         {
-            services.AddScoped<ICargaService, CargaService>();
             services.AddScoped<IClientesService, ClientesService>();
             services.AddScoped<ICheckoutService, CheckoutService>();
             services.AddScoped<IDespachoMercadoriasService, DespachoMercadoriasService>();
@@ -64,7 +64,6 @@ namespace BazarTemTudo.CrossCutting.DI
         }
         private static void RegisterRepositories(IServiceCollection services)
         {
-            services.AddScoped<ICargaRepository, CargaRepository>();
             services.AddScoped<IClientesRepository, ClientesRepository>();
             services.AddScoped<ICheckoutRepository, CheckoutRepository>();
             services.AddScoped<IDespachoMercadoriasRepository, DespachoMercadoriasRepository>();
@@ -78,8 +77,11 @@ namespace BazarTemTudo.CrossCutting.DI
             services.AddScoped<ITransportadorasRepository, TransportadorasRepository>();
             services.AddScoped<IUsuarioRepository, UsuariosRepository>();
             services.AddScoped<IEnderecoRepository, EnderecoRepository>();
+        }
 
-
+        private static void GeneralRegister(IServiceCollection services)
+        {
+            services.AddScoped<CargaService>();
         }
 
 

@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using BazarTemTudo.Domain.Entities;
 using BazarTemTudo.Domain.Entities._Base;
-using BazarTemTudo.Application.ViewModels.Enums;
 
 namespace BazarTemTudo.InfraData.Context.Configuration
 {

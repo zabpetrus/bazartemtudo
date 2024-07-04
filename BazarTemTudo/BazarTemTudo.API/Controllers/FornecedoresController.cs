@@ -54,13 +54,13 @@ namespace BazarTemTudo.API.Controllers
                 // Criar um ViewModel de Endereço a partir do fornecedor
                 EnderecoViewModel enderecoViewModel = new EnderecoViewModel
                 {
-                    ship_address1 = fornecedores.Endereco_Fornecedor.ship_address1,
-                    ship_address2 = fornecedores.Endereco_Fornecedor.ship_address2,
-                    ship_address3 = fornecedores.Endereco_Fornecedor.ship_address3,
-                    ship_state = fornecedores.Endereco_Fornecedor.ship_state,
-                    ship_city = fornecedores.Endereco_Fornecedor.ship_city,
-                    ship_postal_code = fornecedores.Endereco_Fornecedor.ship_postal_code,
-                    ship_country = fornecedores.Endereco_Fornecedor.ship_country
+                    Ship_address1 = fornecedores.Endereco_Fornecedor.Ship_address1,
+                    Ship_address2 = fornecedores.Endereco_Fornecedor.Ship_address2,
+                    Ship_address3 = fornecedores.Endereco_Fornecedor.Ship_address3,
+                    Ship_state = fornecedores.Endereco_Fornecedor.Ship_state,
+                    Ship_city = fornecedores.Endereco_Fornecedor.Ship_city,
+                    Ship_postal_code = fornecedores.Endereco_Fornecedor.Ship_postal_code,
+                    Ship_country = fornecedores.Endereco_Fornecedor.Ship_country
                 };
 
                 // Criar o endereço e obter o ID retornado

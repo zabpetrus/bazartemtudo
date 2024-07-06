@@ -133,27 +133,7 @@ namespace BazarTemTudo.CrossCutting.Service
         }
 
 
-        private long ObterEnderecoId(string orderId)
-        {
-            var endereco = _dbContext.Enderecos.FirstOrDefault(e => e.Order_id == orderId);
-            if (endereco == null)
-            {
-                throw new Exception($"Opa! Endereço com Order_id '{orderId}' não encontrado. O rollback da transação será executado.");
-            }
-            return endereco.Id;
-        }
-
-        private long ObterClientesId(string cpf)
-        {
-            var cliente = _dbContext.Clientes.FirstOrDefault(c => c.CPF == cpf);
-            if (cliente == null)
-            {
-                throw new Exception($"Opa! Cliente com CPF '{cpf}' não encontrado. O rollback da transação será executado.");
-            }
-            return cliente.Id;
-        }
-
-
+       
         private void PopularPedidos(List<CargaViewModel> result)
         {
             try
@@ -208,7 +188,7 @@ namespace BazarTemTudo.CrossCutting.Service
                 var query = (from ca in result
                              join pe in _dbContext.Pedidos on ca.order_id equals pe.Order_id into peGroup
                              from pe in peGroup.DefaultIfEmpty()
-                             join pr in _dbContext.Produtos on new { UPC = ca.upc,SKU = ca.sku } equals new { pr.UPC, pr.SKU } into prGroup
+                             join pr in _dbContext.Produtos on new { UPC = ca.upc, SKU = ca.sku } equals new { pr.UPC, pr.SKU } into prGroup
                              from pr in prGroup.DefaultIfEmpty()
                              where pe == null || pr == null || !_dbContext.ItensPedidos.Any(d =>
                                      d.PedidoId == pe.Id &&
@@ -216,13 +196,13 @@ namespace BazarTemTudo.CrossCutting.Service
                                      d.Order_Item_id == ca.order_item_id)
                              select new ItensPedidos
                              {
-                                 PedidoId = pe != null ? pe.Id : 0,
-                                 ProdutoId = pr != null ? pr.Id : 0,
+                                 PedidoId = pe.Id,
+                                 ProdutoId = pr.Id,
                                  Order_Item_id = ca.order_item_id,
                                  Item_Price = ca.item_price,
                                  Quantity_Purchased = ca.quantity_purchased
-                              
-                             }).Distinct();
+
+                             });
 
                  var distinctQuery = query.Distinct().GroupBy(e => e.Item_Price).Select(g => g.First()).ToList();    // Seleciona o primeiro endereço de cada grupo (distinto pelo Order_id)
 
@@ -278,7 +258,6 @@ namespace BazarTemTudo.CrossCutting.Service
 
                     
 
-                    //  PopulateItensPedidos(result);
 
                 }
                 catch (Exception ex) {                   

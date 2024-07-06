@@ -82,8 +82,9 @@ namespace BazarTemTudo.CrossCutting.DI
         private static void GeneralRegister(IServiceCollection services)
         {
             services.AddScoped<CargaService>();
+            services.AddScoped<PopulationService>();
         }
 
-
+ 
     }
 }

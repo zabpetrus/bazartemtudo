@@ -520,6 +520,9 @@ namespace BazarTemTudo.InfraData.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Shipping")
+                        .HasColumnType("int");
+
                     b.Property<int>("TipoServico")
                         .HasColumnType("int");
 

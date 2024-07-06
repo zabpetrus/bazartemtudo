@@ -2,6 +2,7 @@
 using BazarTemTudo.Application.ViewModels;
 using BazarTemTudo.CrossCutting.Service;
 using BazarTemTudo.Domain.Entities;
+using BazarTemTudo.Domain.Entities.Enums;
 using BazarTemTudo.Infra.Filesystem.FileUpload;
 using BazarTemTudo.InfraData.Procedures;
 using Microsoft.AspNetCore.Http;
@@ -20,10 +21,12 @@ namespace BazarTemTudo.API.Controllers
     {
 
         private readonly CargaService _cargaService;
+        private readonly PopulationService _populationService;  
 
-        public CargaController(CargaService cargaService)
+        public CargaController(CargaService cargaService, PopulationService populationService)
         {
             _cargaService = cargaService;
+            _populationService = populationService;
         }
 
         /// <summary>
@@ -32,14 +35,32 @@ namespace BazarTemTudo.API.Controllers
         /// <param name="file">A File</param>
         /// <returns>An IActionResult.</returns>
         [HttpPost("file")]
-        public IActionResult CarregarArquivoCarga(IFormFile file)
+        public IActionResult CarregarArquivoCarga(IFormFile file, TipoEstoque tipoEstoque)
         {
 
             var result = new List<CargaViewModel>();
+            ProcedimentosPopulacao(_populationService);
+
+
+            switch (tipoEstoque)
+            {
+                case TipoEstoque.Completo:
+                    _populationService.SeedEstoqueAbastecido();
+                    break;
+                case TipoEstoque.Variado:
+                    _populationService.SeedEstoqueVariado();
+                    break;
+                case TipoEstoque.Vazio:
+                    _populationService.SeedEstoqueVazio();
+                    break;
+                default:
+                    _populationService.SeedEstoqueVazio();  
+                    break;
+            }
 
             try
             {
-                
+
                 if (file != null)
                 {
                     if (file == null || file.Length == 0)
@@ -49,13 +70,13 @@ namespace BazarTemTudo.API.Controllers
 
                     if (file.ContentType.Contains("application/json"))
                     {
-                         result = LoadFileService.ParseJson(file);
+                        result = LoadFileService.ParseJson(file);
 
 
                     }
                     else if (file.ContentType.Contains("text/csv") || file.ContentType.Contains("text/plain"))
                     {
-                        result = LoadFileService.LoadTxtFileContent(file);  
+                        result = LoadFileService.LoadTxtFileContent(file);
                     }
                     else
                     {
@@ -67,21 +88,23 @@ namespace BazarTemTudo.API.Controllers
                 }
                 else
                 {
-                   throw new ArgumentNullException("É necessário fornecer um arquivo!");
+                    throw new ArgumentNullException("É necessário fornecer um arquivo!");
                 }
             }
             catch (Exception ex)
             {
-               return BadRequest(new { message = "Erro durante o processamento do arquivo", detalhe = "Detalhes do erro: ..." + ex });                            
-            }
+                return BadRequest(new { message = "Erro durante o processamento do arquivo", detalhe = "Detalhes do erro: ..." + ex });
+            }  
+
+        } 
+
+        private static void ProcedimentosPopulacao(PopulationService populationService)
+        {
+            populationService.PopularFornecedores();
+            populationService.PopularTransportadoras();
+
         }
-        /// <summary>
-        /// Listar Carga Banco
-        /// </summary>
        
-
-
-
     
     }
 }

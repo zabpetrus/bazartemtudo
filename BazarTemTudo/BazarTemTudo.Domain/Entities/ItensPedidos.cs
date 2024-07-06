@@ -21,11 +21,11 @@ namespace BazarTemTudo.Domain.Entities
         //Navegação
          public long PedidoId { get; set; }     
 
-        public Pedidos Pedido { get; set; } = null!;
+        public Pedidos Pedido { get; set; } 
 
         public long ProdutoId {  get; set; }
 
-        public Produtos Produtos { get; set; } = null!;
+        public Produtos Produtos { get; set; }
 
     }
 }

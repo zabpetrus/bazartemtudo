@@ -11,17 +11,20 @@ namespace BazarTemTudo.Application.ViewModels
     {
         public string Order_Item_id { get; set; }
 
-        public decimal? Item_Price { get; set; }
+        public decimal Item_Price { get; set; }
 
         public int Quantity_Purchased { get; set; }
+
+        public bool Disponivel { get; set; } = false;
+
 
         //Navegação
         public long PedidoId { get; set; }
 
-        public Pedidos Pedido { get; set; } = null!;
+        public Pedidos Pedido { get; set; }
 
         public long ProdutoId { get; set; }
 
-        public Produtos Produtos { get; set; } = null!;
+        public Produtos Produtos { get; set; }
     }
 }

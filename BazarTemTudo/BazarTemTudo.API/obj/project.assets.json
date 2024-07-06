@@ -4808,6 +4808,7 @@
           "Microsoft.Extensions.DependencyInjection": "8.0.0",
           "Microsoft.Extensions.Identity.Core": "8.0.6",
           "Microsoft.IdentityModel.Tokens": "7.6.0",
+          "Newtonsoft.Json": "13.0.3",
           "System.IdentityModel.Tokens.Jwt": "7.6.0"
         },
         "compile": {
@@ -4838,6 +4839,7 @@
           "Microsoft.Extensions.DependencyInjection": "8.0.0",
           "Microsoft.Extensions.Identity.Core": "8.0.6",
           "Microsoft.IdentityModel.Tokens": "7.6.0",
+          "Newtonsoft.Json": "13.0.3",
           "System.IdentityModel.Tokens.Jwt": "7.6.0"
         },
         "compile": {
@@ -4864,6 +4866,7 @@
           "Microsoft.Extensions.DependencyInjection": "8.0.0",
           "Microsoft.Extensions.Identity.Core": "8.0.6",
           "Microsoft.IdentityModel.Tokens": "7.6.0",
+          "Newtonsoft.Json": "13.0.3",
           "System.IdentityModel.Tokens.Jwt": "7.6.0"
         },
         "compile": {
@@ -4908,6 +4911,7 @@
           "Microsoft.Extensions.DependencyInjection": "8.0.0",
           "Microsoft.Extensions.Identity.Core": "8.0.6",
           "Microsoft.IdentityModel.Tokens": "7.6.0",
+          "Newtonsoft.Json": "13.0.3",
           "Npgsql": "8.0.3",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4",
           "System.IdentityModel.Tokens.Jwt": "7.6.0"
@@ -4937,6 +4941,7 @@
           "Microsoft.Extensions.Identity.Core": "8.0.6",
           "Microsoft.IdentityModel.Tokens": "7.6.0",
           "Microsoft.NET.Test.Sdk": "17.8.0",
+          "Newtonsoft.Json": "13.0.3",
           "System.IdentityModel.Tokens.Jwt": "7.6.0",
           "coverlet.collector": "6.0.0",
           "xunit": "2.5.3",
@@ -14347,6 +14352,7 @@
       "Microsoft.Extensions.Identity.Core >= 8.0.6",
       "Microsoft.IdentityModel.Tokens >= 7.6.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.2",
+      "Newtonsoft.Json >= 13.0.3",
       "Swashbuckle.AspNetCore >= 6.6.2",
       "System.IdentityModel.Tokens.Jwt >= 7.6.0"
     ]
@@ -14487,6 +14493,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[8.0.2, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

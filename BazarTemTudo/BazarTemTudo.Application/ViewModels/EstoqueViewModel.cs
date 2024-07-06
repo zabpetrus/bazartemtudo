@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BazarTemTudo.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,23 +9,15 @@ namespace BazarTemTudo.Application.ViewModels
 {
     public class EstoqueViewModel
     {
-        public int Produtos_ID { get; set; }
 
-        public ProdutosViewModel Produto { get; set; } = new ProdutosViewModel();
+        public long ProdutosID { get; set; }
 
         public int Quantidade { get; set; } = 0;
 
         public int Estoque_Minimo { get; set; } = 0;
 
+        public ProdutosViewModel Estoque_Produto { get; set; }
 
-        public EstoqueViewModel() { }
 
-        public EstoqueViewModel(int produtos_ID, ProdutosViewModel produto, int quantidade, int estoque_Minimo)
-        {
-            Produtos_ID = produtos_ID;
-            Produto = produto;
-            Quantidade = quantidade;
-            Estoque_Minimo = estoque_Minimo;
-        }
     }
 }

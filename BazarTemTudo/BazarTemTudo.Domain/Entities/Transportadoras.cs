@@ -14,11 +14,11 @@ namespace BazarTemTudo.Domain.Entities
 
         public string CNPJ { get; set; } = String.Empty;
 
-        public TipoServico TipoServico { get; set; } = TipoServico.Normal;   
-
-        public decimal CustoFrete { get; set; } 
+        public TipoServico TipoServico { get; set; } = TipoServico.Normal; 
         
-        //Navegação
-        StatusDespacho StatusDespacho { get; set; } = StatusDespacho.Em_processamento;
+        public Shipping Shipping { get; set; }
+
+        public decimal CustoFrete { get; set; }              
+      
     }
 }

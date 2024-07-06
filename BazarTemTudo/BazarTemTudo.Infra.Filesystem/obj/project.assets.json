@@ -1410,6 +1410,7 @@
           "Microsoft.Extensions.DependencyInjection": "8.0.0",
           "Microsoft.Extensions.Identity.Core": "8.0.6",
           "Microsoft.IdentityModel.Tokens": "7.6.0",
+          "Newtonsoft.Json": "13.0.3",
           "System.IdentityModel.Tokens.Jwt": "7.6.0"
         },
         "compile": {
@@ -1436,6 +1437,7 @@
           "Microsoft.Extensions.DependencyInjection": "8.0.0",
           "Microsoft.Extensions.Identity.Core": "8.0.6",
           "Microsoft.IdentityModel.Tokens": "7.6.0",
+          "Newtonsoft.Json": "13.0.3",
           "System.IdentityModel.Tokens.Jwt": "7.6.0"
         },
         "compile": {

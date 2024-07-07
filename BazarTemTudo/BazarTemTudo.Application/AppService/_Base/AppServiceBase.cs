@@ -187,17 +187,18 @@ namespace BazarTemTudo.Application.AppService._Base
            return _mapper.Map<List<VM>>(s);   
         }
 
-        public void Update(long id, VM obj)
+        public bool Update(long id, VM obj)
         {
             try
             {
                 var res = _mapper.Map<M>(obj);
                 _serviceBase.Update(id, res);
+                return true;
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.ToString(), ex);
-            }
+            }               
         }
 
         public void UpdateMultiples(IEnumerable<VM> entities)

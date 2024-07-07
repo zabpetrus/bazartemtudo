@@ -23,7 +23,7 @@ namespace BazarTemTudo.Application.Interface._Base
 
         IEnumerable<TEntity> GetAll();
 
-        void Update(long id, TEntity obj);
+        bool Update(long id, TEntity obj);
 
 
         IEnumerable<TEntity> FindAll(TEntity args);

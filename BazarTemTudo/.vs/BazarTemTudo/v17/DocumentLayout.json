@@ -7,32 +7,12 @@
       "RelativeMoniker": "D:0:0:{84B4328F-E013-41CD-8986-A749C12320D7}|BazarTemTudo.CrossCutting\\BazarTemTudo.CrossCutting.csproj|solutionrelative:bazartemtudo.crosscutting\\service\\populationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{809A2C46-D1C5-498F-9561-1F0867AE25D8}|BazarTemTudo.API\\BazarTemTudo.API.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.api\\controllers\\requisicaocompracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{809A2C46-D1C5-498F-9561-1F0867AE25D8}|BazarTemTudo.API\\BazarTemTudo.API.csproj|solutionrelative:bazartemtudo.api\\controllers\\requisicaocompracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{84B4328F-E013-41CD-8986-A749C12320D7}|BazarTemTudo.CrossCutting\\BazarTemTudo.CrossCutting.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.crosscutting\\service\\itemprodutodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84B4328F-E013-41CD-8986-A749C12320D7}|BazarTemTudo.CrossCutting\\BazarTemTudo.CrossCutting.csproj|solutionrelative:bazartemtudo.crosscutting\\service\\itemprodutodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{809A2C46-D1C5-498F-9561-1F0867AE25D8}|BazarTemTudo.API\\BazarTemTudo.API.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.api\\controllers\\cargacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{809A2C46-D1C5-498F-9561-1F0867AE25D8}|BazarTemTudo.API\\BazarTemTudo.API.csproj|solutionrelative:bazartemtudo.api\\controllers\\cargacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2C26657-B54D-4914-AAF5-C6F5410467BD}|BazarTemTudo.Application\\BazarTemTudo.Application.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.application\\viewmodels\\cargaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C26657-B54D-4914-AAF5-C6F5410467BD}|BazarTemTudo.Application\\BazarTemTudo.Application.csproj|solutionrelative:bazartemtudo.application\\viewmodels\\cargaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2C26657-B54D-4914-AAF5-C6F5410467BD}|BazarTemTudo.Application\\BazarTemTudo.Application.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.application\\viewmodels\\transportadorasviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2C26657-B54D-4914-AAF5-C6F5410467BD}|BazarTemTudo.Application\\BazarTemTudo.Application.csproj|solutionrelative:bazartemtudo.application\\viewmodels\\transportadorasviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{809A2C46-D1C5-498F-9561-1F0867AE25D8}|BazarTemTudo.API\\BazarTemTudo.API.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.api\\controllers\\transportadoracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{809A2C46-D1C5-498F-9561-1F0867AE25D8}|BazarTemTudo.API\\BazarTemTudo.API.csproj|solutionrelative:bazartemtudo.api\\controllers\\transportadoracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52D7C1EB-E373-4086-9D3E-C56E4C82060F}|BazarTemTudo.Domain\\BazarTemTudo.Domain.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.domain\\entities\\transportadoras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52D7C1EB-E373-4086-9D3E-C56E4C82060F}|BazarTemTudo.Domain\\BazarTemTudo.Domain.csproj|solutionrelative:bazartemtudo.domain\\entities\\transportadoras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52D7C1EB-E373-4086-9D3E-C56E4C82060F}|BazarTemTudo.Domain\\BazarTemTudo.Domain.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.domain\\entities\\enums\\shipping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52D7C1EB-E373-4086-9D3E-C56E4C82060F}|BazarTemTudo.Domain\\BazarTemTudo.Domain.csproj|solutionrelative:bazartemtudo.domain\\entities\\enums\\shipping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{84B4328F-E013-41CD-8986-A749C12320D7}|BazarTemTudo.CrossCutting\\BazarTemTudo.CrossCutting.csproj|j:\\bazar\\bazartemtudo\\bazartemtudo.crosscutting\\service\\consultadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84B4328F-E013-41CD-8986-A749C12320D7}|BazarTemTudo.CrossCutting\\BazarTemTudo.CrossCutting.csproj|solutionrelative:bazartemtudo.crosscutting\\service\\consultadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 274,
-          "SelectedChildIndex": 29,
+          "SelectedChildIndex": 24,
           "Children": [
             {
               "$type": "Bookmark",
@@ -135,92 +115,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RequisicaoCompraController.cs",
-              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\Controllers\\RequisicaoCompraController.cs",
-              "RelativeDocumentMoniker": "BazarTemTudo.API\\Controllers\\RequisicaoCompraController.cs",
-              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\Controllers\\RequisicaoCompraController.cs",
-              "RelativeToolTip": "BazarTemTudo.API\\Controllers\\RequisicaoCompraController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAATAAAA",
+              "Title": "ItemProdutoDTO.cs",
+              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.CrossCutting\\Service\\ItemProdutoDTO.cs",
+              "RelativeDocumentMoniker": "BazarTemTudo.CrossCutting\\Service\\ItemProdutoDTO.cs",
+              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.CrossCutting\\Service\\ItemProdutoDTO.cs",
+              "RelativeToolTip": "BazarTemTudo.CrossCutting\\Service\\ItemProdutoDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T02:31:20.207Z",
+              "WhenOpened": "2024-07-07T00:39:44.773Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CargaController.cs",
-              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\Controllers\\CargaController.cs",
-              "RelativeDocumentMoniker": "BazarTemTudo.API\\Controllers\\CargaController.cs",
-              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\Controllers\\CargaController.cs",
-              "RelativeToolTip": "BazarTemTudo.API\\Controllers\\CargaController.cs",
-              "ViewState": "AQIAAFoAAAAAAAAAAAAqwGcAAAA3AAAA",
+              "Title": "ConsultaDTO.cs",
+              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.CrossCutting\\Service\\ConsultaDTO.cs",
+              "RelativeDocumentMoniker": "BazarTemTudo.CrossCutting\\Service\\ConsultaDTO.cs",
+              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.CrossCutting\\Service\\ConsultaDTO.cs",
+              "RelativeToolTip": "BazarTemTudo.CrossCutting\\Service\\ConsultaDTO.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T02:25:39.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CargaViewModel.cs",
-              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Application\\ViewModels\\CargaViewModel.cs",
-              "RelativeDocumentMoniker": "BazarTemTudo.Application\\ViewModels\\CargaViewModel.cs",
-              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Application\\ViewModels\\CargaViewModel.cs",
-              "RelativeToolTip": "BazarTemTudo.Application\\ViewModels\\CargaViewModel.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T02:25:35.181Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TransportadorasViewModel.cs",
-              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Application\\ViewModels\\TransportadorasViewModel.cs",
-              "RelativeDocumentMoniker": "BazarTemTudo.Application\\ViewModels\\TransportadorasViewModel.cs",
-              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Application\\ViewModels\\TransportadorasViewModel.cs",
-              "RelativeToolTip": "BazarTemTudo.Application\\ViewModels\\TransportadorasViewModel.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T02:07:28.683Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Transportadoras.cs",
-              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Domain\\Entities\\Transportadoras.cs",
-              "RelativeDocumentMoniker": "BazarTemTudo.Domain\\Entities\\Transportadoras.cs",
-              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Domain\\Entities\\Transportadoras.cs",
-              "RelativeToolTip": "BazarTemTudo.Domain\\Entities\\Transportadoras.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABQAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T02:06:42.036Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TransportadoraController.cs",
-              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\Controllers\\TransportadoraController.cs",
-              "RelativeDocumentMoniker": "BazarTemTudo.API\\Controllers\\TransportadoraController.cs",
-              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.API\\Controllers\\TransportadoraController.cs",
-              "RelativeToolTip": "BazarTemTudo.API\\Controllers\\TransportadoraController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T02:06:31.109Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Shipping.cs",
-              "DocumentMoniker": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Domain\\Entities\\Enums\\Shipping.cs",
-              "RelativeDocumentMoniker": "BazarTemTudo.Domain\\Entities\\Enums\\Shipping.cs",
-              "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Domain\\Entities\\Enums\\Shipping.cs",
-              "RelativeToolTip": "BazarTemTudo.Domain\\Entities\\Enums\\Shipping.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T02:03:52.02Z",
+              "WhenOpened": "2024-07-07T00:26:44.378Z",
               "EditorCaption": ""
             },
             {
@@ -231,9 +146,9 @@
               "RelativeDocumentMoniker": "BazarTemTudo.CrossCutting\\Service\\PopulationService.cs",
               "ToolTip": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.CrossCutting\\Service\\PopulationService.cs",
               "RelativeToolTip": "BazarTemTudo.CrossCutting\\Service\\PopulationService.cs",
-              "ViewState": "AQIAAAEBAAAAAAAAAAAAAA8BAAAAAAAA",
+              "ViewState": "AQIAAHsBAAAAAAAAAAAwwI8BAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T01:10:50.367Z",
+              "WhenOpened": "2024-07-06T23:20:38.673Z",
               "EditorCaption": ""
             }
           ]

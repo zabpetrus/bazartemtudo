@@ -24,6 +24,8 @@ namespace BazarTemTudo.API.Controllers
             _cargaService = cargaService;   
         }
 
+   
+
         [HttpPost]
         public IActionResult PopularEstoque()
         {

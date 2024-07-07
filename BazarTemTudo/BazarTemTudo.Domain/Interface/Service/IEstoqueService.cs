@@ -10,5 +10,6 @@ namespace BazarTemTudo.Domain.Interface.Service
 {
     public interface IEstoqueService : IServiceBase<Estoque>
     {
+        public Estoque GetByProductId(long productId);
     }
 }

@@ -146,6 +146,11 @@ namespace BazarTemTudo.InfraData.Migrations
                     b.Property<DateTime>("Data_Registro")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(21)
+                        .HasColumnType("nvarchar(21)");
+
                     b.Property<string>("Order_id")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -186,6 +191,10 @@ namespace BazarTemTudo.InfraData.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Enderecos", (string)null);
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Endereco");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.Estoque", b =>
@@ -240,9 +249,6 @@ namespace BazarTemTudo.InfraData.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("Endereco_ID")
-                        .HasColumnType("bigint");
-
                     b.Property<string>("Nome_Fornecedor")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -256,9 +262,6 @@ namespace BazarTemTudo.InfraData.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Endereco_ID")
-                        .IsUnique();
 
                     b.ToTable("Fornecedores", (string)null);
                 });
@@ -741,6 +744,13 @@ namespace BazarTemTudo.InfraData.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("BazarTemTudo.Domain.Entities.EnderecoFornecedor", b =>
+                {
+                    b.HasBaseType("BazarTemTudo.Domain.Entities.Endereco");
+
+                    b.HasDiscriminator().HasValue("EnderecoFornecedor");
+                });
+
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.Checkout", b =>
                 {
                     b.HasOne("BazarTemTudo.Domain.Entities.Pedidos", "Pedido")
@@ -780,17 +790,6 @@ namespace BazarTemTudo.InfraData.Migrations
                         .IsRequired();
 
                     b.Navigation("Estoque_Produto");
-                });
-
-            modelBuilder.Entity("BazarTemTudo.Domain.Entities.Fornecedores", b =>
-                {
-                    b.HasOne("BazarTemTudo.Domain.Entities.Endereco", "Endereco_Fornecedor")
-                        .WithOne()
-                        .HasForeignKey("BazarTemTudo.Domain.Entities.Fornecedores", "Endereco_ID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Endereco_Fornecedor");
                 });
 
             modelBuilder.Entity("BazarTemTudo.Domain.Entities.ItensPedidos", b =>

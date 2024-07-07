@@ -13,15 +13,10 @@ namespace BazarTemTudo.Application.ViewModels
 
         public string CNPJ { get; set; } = string.Empty;
 
-        public long Endereco_ID { get; set; }
-
         public string Telefone { get; set; } = string.Empty;
 
         public string Email { get; set; } = string.Empty;
 
         public string Website { get; set; } = string.Empty;
-
-        // links
-        public Endereco Endereco_Fornecedor { get; set; }
     }
 }

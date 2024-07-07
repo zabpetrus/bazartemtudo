@@ -257,8 +257,6 @@ namespace BazarTemTudo.CrossCutting.Service
                    
 
                     
-
-
                 }
                 catch (Exception ex) {                   
                    

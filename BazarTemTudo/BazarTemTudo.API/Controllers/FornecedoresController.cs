@@ -49,23 +49,8 @@ namespace BazarTemTudo.API.Controllers
                 if (fornecedores == null)
                 {
                     throw new ArgumentNullException("Um objeto de entrada é necessário");
-                }
-
-                // Criar um ViewModel de Endereço a partir do fornecedor
-                EnderecoViewModel enderecoViewModel = new EnderecoViewModel
-                {
-                    Ship_address1 = fornecedores.Endereco_Fornecedor.Ship_address1,
-                    Ship_address2 = fornecedores.Endereco_Fornecedor.Ship_address2,
-                    Ship_address3 = fornecedores.Endereco_Fornecedor.Ship_address3,
-                    Ship_state = fornecedores.Endereco_Fornecedor.Ship_state,
-                    Ship_city = fornecedores.Endereco_Fornecedor.Ship_city,
-                    Ship_postal_code = fornecedores.Endereco_Fornecedor.Ship_postal_code,
-                    Ship_country = fornecedores.Endereco_Fornecedor.Ship_country
-                };
-
-                // Criar o endereço e obter o ID retornado
-                var enderecoId = _enderecoAppService.CreateGetID(enderecoViewModel);
-                fornecedores.Endereco_ID = enderecoId;
+                }   
+                
 
                 // Adicionar o fornecedor usando o serviço de aplicação de fornecedores
                 _fornecedoresAppService.Add(fornecedores);

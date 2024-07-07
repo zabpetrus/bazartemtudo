@@ -19,5 +19,10 @@ namespace BazarTemTudo.Domain.Service
         {
             _estoqueRepository = Repository;
         }
+
+        public Estoque GetByProductId(long productId)
+        {
+            return _estoqueRepository.GetByProductId(productId);    
+        }
     }
 }

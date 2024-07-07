@@ -37,7 +37,6 @@ namespace BazarTemTudo.InfraData.Context
         public DbSet<Usuarios> Usuarios { get; set; }
 
 
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Ignore<Notification>();

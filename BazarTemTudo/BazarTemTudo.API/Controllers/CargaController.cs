@@ -101,8 +101,8 @@ namespace BazarTemTudo.API.Controllers
         private static void ProcedimentosPopulacao(PopulationService populationService)
         {
             populationService.PopularFornecedores();
-            populationService.PopularTransportadoras();
-
+            populationService.PopularTransportadoras();              
+            populationService.VerificarEPopularRequisicaoCompra();
         }
        
     

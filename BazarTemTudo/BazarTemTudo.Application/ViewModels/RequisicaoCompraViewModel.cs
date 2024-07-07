@@ -1,4 +1,5 @@
-﻿using BazarTemTudo.Domain.Entities.Enums;
+﻿using BazarTemTudo.Domain.Entities;
+using BazarTemTudo.Domain.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +10,11 @@ namespace BazarTemTudo.Application.ViewModels
 {
     public class RequisicaoCompraViewModel
     {
+        public long Id { get; set; }
 
-        public int Fornecedor_ID { get; set; }
+        public long Fornecedor_ID { get; set; } = 1;
 
-        public FornecedoresViewModel Fornecedor { get; set; } = new FornecedoresViewModel();
-
-
-        public int Produto_ID { get; set; }
-
-        public ProdutosViewModel Produto { get; set; } = new ProdutosViewModel();
+        public long Produto_ID { get; set; }
 
         public int Quantidade { get; set; }
 
@@ -27,6 +24,11 @@ namespace BazarTemTudo.Application.ViewModels
 
         public DateTime Data_Emissao { get; set; }
 
-      
+        //Mapeamento
+
+        public Fornecedores Fornecedor { get; set; }
+
+        public Produtos Produto { get; set; }
+
     }
 }

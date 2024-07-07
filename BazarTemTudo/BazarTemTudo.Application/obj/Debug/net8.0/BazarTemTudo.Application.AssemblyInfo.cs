@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BazarTemTudo.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aacbf48bb9ea6affd4ed082a4d121ae316e818ba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67b303d8731adb419564586a6c788edd8686e73c")]
 [assembly: System.Reflection.AssemblyProductAttribute("BazarTemTudo.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BazarTemTudo.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

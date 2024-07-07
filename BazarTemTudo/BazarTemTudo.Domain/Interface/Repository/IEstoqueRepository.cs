@@ -10,5 +10,6 @@ namespace BazarTemTudo.Domain.Interface.Repository
 {
     public interface IEstoqueRepository : IRepositoryBase<Estoque>
     {
+        public Estoque GetByProductId(long productId);
     }
 }

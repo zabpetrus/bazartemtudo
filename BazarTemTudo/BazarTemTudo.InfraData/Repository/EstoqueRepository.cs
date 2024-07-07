@@ -3,6 +3,7 @@ using BazarTemTudo.Domain.Entities._Base;
 using BazarTemTudo.Domain.Interface.Repository;
 using BazarTemTudo.InfraData.Context;
 using BazarTemTudo.InfraData.Repository._Base;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,30 @@ namespace BazarTemTudo.InfraData.Repository
 {
     public class EstoqueRepository : RepositoryBase<Estoque>, IEstoqueRepository
     {
+        private new readonly ApplicationDBContext _context;
         public EstoqueRepository(ApplicationDBContext context) : base(context)
         {
+            _context = context;
         }
+
+        public Estoque GetByProductId(long productId)
+        {
+            try
+            {
+                var res =_context.Estoque.FirstOrDefault(e => e.ProdutosID == productId); 
+                if(res == null)
+                {
+                    throw new ArgumentNullException(nameof(res));
+                }
+                return res;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }                                       
+           
+        }
+
+
     }
 }

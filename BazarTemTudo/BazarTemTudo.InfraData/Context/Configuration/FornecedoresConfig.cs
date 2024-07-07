@@ -17,18 +17,13 @@ namespace BazarTemTudo.InfraData.Context.Configuration
         {
             builder.ToTable("Fornecedores");
 
-
             builder.HasKey(e => e.Id);
             builder.Property(e => e.Id)
                   .ValueGeneratedOnAdd()
             .IsRequired();
 
-            builder.HasOne(c => c.Endereco_Fornecedor)
-             .WithOne()
-             .HasForeignKey<Fornecedores>(a => a.Endereco_ID)
-             .OnDelete(DeleteBehavior.Restrict);
 
-
+         
         }
     }
 }

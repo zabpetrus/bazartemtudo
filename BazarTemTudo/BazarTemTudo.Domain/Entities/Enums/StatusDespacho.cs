@@ -8,9 +8,9 @@ namespace BazarTemTudo.Domain.Entities.Enums
 {
     public enum StatusDespacho
     {
-        Em_processamento,
-		Pronto_para_envio,
-		Entregue,
-		Cancelado
+        Em_processamento = 1,
+		Pronto_para_envio = 2,
+		Entregue = 3,
+		Cancelado = 4
     }
 }

@@ -14,6 +14,7 @@ using BazarTemTudo.InfraData.Context;
 using BazarTemTudo.InfraData.Mapping;
 using BazarTemTudo.InfraData.Repository;
 using BazarTemTudo.InfraData.UnitOfWork;
+using BazarTemTudo.TesteConsole.Context;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -43,6 +44,8 @@ else if (builder.Configuration.GetSection("DatabaseProvider").Value == "SQLServe
 {
     var conexao2 = builder.Configuration.GetConnectionString("SecondConnection");
     builder.Services.AddDbContextPool<ApplicationDBContext>(options => options.UseSqlServer(conexao2));
+
+   
 }
 else if (builder.Configuration.GetSection("DatabaseProvider").Value == "PostgreSQL")
 {

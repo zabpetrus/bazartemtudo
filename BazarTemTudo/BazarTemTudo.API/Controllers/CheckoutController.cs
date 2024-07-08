@@ -23,8 +23,7 @@ namespace BazarTemTudo.API.Controllers
         }
 
         public override IActionResult Get()
-        {
-            _populationService.Checkout(); 
+        { 
             var res = _checkoutAppService.GetAll();
             return Ok(res);
         }

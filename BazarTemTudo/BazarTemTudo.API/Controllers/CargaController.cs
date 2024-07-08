@@ -39,24 +39,7 @@ namespace BazarTemTudo.API.Controllers
         {
 
             var result = new List<CargaViewModel>();
-            ProcedimentosPopulacao(_populationService);
-
-
-            switch (tipoEstoque)
-            {
-                case TipoEstoque.Completo:
-                    _populationService.SeedEstoqueAbastecido();
-                    break;
-                case TipoEstoque.Variado:
-                    _populationService.SeedEstoqueVariado();
-                    break;
-                case TipoEstoque.Vazio:
-                    _populationService.SeedEstoqueVazio();
-                    break;
-                default:
-                    _populationService.SeedEstoqueVazio();  
-                    break;
-            }
+           
 
             try
             {
@@ -84,7 +67,38 @@ namespace BazarTemTudo.API.Controllers
                     }
 
                     var response = _cargaService.PopulateTables(result);
-                    if (response) { return Ok("Tabelas populadas com sucesso"); } else { return BadRequest("Ops!"); }
+
+                    if (response) 
+                    {
+
+                        switch (tipoEstoque)
+                        {
+                            case TipoEstoque.Completo:
+                                _populationService.SeedEstoqueAbastecido();
+                                break;
+                            case TipoEstoque.Variado:
+                                _populationService.SeedEstoqueVariado();
+                                break;
+                            case TipoEstoque.Vazio:
+                                _populationService.SeedEstoqueVazio();
+                                break;
+                            default:
+                                _populationService.SeedEstoqueVazio();
+                                break;
+                        }
+
+                        ProcedimentosPopulacao(_populationService);
+
+                        _populationService.VerficarEstoque();
+
+
+                        return Ok("Tabelas populadas com sucesso");
+                    }
+                    else
+                    {
+                        return BadRequest("");
+                    }
+                    
                 }
                 else
                 {
@@ -94,15 +108,16 @@ namespace BazarTemTudo.API.Controllers
             catch (Exception ex)
             {
                 return BadRequest(new { message = "Erro durante o processamento do arquivo", detalhe = "Detalhes do erro: ..." + ex });
-            }  
+            }
+
+         
 
         } 
 
         private static void ProcedimentosPopulacao(PopulationService populationService)
         {
             populationService.PopularFornecedores();
-            populationService.PopularTransportadoras();              
-            populationService.VerificarEPopularRequisicaoCompra();
+            populationService.PopularTransportadoras();   
         }
        
     

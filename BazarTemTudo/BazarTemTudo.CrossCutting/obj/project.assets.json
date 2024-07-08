@@ -3599,6 +3599,20 @@
         "runtime": {
           "bin/placeholder/BazarTemTudo.Test.dll": {}
         }
+      },
+      "BazarTemTudo.TesteConsole/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "BazarTemTudo.InfraData": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/BazarTemTudo.TesteConsole.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BazarTemTudo.TesteConsole.dll": {}
+        }
       }
     }
   },
@@ -10169,6 +10183,11 @@
       "type": "project",
       "path": "../BazarTemTudo.Test/BazarTemTudo.Test.csproj",
       "msbuildProject": "../BazarTemTudo.Test/BazarTemTudo.Test.csproj"
+    },
+    "BazarTemTudo.TesteConsole/1.0.0": {
+      "type": "project",
+      "path": "../BazarTemTudo.TesteConsole/BazarTemTudo.TesteConsole.csproj",
+      "msbuildProject": "../BazarTemTudo.TesteConsole/BazarTemTudo.TesteConsole.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -10179,6 +10198,7 @@
       "BazarTemTudo.Domain >= 1.0.0",
       "BazarTemTudo.InfraData >= 1.0.0",
       "BazarTemTudo.Test >= 1.0.0",
+      "BazarTemTudo.TesteConsole >= 1.0.0",
       "Flunt >= 2.0.5",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.6",
       "Microsoft.AspNetCore.Identity.UI >= 8.0.6",
@@ -10237,6 +10257,9 @@
             },
             "J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\BazarTemTudo.InfraData.csproj": {
               "projectPath": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.InfraData\\BazarTemTudo.InfraData.csproj"
+            },
+            "J:\\bazar\\BazarTemTudo\\BazarTemTudo.TesteConsole\\BazarTemTudo.TesteConsole.csproj": {
+              "projectPath": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.TesteConsole\\BazarTemTudo.TesteConsole.csproj"
             },
             "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Test\\BazarTemTudo.Test.csproj": {
               "projectPath": "J:\\bazar\\BazarTemTudo\\BazarTemTudo.Test\\BazarTemTudo.Test.csproj"

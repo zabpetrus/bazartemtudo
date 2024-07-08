@@ -29,3 +29,8 @@ J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\obj\Debug\net8.0\refint\BazarTem
 J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\obj\Debug\net8.0\BazarTemTudo.CrossCutting.pdb
 J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\obj\Debug\net8.0\BazarTemTudo.CrossCutting.genruntimeconfig.cache
 J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\obj\Debug\net8.0\ref\BazarTemTudo.CrossCutting.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\bin\Debug\net8.0\BazarTemTudo.TesteConsole.deps.json
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\bin\Debug\net8.0\BazarTemTudo.TesteConsole.runtimeconfig.json
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\bin\Debug\net8.0\BazarTemTudo.TesteConsole.exe
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\bin\Debug\net8.0\BazarTemTudo.TesteConsole.dll
+J:\bazar\BazarTemTudo\BazarTemTudo.CrossCutting\bin\Debug\net8.0\BazarTemTudo.TesteConsole.pdb

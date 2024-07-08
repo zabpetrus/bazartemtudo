@@ -14,6 +14,7 @@
           "BazarTemTudo.Domain": "1.0.0",
           "BazarTemTudo.InfraData": "1.0.0",
           "BazarTemTudo.Test": "1.0.0",
+          "BazarTemTudo.TesteConsole": "1.0.0",
           "Flunt": "2.0.5",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.6",
           "Microsoft.AspNetCore.Identity.UI": "8.0.6",
@@ -2249,6 +2250,15 @@
         "runtime": {
           "BazarTemTudo.Test.dll": {}
         }
+      },
+      "BazarTemTudo.TesteConsole/1.0.0": {
+        "dependencies": {
+          "BazarTemTudo.InfraData": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "BazarTemTudo.TesteConsole.dll": {}
+        }
       }
     }
   },
@@ -3513,6 +3523,11 @@
       "sha512": ""
     },
     "BazarTemTudo.Test/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BazarTemTudo.TesteConsole/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

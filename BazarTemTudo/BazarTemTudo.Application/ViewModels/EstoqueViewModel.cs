@@ -9,6 +9,7 @@ namespace BazarTemTudo.Application.ViewModels
 {
     public class EstoqueViewModel
     {
+        public long Id { get; set; }
 
         public long ProdutosID { get; set; }
 

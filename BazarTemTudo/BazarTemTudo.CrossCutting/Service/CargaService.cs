@@ -185,16 +185,18 @@ namespace BazarTemTudo.CrossCutting.Service
         {
             try
             {
-                var query = (from ca in result
-                             join pe in _dbContext.Pedidos on ca.order_id equals pe.Order_id into peGroup
-                             from pe in peGroup.DefaultIfEmpty()
-                             join pr in _dbContext.Produtos on new { UPC = ca.upc, SKU = ca.sku } equals new { pr.UPC, pr.SKU } into prGroup
-                             from pr in prGroup.DefaultIfEmpty()
-                             where pe == null || pr == null || !_dbContext.ItensPedidos.Any(d =>
-                                     d.PedidoId == pe.Id &&
-                                     d.ProdutoId == pr.Id &&
-                                     d.Order_Item_id == ca.order_item_id)
-                             select new ItensPedidos
+                var query = (
+                            from ca in result
+                            join pe in _dbContext.Pedidos on ca.order_id equals pe.Order_id into peGroup
+                            from pe in peGroup.DefaultIfEmpty()
+                            join pr in _dbContext.Produtos on new { UPC= ca.upc, SKU = ca.sku } equals new { pr.UPC, pr.SKU } into prGroup
+                            from pr in prGroup.DefaultIfEmpty()
+                            where pe != null && pr != null && ! _dbContext.ItensPedidos.Any(d =>
+                                d.PedidoId == pe.Id &&
+                                d.ProdutoId == pr.Id &&
+                                d.Order_Item_id == ca.order_item_id
+                            )
+                            select new ItensPedidos
                              {
                                  PedidoId = pe.Id,
                                  ProdutoId = pr.Id,
@@ -204,26 +206,11 @@ namespace BazarTemTudo.CrossCutting.Service
 
                              });
 
-                 var distinctQuery = query.Distinct().GroupBy(e => e.Item_Price).Select(g => g.First()).ToList();    // Seleciona o primeiro endereço de cada grupo (distinto pelo Order_id)
 
-                bool existemItensPedidos = distinctQuery.Any(item =>
-                    _dbContext.ItensPedidos.Any(ip =>
-                        ip.PedidoId == item.PedidoId &&
-                        ip.ProdutoId == item.ProdutoId &&
-                        ip.Order_Item_id == item.Order_Item_id));
-
-                if(! existemItensPedidos)
-                {
-                    _dbContext.ItensPedidos.AddRange(distinctQuery);
-                    _dbContext.SaveChanges();
-                }
-                else
-                {
-                    throw new Exception("Opa!");
-                }
+                _dbContext.ItensPedidos.AddRange(query);
+                _dbContext.SaveChanges();
 
 
-              
             }
             catch (Exception ex)
             {
@@ -251,21 +238,21 @@ namespace BazarTemTudo.CrossCutting.Service
                   
                     PopularItensPedidos(result);
 
-
-                    transaction.Commit();
+                    transaction.Commit(); 
                     
-                   
-
+                    return true;
                     
                 }
-                catch (Exception ex) {                   
-                   
-                    throw new Exception("Erro durante a transação: " + ex.Message);
+                catch (Exception ex) {
+
+                    return false;
                 }
             }
-
-            return true;
+           
         }
+
+       
+
 
 
         public void PopularEstoque()

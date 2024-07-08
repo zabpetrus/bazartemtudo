@@ -1,11 +1,16 @@
 ﻿using BazarTemTudo.Domain.Entities;
 using BazarTemTudo.Domain.Entities.Enums;
 using BazarTemTudo.InfraData.Context;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace BazarTemTudo.CrossCutting.Service
@@ -22,14 +27,13 @@ namespace BazarTemTudo.CrossCutting.Service
                 throw new Exception("Contexto nulo. Não posso continuar");
             }
 
-           _dbContext.Database.ExecuteSqlRaw("TRUNCATE TABLE [Estoque]");
-
+            //_dbContext.Database.ExecuteSqlRaw("TRUNCATE TABLE [Estoque]");
         }
 
         public void SeedEstoqueVazio()
         {
             try
-            {                
+            {
                 var query =
                     from oi in _dbContext.ItensPedidos
                     join it in _dbContext.Estoque on oi.ProdutoId equals it.ProdutosID into itGroup
@@ -47,13 +51,13 @@ namespace BazarTemTudo.CrossCutting.Service
 
                 _dbContext.Estoque.AddRange(result);
                 _dbContext.SaveChanges();
-               
+
 
             }
             catch (Exception ex)
             {
                 throw new Exception("Erro na populacao de Estoque:" + ex);
-                
+
             }
 
         }
@@ -63,18 +67,18 @@ namespace BazarTemTudo.CrossCutting.Service
         {
             try
             {
-                 var query =
-                    from oi in _dbContext.ItensPedidos
-                    join it in _dbContext.Estoque on oi.ProdutoId equals it.ProdutosID into itGroup
-                    from it in itGroup.DefaultIfEmpty()
-                    where !_dbContext.Estoque.Any(e => e.ProdutosID == oi.ProdutoId)
-                    group oi by oi.ProdutoId into grouped
-                    select new Estoque
-                    {
-                        ProdutosID = grouped.Key,
-                        Quantidade = 100,
-                        Estoque_Minimo = grouped.Sum(g => g.Quantity_Purchased)
-                    };
+                var query =
+                   from oi in _dbContext.ItensPedidos
+                   join it in _dbContext.Estoque on oi.ProdutoId equals it.ProdutosID into itGroup
+                   from it in itGroup.DefaultIfEmpty()
+                   where !_dbContext.Estoque.Any(e => e.ProdutosID == oi.ProdutoId)
+                   group oi by oi.ProdutoId into grouped
+                   select new Estoque
+                   {
+                       ProdutosID = grouped.Key,
+                       Quantidade = 100,
+                       Estoque_Minimo = grouped.Sum(g => g.Quantity_Purchased)
+                   };
 
                 var result = query.ToList();
 
@@ -95,7 +99,7 @@ namespace BazarTemTudo.CrossCutting.Service
         {
             try
             {
-                
+
                 var random = new Random();
                 var query =
                     from oi in _dbContext.ItensPedidos
@@ -132,7 +136,7 @@ namespace BazarTemTudo.CrossCutting.Service
 
                 if (tabelaVazia)
                 {
-                    var fornecedores = new List<Fornecedores>       
+                    var fornecedores = new List<Fornecedores>
                     {
                         new Fornecedores
                         {
@@ -190,7 +194,7 @@ namespace BazarTemTudo.CrossCutting.Service
                     }
 
                     _dbContext.SaveChanges();
-                }                 
+                }
             }
             catch (Exception ex)
             {
@@ -215,7 +219,7 @@ namespace BazarTemTudo.CrossCutting.Service
                             CNPJ = "11.222.333/0001-01",
                             TipoServico = TipoServico.Normal,
                             Shipping = Shipping.Standard_Shipping,
-                            CustoFrete = 50.00m,                           
+                            CustoFrete = 50.00m,
                         },
                         new Transportadoras
                         {
@@ -223,7 +227,7 @@ namespace BazarTemTudo.CrossCutting.Service
                             CNPJ = "22.333.444/0001-02",
                             TipoServico = TipoServico.Normal,
                             Shipping = Shipping.Standard_Shipping,
-                            CustoFrete = 75.00m,                          
+                            CustoFrete = 75.00m,
                         },
                         new Transportadoras
                         {
@@ -232,7 +236,7 @@ namespace BazarTemTudo.CrossCutting.Service
                             TipoServico = TipoServico.Economico,
                             Shipping = Shipping.Standard_Shipping,
                             CustoFrete = 60.00m
-                            
+
                         },
                         new Transportadoras
                         {
@@ -240,7 +244,7 @@ namespace BazarTemTudo.CrossCutting.Service
                             CNPJ = "44.555.666/0001-04",
                             TipoServico = TipoServico.Normal,
                             Shipping = Shipping.Express_Shipping,
-                            CustoFrete = 50.00m                            
+                            CustoFrete = 50.00m
                         },
                         new Transportadoras
                         {
@@ -249,7 +253,7 @@ namespace BazarTemTudo.CrossCutting.Service
                             TipoServico = TipoServico.Expresso,
                             Shipping = Shipping.Express_Shipping,
                             CustoFrete = 90.00m,
-                          
+
                         }
                     };
 
@@ -264,43 +268,90 @@ namespace BazarTemTudo.CrossCutting.Service
                     _dbContext.SaveChanges();
                 }
             }
-            catch(Exception ex) { throw new Exception(ex.Message); }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
+
+        public void VerficarEstoque()
+        {
+
+            var result = ListaPedidosOrganizada();
+            if (result == null)
+            {
+                throw new Exception("Lista Pedidos não foi organizada");
+            }
+
+            List<ItemProdutoDTO> itensPorProduto = result
+                .GroupBy(x => x.ProdutoId)
+                .Select(g => new ItemProdutoDTO
+                {
+                    ProdutoId = g.Key,
+                    QuantidadeTotalComprada = g.Sum(x => x.QuantidadeComprada)
+                })
+                .ToList();
+
+
+            //Verificar se é necessaria uma nova requisicao
+            var requisicaoCompraCriada = VerificarNovaRequisicaoCompra(itensPorProduto);
+            
+            // Passo 3: Se uma requisição de compra foi criada, não atualize o estoque nem a disponibilidade dos itens de pedido
+            if (!requisicaoCompraCriada)
+            {
+                //Verificar mais uma vez se tem pedido pronto
+                VendoDisponibilidade(result);
+                Checkout();
+            }
+
+        }
+
+    
         private List<ConsultaDTO> ListaPedidosOrganizada()
         {
-          
-            // Passo 1: Obter a lista de pedidos com os itens e seus totais
-            var pedidoTotais = from tp in _dbContext.ItensPedidos
-                               group tp by new { tp.Id, tp.PedidoId, tp.Pedido.Purchase_Date } into grouped
-                               select new
-                               {
-                                   ItemPedidoID = grouped.Key.Id,
-                                   PedidoID = grouped.Key.PedidoId,
-                                   SOMA = grouped.Sum(tp => tp.Item_Price * tp.Quantity_Purchased),
-                                   Prioridade = grouped.Key.Purchase_Date
-                               };
 
-            var pedidosComItens = from pt in pedidoTotais
-                                  join ipx in _dbContext.ItensPedidos on pt.PedidoID equals ipx.PedidoId
-                                  orderby pt.SOMA descending, pt.Prioridade descending, ipx.ProdutoId
-                                  select new ConsultaDTO
-                                  {
-                                      ItemPedidoId = ipx.Id,
-                                      PedidoId = pt.PedidoID,
-                                      ProdutoId = ipx.ProdutoId,
-                                      QuantidadeComprada = ipx.Quantity_Purchased,
-                                      Disponivel = ipx.Disponivel,
-                                      Soma = pt.SOMA,
-                                      Prioridade = pt.Prioridade
-                                  };
+            try
+            {
+                // Passo 1: Obter a lista de pedidos com os itens e seus totais
+                var pedidoTotais = from tp in _dbContext.ItensPedidos
+                                   group tp by new { tp.Id, tp.PedidoId, tp.Pedido.Purchase_Date } into grouped
+                                   select new
+                                   {
+                                       ItemPedidoID = grouped.Key.Id,
+                                       PedidoID = grouped.Key.PedidoId,
+                                       SOMA = grouped.Sum(tp => tp.Item_Price * tp.Quantity_Purchased),
+                                       Prioridade = grouped.Key.Purchase_Date
+                                   };
 
-            var result = pedidosComItens.ToList();
-            return result;
-        }   
+                var pedidosComItens = from pt in pedidoTotais
+                                      join ipx in _dbContext.ItensPedidos on pt.PedidoID equals ipx.PedidoId
+                                      orderby pt.SOMA descending, pt.Prioridade descending, ipx.ProdutoId
+                                      select new ConsultaDTO
+                                      {
+                                          ItemPedidoId = ipx.Id,
+                                          PedidoId = pt.PedidoID,
+                                          ProdutoId = ipx.ProdutoId,
+                                          QuantidadeComprada = ipx.Quantity_Purchased,
+                                          Disponivel = ipx.Disponivel,
+                                          Soma = pt.SOMA,
+                                          Prioridade = pt.Prioridade
+                                      };
 
-        private void VendoDisponibilidade(List<ConsultaDTO> result )
+                var result = pedidosComItens.ToList();
+                return result;
+            } 
+            catch(Exception e)
+            {
+                throw new Exception("Não foi possivel obter a ordenacao:" + e.Message, e);
+            }
+        }
+
+
+        private void VendoDisponibilidade(List<ConsultaDTO> result)
         {
+            if(result == null)
+            {
+                throw new Exception("Erro: nenhuma entrada válida");
+            }
+
             // Passo 4: Atualizar a disponibilidade dos itens de pedido e o estoque
             foreach (var item in result)
             {
@@ -324,69 +375,42 @@ namespace BazarTemTudo.CrossCutting.Service
                     _dbContext.Update(estoque);
                 }
             }
-        }
-
-
-
-
-        public void PrimeirosProcedimentos()
-        {
-            var result = ListaPedidosOrganizada();
-
-            List<ItemProdutoDTO> itensPorProduto = result
-                .GroupBy(x => x.ProdutoId)
-                .Select(g => new ItemProdutoDTO
-                {
-                    ProdutoId = g.Key,
-                    QuantidadeTotalComprada = g.Sum(x => x.QuantidadeComprada)
-                })
-                .ToList();
-
-            //Verificar se é necessaria uma nova requisicao
-
-            var requisicaoCompraCriada = VerificarNovaRequisicaoCompra(itensPorProduto);
-
-
-            // Passo 3: Se uma requisição de compra foi criada, não atualize o estoque nem a disponibilidade dos itens de pedido
-            if (!requisicaoCompraCriada)
-            {
-                VendoDisponibilidade(result);
-                Checkout();
-            }
 
             // Salve as alterações no contexto
             _dbContext.SaveChanges();
-
-
         }
+
+
 
         private bool VerificarNovaRequisicaoCompra(List<ItemProdutoDTO> itensPorProduto)
         {
-            bool requisicaoCompraCriada = false;
+            if (itensPorProduto == null || itensPorProduto.Count <= 0)
+            {
+                throw new Exception("Itens Produtos nulo ou vazio");
+            }
 
-            
             // Verifique se existe um fornecedor disponível
             var fornecedor = _dbContext.Fornecedores.FirstOrDefault();
-
-            if(itensPorProduto.Count <= 0  || itensPorProduto == null)
-            {
-                throw new Exception("Itens Produtos nulo");
-            }
-         
             if (fornecedor == null)
             {
                 throw new Exception("Sem nenhum Fornecedor disponível");
             }
 
-            // Verifique se a quantidade necessária está disponível no estoque para cada produto
+            bool requisicaoCompraCriada = false;
+
             foreach (var item in itensPorProduto)
             {
                 var estoque_prod = _dbContext.Estoque.FirstOrDefault(e => e.ProdutosID == item.ProdutoId);
 
-                   if (estoque_prod == null || estoque_prod.Quantidade < item.QuantidadeTotalComprada)
+                if (estoque_prod == null || estoque_prod.Quantidade < item.QuantidadeTotalComprada)
+                {
+                    // Verifique se já existe uma requisição de compra pendente para o mesmo produto
+                    var requisicaoExistente = _dbContext.RequisicoesCompra.FirstOrDefault(rc => rc.Produto_ID == item.ProdutoId && rc.Status_Pedido == StatusPedido.Pendente);
+
+                    if (requisicaoExistente == null)
                     {
-                        // Se a quantidade no estoque for insuficiente, crie uma RequisicaoCompra
-                        RequisicaoCompra requisicaoCompra = new()
+                        // Crie uma nova RequisicaoCompra
+                        RequisicaoCompra novaRequisicao = new RequisicaoCompra
                         {
                             Fornecedor_ID = fornecedor.Id,
                             Produto_ID = item.ProdutoId,
@@ -396,15 +420,26 @@ namespace BazarTemTudo.CrossCutting.Service
                             Data_Emissao = DateTime.Now
                         };
 
-                        _dbContext.RequisicoesCompra.Add(requisicaoCompra);  
+                        _dbContext.RequisicoesCompra.Add(novaRequisicao);
                         _dbContext.SaveChanges();
                         requisicaoCompraCriada = true;
-                    }                
-              
-                
+                    }
+                    else
+                    {
+                        // Já existe uma requisição pendente para o produto, verifique se pode ser atualizada
+                        if (requisicaoExistente.Status_Pedido == StatusPedido.Pendente)
+                        {
+                            // Atualize a requisição existente se necessário
+                            requisicaoExistente.Quantidade = item.QuantidadeTotalComprada;
+                            // Outros campos podem ser atualizados conforme necessário
+                            _dbContext.SaveChanges();
+                            requisicaoCompraCriada = true; // Indica que uma requisição foi considerada
+                        }
+                        // Se já estiver concluída, não criamos uma nova requisição
+                    }
+                }
             }
 
-           
             return requisicaoCompraCriada;
         }
 
@@ -413,13 +448,20 @@ namespace BazarTemTudo.CrossCutting.Service
 
 
 
-        public void VerificarEPopularRequisicaoCompra()
+
+
+
+
+        public List<Pedidos> VerificarPedidosProntosEmPedidos()
         {
-            if (_dbContext.Estoque.Any())
-            {
-                 PrimeirosProcedimentos();   
-            }                      
+            var todospedidosdisponiveis = _dbContext.Pedidos
+                    .Where(pedido => pedido.ItensPedidos.All(ip => ip.Disponivel))
+                    .ToList();
+
+            return todospedidosdisponiveis;
+
         }
+
 
         public void Checkout()
         {
@@ -444,17 +486,28 @@ namespace BazarTemTudo.CrossCutting.Service
                                 };
 
                     var result = query.ToList();
-                    _dbContext.AddRange(result);
-                    _dbContext.SaveChanges();
+
+                    if(result != null)
+                    {
+                        _dbContext.AddRange(result);
+                        _dbContext.SaveChanges();
+                    }                  
                 }
                 else
                 {
-                    // Se não estiver vazia, verifica pedidos prontos e atualiza status de despacho
+                    // Ver se o estoque tem produtos
 
-                    VerificarEPopularRequisicaoCompra();
+                    if (_dbContext.Estoque.Any())
+                    {
+                        VerficarEstoque();
+                    }
+                    else
+                    {
+                        throw new Exception("O estoque está vazio ou nulo. Não posso continuar");
+                    }
 
-                    var pedidosProntos = VerificarPedidosProntos();
-
+                    var pedidosProntos = VerificarPedidosProntosEmPedidos();
+                                   
                     if (pedidosProntos != null && pedidosProntos.Any())
                     {
                         foreach (var pedido in pedidosProntos)
@@ -481,10 +534,7 @@ namespace BazarTemTudo.CrossCutting.Service
 
                         _dbContext.SaveChanges(); // Salva as alterações no banco de dados
                     }
-                    else
-                    {
-                        throw new Exception("Não há pedidos prontos!");
-                    }
+                
                 }
             }
             catch (Exception ex)
@@ -493,105 +543,37 @@ namespace BazarTemTudo.CrossCutting.Service
             }
         }
 
-
-        public void AtualizarEstoque()
-        {
-            using (var transaction = _dbContext.Database.BeginTransaction())
-            {
-                try
-                {
-                    var pedidoTotais = from tp in _dbContext.ItensPedidos
-                                       group tp by new { tp.PedidoId, tp.Pedido.Purchase_Date } into grouped
-                                       select new
-                                       {
-                                           PedidoID = grouped.Key.PedidoId,
-                                           SOMA = grouped.Sum(tp => tp.Item_Price * tp.Quantity_Purchased),
-                                           Prioridade = grouped.Key.Purchase_Date
-                                       };
-
-                    var pedidosComItens = from pt in pedidoTotais
-                                          join ipx in _dbContext.ItensPedidos on pt.PedidoID equals ipx.PedidoId
-                                          orderby pt.SOMA descending, pt.Prioridade descending, ipx.ProdutoId
-                                          select new
-                                          {
-                                              ipx.Id,
-                                              ipx.PedidoId,
-                                              ipx.ProdutoId,
-                                              ipx.Quantity_Purchased,
-                                              ipx.Disponivel,
-                                              pt.SOMA,
-                                              pt.Prioridade
-                                          };
-
-                    foreach (var item in pedidosComItens)
-                    {
-                        var res = _dbContext.Estoque.FirstOrDefault(e => e.ProdutosID == item.ProdutoId);
-                        if (res != null)
-                        {
-                            if (res.Quantidade >= item.Quantity_Purchased)
-                            {
-                                res.Quantidade -= item.Quantity_Purchased;
-
-                                var founded = _dbContext.ItensPedidos.Find(item.Id);
-                                if (founded != null)
-                                {
-                                    founded.Disponivel = true;
-                                    _dbContext.ItensPedidos.Update(founded);
-                                    _dbContext.Estoque.Update(res);
-                                }
-                                else
-                                {
-                                    throw new Exception("Erro durante a operação: Produto não encontrado");
-                                }
-                            }
-                            else
-                            {
-                                // Se o estoque não for suficiente para este item, para o processamento
-                                break;
-                            }
-                        }
-                        else
-                        {
-                            throw new Exception("Produto não encontrado no estoque");
-                        }
-                    }
-
-                    _dbContext.SaveChanges();
-                    transaction.Commit();
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();
-                    throw new Exception("Erro durante a atualização do estoque: " + ex.Message, ex);
-                }
-            }
-        }
-
-
-
-
-        public List<Pedidos> VerificarPedidosProntos()
+        public void PopularEstoque()
         {
             try
             {
-               var res = _dbContext.Pedidos
-                .Where(pedido => pedido.ItensPedidos.All(ip => ip.Disponivel))
-                .ToList();
-                if (res.Any())
-                {
-                    return res;
-                }
-                else
-                {
-                    throw new Exception("Não tem pedidos prontos!");
-                }
+                var produtosNaTabelaEstoque = _dbContext.Estoque
+                    .Select(e => e.ProdutosID)
+                    .ToList();
+
+                var produtosParaInserir = _dbContext.Produtos
+                    .Where(p => !produtosNaTabelaEstoque.Contains(p.Id))
+                    .ToList();
+
+                var novosEstoques = produtosParaInserir
+                    .Select(produto => new Estoque
+                    {
+                        ProdutosID = produto.Id,
+                        Quantidade = 0,
+                        Estoque_Minimo = 0, // Defina o valor inicial desejado para Estoque_Minimo
+
+                    })
+                    .ToList();
+
+                _dbContext.Estoque.AddRange(novosEstoques);
+                _dbContext.SaveChanges();
+
+                Console.WriteLine("Estoques populados com sucesso!");
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message, ex);
-            }             
+                throw new Exception("Erro ao popular o estoque.", ex);
+            }
         }
-
-
-    }                                
+    }                             
 }

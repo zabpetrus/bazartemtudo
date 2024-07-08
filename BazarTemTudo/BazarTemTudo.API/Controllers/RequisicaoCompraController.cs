@@ -35,45 +35,62 @@ namespace BazarTemTudo.API.Controllers
         public IActionResult AtualizandoEstoque(long Id, StatusPedido statusPedido)
         {
 
-            try
+            var requisicao = _requisicaoAppService.GetById(Id);
+
+            // Verificando se a requisicao foi encontrada
+            if (requisicao == null)
             {
-                var requisicao = _requisicaoAppService.GetById(Id);
-                requisicao.Status_Pedido = statusPedido;
+                throw new KeyNotFoundException("Id da Requisicão não foi encontrado");
+            }
 
-                if (_requisicaoAppService.Update(Id, requisicao))
+            requisicao.Status_Pedido = statusPedido;
+
+            // Atualizando a requisicao no serviço
+            if (!_requisicaoAppService.Update(Id, requisicao))
+            {
+                throw new InvalidOperationException("Erro ao atualizar a requisição de compra");
+            }
+
+            // Verificando se o status do pedido é 'Entregue'
+            if (statusPedido == StatusPedido.Entregue)
+            {
+                var estoqueId = requisicao.Produto_ID;
+
+                var estoque = _estoqueAppService.GetByProductId(estoqueId);
+
+                // Verificando se o estoque foi encontrado
+                if (estoque == null)
                 {
-                    if(statusPedido == StatusPedido.Entregue)
-                    {
-                        var estoqueId = requisicao.Produto_ID;
-                        var estoque = _estoqueAppService.GetByProductId(estoqueId);
-                        estoque.Quantidade = requisicao.Quantidade;
+                    throw new KeyNotFoundException("Produto não encontrado no estoque: Id do produto:" + estoqueId);
+                }
 
-                    if (_estoqueAppService.Update(estoqueId, estoque))
-                    {                           
+                estoque.Quantidade = requisicao.Quantidade;
 
-                        return Ok(statusPedido);
-                    }
-                    else
-                    {
-                        throw new Exception("Erro durante a atualização do estoque");
-                    }
-                    }
-                    else
-                    {
-                       return Ok("Nenhuma alteração substancial");
-                    }
-                  
+                // Atualizando o estoque no serviço
+                if (!_estoqueAppService.Update(estoqueId, estoque))
+                {
+                    throw new InvalidOperationException("Erro durante a atualização do estoque");
+                }
+
+                // Verificando e atualizando o estoque
+                _populationService.VerficarEstoque();
+
+                var result = _populationService.VerificarPedidosProntosEmPedidos();
+                if (result != null)
+                {
+                    _populationService.Checkout();
+                    return Ok("Produto entregue com pedidos a serem despachados");
                 }
                 else
                 {
-                    throw new Exception("Erro ao atualizar a requisição de compra");
+                    return Ok("Produto entregue e sem nenhum pedido a ser despachado");
                 }
             }
-            catch (Exception ex)
-            {
-                return BadRequest($"Ocorreu um erro genérico: {ex.Message}");
-            }
+
+            return Ok("Nenhuma alteração substancial");
         }
+
+
 
 
     }

@@ -8,6 +8,8 @@ namespace BazarTemTudo.Application.ViewModels
 {
     public class ProdutosViewModel
     {
+        public long Id { get; set; }
+
         public string NomeProduto { get; set; }
 
         public string SKU { get; set; }

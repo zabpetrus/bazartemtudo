@@ -9,6 +9,8 @@ namespace BazarTemTudo.Application.ViewModels
 {
     public class ItensPedidosViewModel
     {
+        public long Id { get; set; }
+
         public string Order_Item_id { get; set; }
 
         public decimal Item_Price { get; set; }

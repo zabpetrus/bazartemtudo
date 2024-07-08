@@ -7,6 +7,7 @@ using BazarTemTudo.Domain.Interface.Service;
 using BazarTemTudo.Domain.Service;
 using BazarTemTudo.InfraData.Repository;
 using BazarTemTudo.InfraData.UnitOfWork;
+using BazarTemTudo.TesteConsole.Repository;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;

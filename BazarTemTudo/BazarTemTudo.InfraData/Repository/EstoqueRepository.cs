@@ -20,24 +20,12 @@ namespace BazarTemTudo.InfraData.Repository
             _context = context;
         }
 
+
         public Estoque GetByProductId(long productId)
         {
-            try
-            {
-                var res =_context.Estoque.FirstOrDefault(e => e.ProdutosID == productId); 
-                if(res == null)
-                {
-                    throw new ArgumentNullException(nameof(res));
-                }
-                return res;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }                                       
-           
+            var res = _context.Estoque.FirstOrDefault(e => e.ProdutosID == productId);
+            return res;
         }
-
 
     }
 }

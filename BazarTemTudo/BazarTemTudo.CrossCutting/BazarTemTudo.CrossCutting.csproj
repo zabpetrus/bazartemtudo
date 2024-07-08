@@ -45,6 +45,7 @@
     <ProjectReference Include="..\BazarTemTudo.Application\BazarTemTudo.Application.csproj" />
     <ProjectReference Include="..\BazarTemTudo.Domain\BazarTemTudo.Domain.csproj" />
     <ProjectReference Include="..\BazarTemTudo.InfraData\BazarTemTudo.InfraData.csproj" />
+    <ProjectReference Include="..\BazarTemTudo.TesteConsole\BazarTemTudo.TesteConsole.csproj" />
     <ProjectReference Include="..\BazarTemTudo.Test\BazarTemTudo.Test.csproj" />
   </ItemGroup>
 

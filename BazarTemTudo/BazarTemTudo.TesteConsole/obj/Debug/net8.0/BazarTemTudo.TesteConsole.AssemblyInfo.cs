@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BazarTemTudo.TesteConsole")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67b303d8731adb419564586a6c788edd8686e73c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67f20baeae95a3451aa9861505b26b52b08582ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("BazarTemTudo.TesteConsole")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BazarTemTudo.TesteConsole")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

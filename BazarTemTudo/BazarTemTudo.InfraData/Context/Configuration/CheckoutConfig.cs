@@ -30,9 +30,9 @@ namespace BazarTemTudo.InfraData.Context.Configuration
            );
 
             builder
-              .HasOne(e => e.Pedido)
+              .HasOne(e => e.Pedido_Cliente)
               .WithOne()
-              .HasForeignKey<Checkout>(e => e.PedidoId)
+              .HasForeignKey<Checkout>(e => e.Pedido_Id)
               .OnDelete(DeleteBehavior.Restrict);
         }
     }

@@ -299,7 +299,7 @@ namespace BazarTemTudo.CrossCutting.Service
             {
                 //Verificar mais uma vez se tem pedido pronto
                 VendoDisponibilidade(result);
-                Checkout();
+               
             }
 
         }
@@ -378,6 +378,8 @@ namespace BazarTemTudo.CrossCutting.Service
 
             // Salve as alterações no contexto
             _dbContext.SaveChanges();
+
+            Checkout();
         }
 
 
@@ -482,7 +484,7 @@ namespace BazarTemTudo.CrossCutting.Service
                                     Total_Pedido = g.Sum(x => x.tp.Item_Price * x.tp.Quantity_Purchased),
                                     Status_Despacho = StatusDespacho.Em_processamento,
                                     DataDespacho = DateTime.Now,
-                                    PedidoId = g.Key.Id
+                                    Pedido_Id = g.Key.Id
                                 };
 
                     var result = query.ToList();
@@ -513,7 +515,7 @@ namespace BazarTemTudo.CrossCutting.Service
                         foreach (var pedido in pedidosProntos)
                         {
                             // Atualiza o status de despacho para Pronto para envio
-                            var checkoutItems = _dbContext.Checkout.Where(o => o.PedidoId == pedido.Id);
+                            var checkoutItems = _dbContext.Checkout.Where(o => o.Pedido_Id == pedido.Id);
                             foreach (var item in checkoutItems)
                             {
                                 item.Status_Despacho = StatusDespacho.Pronto_para_envio;
@@ -522,7 +524,7 @@ namespace BazarTemTudo.CrossCutting.Service
                             var produtosProntosParaEnvio = checkoutItems
                                 .Select(o => new DespachoMercadorias
                                 {
-                                    Pedido_Id = o.PedidoId,
+                                    Pedido_Id = o.Pedido_Id,
                                     Transportadora_ID = 1, // Sempre ID da transportadora 1
                                     Status_Entrega = StatusDespacho.Pronto_para_envio,
                                     Data_Liberacao = DateTime.Now,

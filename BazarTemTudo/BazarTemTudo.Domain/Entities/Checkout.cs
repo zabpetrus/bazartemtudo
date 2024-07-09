@@ -10,19 +10,17 @@ namespace BazarTemTudo.Domain.Entities
 {
     public class Checkout : Entity
     {
-    
 
-        public decimal Total_Pedido {  get; set; }  
+
+        public long Pedido_Id { get; set; }
+
+        public Pedidos Pedido_Cliente { get; set; }
+
+        public decimal Total_Pedido { get; set; }
 
         public StatusDespacho Status_Despacho { get; set; }
 
-        public DateTime DataDespacho { get; set; }  = new DateTime();
-
-        //Navegação
-
-        public long PedidoId { get; set; }
-
-        public Pedidos Pedido { get; set; }
+        public DateTime DataDespacho { get; set; } = new DateTime();
 
 
     }
